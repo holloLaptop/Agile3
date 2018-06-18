@@ -52,6 +52,12 @@
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Contractors.cs" />
+    <Compile Include="CreateShiftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateShiftForm.Designer.cs">
+      <DependentUpon>CreateShiftForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateShiftForm.resx">
+      <DependentUpon>CreateShiftForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
