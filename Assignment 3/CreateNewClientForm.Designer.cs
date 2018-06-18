@@ -166,6 +166,8 @@
             this.Controls.Add(this.lbl_landLine);
             this.Controls.Add(this.lbl_address);
             this.Controls.Add(this.lbl_name);
+            this.MaximumSize = new System.Drawing.Size(548, 363);
+            this.MinimumSize = new System.Drawing.Size(548, 363);
             this.Name = "CreateNewClientForm";
             this.Text = "CreateNewClientForm";
             this.Load += new System.EventHandler(this.CreateNewClientForm_Load);

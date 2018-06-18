@@ -1,0 +1,232 @@
+﻿namespace Assignment_3
+{
+    partial class CreateJobForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lbl_clientID = new System.Windows.Forms.Label();
+            this.lbl_shortDescription = new System.Windows.Forms.Label();
+            this.lbl_timeOrdered = new System.Windows.Forms.Label();
+            this.lbl_location = new System.Windows.Forms.Label();
+            this.lbl_priority = new System.Windows.Forms.Label();
+            this.lbl_startTime = new System.Windows.Forms.Label();
+            this.lbl_endTime = new System.Windows.Forms.Label();
+            this.comboBox_clientID = new System.Windows.Forms.ComboBox();
+            this.txt_shortDescription = new System.Windows.Forms.TextBox();
+            this.date_timeOrdered = new System.Windows.Forms.DateTimePicker();
+            this.txt_location = new System.Windows.Forms.TextBox();
+            this.numUD_priority = new System.Windows.Forms.NumericUpDown();
+            this.date_startTime = new System.Windows.Forms.DateTimePicker();
+            this.date_endTime = new System.Windows.Forms.DateTimePicker();
+            this.btn_submit = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_priority)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // lbl_clientID
+            // 
+            this.lbl_clientID.AutoSize = true;
+            this.lbl_clientID.Location = new System.Drawing.Point(13, 13);
+            this.lbl_clientID.Name = "lbl_clientID";
+            this.lbl_clientID.Size = new System.Drawing.Size(70, 20);
+            this.lbl_clientID.TabIndex = 0;
+            this.lbl_clientID.Text = "Client ID";
+            // 
+            // lbl_shortDescription
+            // 
+            this.lbl_shortDescription.AutoSize = true;
+            this.lbl_shortDescription.Location = new System.Drawing.Point(13, 53);
+            this.lbl_shortDescription.Name = "lbl_shortDescription";
+            this.lbl_shortDescription.Size = new System.Drawing.Size(132, 20);
+            this.lbl_shortDescription.TabIndex = 1;
+            this.lbl_shortDescription.Text = "Short Description";
+            // 
+            // lbl_timeOrdered
+            // 
+            this.lbl_timeOrdered.AutoSize = true;
+            this.lbl_timeOrdered.Location = new System.Drawing.Point(13, 93);
+            this.lbl_timeOrdered.Name = "lbl_timeOrdered";
+            this.lbl_timeOrdered.Size = new System.Drawing.Size(109, 20);
+            this.lbl_timeOrdered.TabIndex = 2;
+            this.lbl_timeOrdered.Text = "Time Ordered:";
+            // 
+            // lbl_location
+            // 
+            this.lbl_location.AutoSize = true;
+            this.lbl_location.Location = new System.Drawing.Point(13, 133);
+            this.lbl_location.Name = "lbl_location";
+            this.lbl_location.Size = new System.Drawing.Size(70, 20);
+            this.lbl_location.TabIndex = 3;
+            this.lbl_location.Text = "Location";
+            // 
+            // lbl_priority
+            // 
+            this.lbl_priority.AutoSize = true;
+            this.lbl_priority.Location = new System.Drawing.Point(13, 173);
+            this.lbl_priority.Name = "lbl_priority";
+            this.lbl_priority.Size = new System.Drawing.Size(56, 20);
+            this.lbl_priority.TabIndex = 4;
+            this.lbl_priority.Text = "Priority";
+            // 
+            // lbl_startTime
+            // 
+            this.lbl_startTime.AutoSize = true;
+            this.lbl_startTime.Location = new System.Drawing.Point(13, 213);
+            this.lbl_startTime.Name = "lbl_startTime";
+            this.lbl_startTime.Size = new System.Drawing.Size(86, 20);
+            this.lbl_startTime.TabIndex = 5;
+            this.lbl_startTime.Text = "Start Time:";
+            // 
+            // lbl_endTime
+            // 
+            this.lbl_endTime.AutoSize = true;
+            this.lbl_endTime.Location = new System.Drawing.Point(13, 253);
+            this.lbl_endTime.Name = "lbl_endTime";
+            this.lbl_endTime.Size = new System.Drawing.Size(80, 20);
+            this.lbl_endTime.TabIndex = 6;
+            this.lbl_endTime.Text = "End Time:";
+            // 
+            // comboBox_clientID
+            // 
+            this.comboBox_clientID.FormattingEnabled = true;
+            this.comboBox_clientID.Location = new System.Drawing.Point(157, 13);
+            this.comboBox_clientID.Name = "comboBox_clientID";
+            this.comboBox_clientID.Size = new System.Drawing.Size(371, 28);
+            this.comboBox_clientID.TabIndex = 7;
+            // 
+            // txt_shortDescription
+            // 
+            this.txt_shortDescription.Location = new System.Drawing.Point(157, 53);
+            this.txt_shortDescription.Name = "txt_shortDescription";
+            this.txt_shortDescription.Size = new System.Drawing.Size(371, 26);
+            this.txt_shortDescription.TabIndex = 8;
+            // 
+            // date_timeOrdered
+            // 
+            this.date_timeOrdered.Location = new System.Drawing.Point(157, 93);
+            this.date_timeOrdered.Name = "date_timeOrdered";
+            this.date_timeOrdered.Size = new System.Drawing.Size(297, 26);
+            this.date_timeOrdered.TabIndex = 9;
+            // 
+            // txt_location
+            // 
+            this.txt_location.Location = new System.Drawing.Point(157, 133);
+            this.txt_location.Name = "txt_location";
+            this.txt_location.Size = new System.Drawing.Size(371, 26);
+            this.txt_location.TabIndex = 10;
+            // 
+            // numUD_priority
+            // 
+            this.numUD_priority.Location = new System.Drawing.Point(157, 173);
+            this.numUD_priority.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numUD_priority.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUD_priority.Name = "numUD_priority";
+            this.numUD_priority.Size = new System.Drawing.Size(46, 26);
+            this.numUD_priority.TabIndex = 11;
+            this.numUD_priority.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // date_startTime
+            // 
+            this.date_startTime.Location = new System.Drawing.Point(157, 213);
+            this.date_startTime.Name = "date_startTime";
+            this.date_startTime.Size = new System.Drawing.Size(297, 26);
+            this.date_startTime.TabIndex = 12;
+            // 
+            // date_endTime
+            // 
+            this.date_endTime.Location = new System.Drawing.Point(157, 253);
+            this.date_endTime.Name = "date_endTime";
+            this.date_endTime.Size = new System.Drawing.Size(297, 26);
+            this.date_endTime.TabIndex = 13;
+            // 
+            // btn_submit
+            // 
+            this.btn_submit.Location = new System.Drawing.Point(433, 292);
+            this.btn_submit.Name = "btn_submit";
+            this.btn_submit.Size = new System.Drawing.Size(95, 36);
+            this.btn_submit.TabIndex = 14;
+            this.btn_submit.Text = "Submit";
+            this.btn_submit.UseVisualStyleBackColor = true;
+            // 
+            // CreateJobForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(537, 338);
+            this.Controls.Add(this.btn_submit);
+            this.Controls.Add(this.date_endTime);
+            this.Controls.Add(this.date_startTime);
+            this.Controls.Add(this.numUD_priority);
+            this.Controls.Add(this.txt_location);
+            this.Controls.Add(this.date_timeOrdered);
+            this.Controls.Add(this.txt_shortDescription);
+            this.Controls.Add(this.comboBox_clientID);
+            this.Controls.Add(this.lbl_endTime);
+            this.Controls.Add(this.lbl_startTime);
+            this.Controls.Add(this.lbl_priority);
+            this.Controls.Add(this.lbl_location);
+            this.Controls.Add(this.lbl_timeOrdered);
+            this.Controls.Add(this.lbl_shortDescription);
+            this.Controls.Add(this.lbl_clientID);
+            this.Name = "CreateJobForm";
+            this.Text = "CreateJobForm";
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_priority)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lbl_clientID;
+        private System.Windows.Forms.Label lbl_shortDescription;
+        private System.Windows.Forms.Label lbl_timeOrdered;
+        private System.Windows.Forms.Label lbl_location;
+        private System.Windows.Forms.Label lbl_priority;
+        private System.Windows.Forms.Label lbl_startTime;
+        private System.Windows.Forms.Label lbl_endTime;
+        private System.Windows.Forms.ComboBox comboBox_clientID;
+        private System.Windows.Forms.TextBox txt_shortDescription;
+        private System.Windows.Forms.DateTimePicker date_timeOrdered;
+        private System.Windows.Forms.TextBox txt_location;
+        private System.Windows.Forms.NumericUpDown numUD_priority;
+        private System.Windows.Forms.DateTimePicker date_startTime;
+        private System.Windows.Forms.DateTimePicker date_endTime;
+        private System.Windows.Forms.Button btn_submit;
+    }
+}
