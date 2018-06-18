@@ -169,7 +169,6 @@
             this.MaximumSize = new System.Drawing.Size(548, 363);
             this.MinimumSize = new System.Drawing.Size(548, 363);
             this.Name = "CreateNewClientForm";
-            this.Text = "CreateNewClientForm";
             this.Load += new System.EventHandler(this.CreateNewClientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
