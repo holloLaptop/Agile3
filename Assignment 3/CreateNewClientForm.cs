@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Assignment_3
 {
-    public partial class CreateShiftForm : Form
+    public partial class CreateNewClientForm : Form
     {
-        public CreateShiftForm()
+        public CreateNewClientForm()
         {
             InitializeComponent();
         }
 
-        private void CreateShiftForm_Load(object sender, EventArgs e)
+        private void CreateNewClientForm_Load(object sender, EventArgs e)
         {
 
         }

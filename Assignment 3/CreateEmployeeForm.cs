@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Assignment_3
 {
-    public partial class CreateShiftForm : Form
+    public partial class CreateEmployeeForm : Form
     {
-        public CreateShiftForm()
+        public CreateEmployeeForm()
         {
             InitializeComponent();
-        }
-
-        private void CreateShiftForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
