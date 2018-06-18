@@ -17,8 +17,6 @@ namespace Assignment_3
         String Location;
         DateTime Ordered;
         DateTime StartTime;
-        int deletethis;
-        int deletemore;
 
         DateTime CompletionTime;
 
