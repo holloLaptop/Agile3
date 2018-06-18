@@ -15,6 +15,10 @@ namespace Assignment_3
         String ShotDescription;
         int priority;
         String Location;
-        DateTime TimeStamp;
+        DateTime Ordered;
+        DateTime StartTime;
+
+        DateTime CompletionTime;
+
     }
 }
