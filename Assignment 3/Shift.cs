@@ -11,6 +11,6 @@ namespace Assignment_3
         int ContractorID;
         int JobID;
         DateTime Start;
-        DateTime End = null;
+        DateTime End = new DateTime(2000, 1, 1, 0, 0, 0, 0);
     }
 }
