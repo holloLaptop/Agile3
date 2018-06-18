@@ -16,5 +16,6 @@ namespace Assignment_3
         int priority;
         String Location;
         DateTime TimeStamp;
+        int deletethis;
     }
 }
