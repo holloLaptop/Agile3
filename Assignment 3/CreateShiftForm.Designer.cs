@@ -37,8 +37,8 @@
             this.comboBox_job = new System.Windows.Forms.ComboBox();
             this.getJobsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_startTime = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.date_endTime = new System.Windows.Forms.DateTimePicker();
+            this.date_startTime = new System.Windows.Forms.DateTimePicker();
             this.btn_submit = new System.Windows.Forms.Button();
             this.lbl_endTime = new System.Windows.Forms.Label();
             this.getEmployeesTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter();
@@ -117,22 +117,22 @@
             this.lbl_startTime.TabIndex = 4;
             this.lbl_startTime.Text = "Start Time:";
             // 
-            // dateTimePicker1
+            // date_endTime
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(122, 130);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(296, 26);
-            this.dateTimePicker1.TabIndex = 7;
+            this.date_endTime.Location = new System.Drawing.Point(122, 130);
+            this.date_endTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.date_endTime.Name = "date_endTime";
+            this.date_endTime.Size = new System.Drawing.Size(296, 26);
+            this.date_endTime.TabIndex = 7;
             // 
-            // dateTimePicker2
+            // date_startTime
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(122, 90);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(296, 26);
-            this.dateTimePicker2.TabIndex = 8;
-            this.dateTimePicker2.Value = new System.DateTime(2018, 6, 18, 0, 0, 0, 0);
+            this.date_startTime.Location = new System.Drawing.Point(122, 90);
+            this.date_startTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.date_startTime.Name = "date_startTime";
+            this.date_startTime.Size = new System.Drawing.Size(296, 26);
+            this.date_startTime.TabIndex = 8;
+            this.date_startTime.Value = new System.DateTime(2018, 6, 18, 0, 0, 0, 0);
             // 
             // btn_submit
             // 
@@ -170,8 +170,8 @@
             this.ClientSize = new System.Drawing.Size(432, 221);
             this.Controls.Add(this.lbl_endTime);
             this.Controls.Add(this.btn_submit);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.date_startTime);
+            this.Controls.Add(this.date_endTime);
             this.Controls.Add(this.lbl_startTime);
             this.Controls.Add(this.comboBox_job);
             this.Controls.Add(this.lbl_job);
@@ -198,8 +198,8 @@
         private System.Windows.Forms.Label lbl_job;
         private System.Windows.Forms.ComboBox comboBox_job;
         private System.Windows.Forms.Label lbl_startTime;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker date_endTime;
+        private System.Windows.Forms.DateTimePicker date_startTime;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.Label lbl_endTime;
         private AgileDevelopmentDataSet agileDevelopmentDataSet;

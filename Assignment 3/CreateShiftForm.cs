@@ -32,7 +32,7 @@ namespace Assignment_3
             {
                 int EmployeeID = Convert.ToInt32(comboBox_employeeID.SelectedValue.ToString());
                 int JobID = Convert.ToInt32(comboBox_job.SelectedValue.ToString());
-                queriesTableAdapter1.CreateShift(EmployeeID, JobID, dateTimePicker2.Value, dateTimePicker1.Value);
+                queriesTableAdapter1.CreateShift(EmployeeID, JobID, date_startTime.Value, date_endTime.Value);
                 //make it safe please
                 queriesTableAdapter1.Dispose();
                 this.Close();
