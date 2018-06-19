@@ -35,9 +35,7 @@ namespace Assignment_3
                 queriesTableAdapter1.CreateShift(EmployeeID, JobID, dateTimePicker2.Value, dateTimePicker1.Value);
                 //make it safe please
                 queriesTableAdapter1.Dispose();
-
                 this.Close();
-                
             }
             catch { Console.Out.WriteLine("oops");}            
         }
