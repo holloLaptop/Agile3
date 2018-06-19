@@ -16,6 +16,7 @@ namespace Assignment_3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //used to test forms currently as shortcut
             Application.Run(new CreateShiftForm());
         }
     }

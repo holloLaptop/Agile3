@@ -16,5 +16,15 @@ namespace Assignment_3
         {
             InitializeComponent();
         }
+
+        private void btn_submit_Click(object sender, EventArgs e)
+        {
+            try {
+                queriesTableAdapter1.CreateEmployee(txt_name.Text, txt_address.Text, txt_landLine.Text, txt_mobilePhone.Text, txt_email.Text);
+            queriesTableAdapter1.Dispose();
+            this.Close();
+        }
+            catch { Console.Out.WriteLine("oops"); }
+}
     }
 }
