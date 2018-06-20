@@ -50,10 +50,13 @@ namespace Assignment_3
             if (fileDialog.FileName != null)
             {
                 Stream stream = File.Open(fileDialog.FileName, FileMode.Create);
-                BinaryFormatter bformatter = new BinaryFormatter();
+                //BinaryFormatter bformatter = new BinaryFormatter();
+
+                System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(GetType());
+                x.Serialize(stream, this);
 
                 Console.WriteLine("Writing Job Information");
-                bformatter.Serialize(stream, this);
+                //bformatter.Serialize(stream, this);
                 stream.Close();
             }
         }
