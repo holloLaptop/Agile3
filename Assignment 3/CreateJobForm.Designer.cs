@@ -54,54 +54,54 @@
             // lbl_clientID
             // 
             this.lbl_clientID.AutoSize = true;
-            this.lbl_clientID.Location = new System.Drawing.Point(14, 12);
+            this.lbl_clientID.Location = new System.Drawing.Point(12, 10);
             this.lbl_clientID.Name = "lbl_clientID";
-            this.lbl_clientID.Size = new System.Drawing.Size(70, 20);
+            this.lbl_clientID.Size = new System.Drawing.Size(60, 17);
             this.lbl_clientID.TabIndex = 0;
             this.lbl_clientID.Text = "Client ID";
             // 
             // lbl_shortDescription
             // 
             this.lbl_shortDescription.AutoSize = true;
-            this.lbl_shortDescription.Location = new System.Drawing.Point(14, 52);
+            this.lbl_shortDescription.Location = new System.Drawing.Point(12, 42);
             this.lbl_shortDescription.Name = "lbl_shortDescription";
-            this.lbl_shortDescription.Size = new System.Drawing.Size(132, 20);
+            this.lbl_shortDescription.Size = new System.Drawing.Size(117, 17);
             this.lbl_shortDescription.TabIndex = 1;
             this.lbl_shortDescription.Text = "Short Description";
             // 
             // lbl_location
             // 
             this.lbl_location.AutoSize = true;
-            this.lbl_location.Location = new System.Drawing.Point(14, 92);
+            this.lbl_location.Location = new System.Drawing.Point(12, 74);
             this.lbl_location.Name = "lbl_location";
-            this.lbl_location.Size = new System.Drawing.Size(70, 20);
+            this.lbl_location.Size = new System.Drawing.Size(62, 17);
             this.lbl_location.TabIndex = 3;
             this.lbl_location.Text = "Location";
             // 
             // lbl_priority
             // 
             this.lbl_priority.AutoSize = true;
-            this.lbl_priority.Location = new System.Drawing.Point(14, 132);
+            this.lbl_priority.Location = new System.Drawing.Point(12, 106);
             this.lbl_priority.Name = "lbl_priority";
-            this.lbl_priority.Size = new System.Drawing.Size(56, 20);
+            this.lbl_priority.Size = new System.Drawing.Size(52, 17);
             this.lbl_priority.TabIndex = 4;
             this.lbl_priority.Text = "Priority";
             // 
             // lbl_startTime
             // 
             this.lbl_startTime.AutoSize = true;
-            this.lbl_startTime.Location = new System.Drawing.Point(14, 172);
+            this.lbl_startTime.Location = new System.Drawing.Point(12, 138);
             this.lbl_startTime.Name = "lbl_startTime";
-            this.lbl_startTime.Size = new System.Drawing.Size(86, 20);
+            this.lbl_startTime.Size = new System.Drawing.Size(77, 17);
             this.lbl_startTime.TabIndex = 5;
             this.lbl_startTime.Text = "Start Time:";
             // 
             // lbl_endTime
             // 
             this.lbl_endTime.AutoSize = true;
-            this.lbl_endTime.Location = new System.Drawing.Point(14, 212);
+            this.lbl_endTime.Location = new System.Drawing.Point(12, 170);
             this.lbl_endTime.Name = "lbl_endTime";
-            this.lbl_endTime.Size = new System.Drawing.Size(80, 20);
+            this.lbl_endTime.Size = new System.Drawing.Size(72, 17);
             this.lbl_endTime.TabIndex = 6;
             this.lbl_endTime.Text = "End Time:";
             // 
@@ -110,10 +110,10 @@
             this.comboBox_clientID.DataSource = this.getClientsBindingSource;
             this.comboBox_clientID.DisplayMember = "Name";
             this.comboBox_clientID.FormattingEnabled = true;
-            this.comboBox_clientID.Location = new System.Drawing.Point(158, 12);
+            this.comboBox_clientID.Location = new System.Drawing.Point(140, 10);
             this.comboBox_clientID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox_clientID.Name = "comboBox_clientID";
-            this.comboBox_clientID.Size = new System.Drawing.Size(371, 28);
+            this.comboBox_clientID.Size = new System.Drawing.Size(330, 24);
             this.comboBox_clientID.TabIndex = 7;
             this.comboBox_clientID.ValueMember = "PersonID";
             // 
@@ -129,23 +129,23 @@
             // 
             // txt_shortDescription
             // 
-            this.txt_shortDescription.Location = new System.Drawing.Point(158, 52);
+            this.txt_shortDescription.Location = new System.Drawing.Point(140, 42);
             this.txt_shortDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_shortDescription.Name = "txt_shortDescription";
-            this.txt_shortDescription.Size = new System.Drawing.Size(371, 26);
+            this.txt_shortDescription.Size = new System.Drawing.Size(330, 22);
             this.txt_shortDescription.TabIndex = 8;
             // 
             // txt_location
             // 
-            this.txt_location.Location = new System.Drawing.Point(158, 92);
+            this.txt_location.Location = new System.Drawing.Point(140, 74);
             this.txt_location.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_location.Name = "txt_location";
-            this.txt_location.Size = new System.Drawing.Size(371, 26);
+            this.txt_location.Size = new System.Drawing.Size(330, 22);
             this.txt_location.TabIndex = 10;
             // 
             // numUD_priority
             // 
-            this.numUD_priority.Location = new System.Drawing.Point(158, 132);
+            this.numUD_priority.Location = new System.Drawing.Point(140, 106);
             this.numUD_priority.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numUD_priority.Maximum = new decimal(new int[] {
             5,
@@ -158,7 +158,7 @@
             0,
             0});
             this.numUD_priority.Name = "numUD_priority";
-            this.numUD_priority.Size = new System.Drawing.Size(46, 26);
+            this.numUD_priority.Size = new System.Drawing.Size(41, 22);
             this.numUD_priority.TabIndex = 11;
             this.numUD_priority.Value = new decimal(new int[] {
             1,
@@ -168,26 +168,30 @@
             // 
             // date_startTime
             // 
-            this.date_startTime.Location = new System.Drawing.Point(158, 172);
+            this.date_startTime.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
+            this.date_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.date_startTime.Location = new System.Drawing.Point(140, 138);
             this.date_startTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_startTime.Name = "date_startTime";
-            this.date_startTime.Size = new System.Drawing.Size(296, 26);
+            this.date_startTime.Size = new System.Drawing.Size(264, 22);
             this.date_startTime.TabIndex = 12;
             // 
             // date_endTime
             // 
-            this.date_endTime.Location = new System.Drawing.Point(158, 212);
+            this.date_endTime.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
+            this.date_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.date_endTime.Location = new System.Drawing.Point(140, 170);
             this.date_endTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_endTime.Name = "date_endTime";
-            this.date_endTime.Size = new System.Drawing.Size(296, 26);
+            this.date_endTime.Size = new System.Drawing.Size(264, 22);
             this.date_endTime.TabIndex = 13;
             // 
             // btn_submit
             // 
-            this.btn_submit.Location = new System.Drawing.Point(433, 259);
+            this.btn_submit.Location = new System.Drawing.Point(385, 207);
             this.btn_submit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(94, 36);
+            this.btn_submit.Size = new System.Drawing.Size(84, 29);
             this.btn_submit.TabIndex = 14;
             this.btn_submit.Text = "Submit";
             this.btn_submit.UseVisualStyleBackColor = true;
@@ -199,9 +203,9 @@
             // 
             // CreateJobForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 300);
+            this.ClientSize = new System.Drawing.Size(481, 247);
             this.Controls.Add(this.btn_submit);
             this.Controls.Add(this.date_endTime);
             this.Controls.Add(this.date_startTime);
@@ -216,8 +220,8 @@
             this.Controls.Add(this.lbl_shortDescription);
             this.Controls.Add(this.lbl_clientID);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(559, 356);
-            this.MinimumSize = new System.Drawing.Size(559, 356);
+            this.MaximumSize = new System.Drawing.Size(499, 294);
+            this.MinimumSize = new System.Drawing.Size(499, 294);
             this.Name = "CreateJobForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "New Job";

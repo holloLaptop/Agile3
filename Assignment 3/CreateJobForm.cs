@@ -27,13 +27,7 @@ namespace Assignment_3
             this.getClientsTableAdapter.Fill(this.agileDevelopmentDataSet.GetClients);
         }
 
-        private void btn_submit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
+        private void btn_submit_Click(object sender, EventArgs e) {
             try
             {
                 this.getClientsTableAdapter.FillBy(this.agileDevelopmentDataSet.GetClients);
@@ -43,16 +37,22 @@ namespace Assignment_3
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
-    
-            try { 
 
-            int ClientID = Convert.ToInt32(comboBox_clientID.SelectedValue);
-            //please this work
-            queriesTableAdapter1.CreateJob(ClientID, txt_shortDescription.Text, txt_location.Text, (byte) numUD_priority.Value, date_startTime.Value, null, 0, false);
+            try
+            {
+
+                int ClientID = Convert.ToInt32(comboBox_clientID.SelectedValue);
+                //please this work
+                queriesTableAdapter1.CreateJob(ClientID, txt_shortDescription.Text, txt_location.Text, (byte)numUD_priority.Value, date_startTime.Value, null, 0, false);
                 queriesTableAdapter1.Dispose();
                 this.Close();
             }
             catch { Console.Out.WriteLine("oops"); }
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void CreateJobForm_FormClosed(object sender, FormClosedEventArgs e)
