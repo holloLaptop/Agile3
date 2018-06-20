@@ -1,6 +1,6 @@
 ﻿namespace Assignment_3
 {
-    partial class EmployeeJobs
+    partial class EmployeeJobsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -222,7 +222,7 @@
             this.btn_import.Text = "Import Jobs";
             this.btn_import.UseVisualStyleBackColor = true;
             // 
-            // EmployeeJobs
+            // EmployeeJobsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -237,8 +237,8 @@
             this.Controls.Add(this.lbl_description);
             this.Controls.Add(this.lbl_client);
             this.Controls.Add(this.lbl_jobs);
-            this.Name = "EmployeeJobs";
-            this.Text = "EmployeeJobs";
+            this.Name = "EmployeeJobsForm";
+            this.Text = "View Jobs";
             this.Load += new System.EventHandler(this.EmployeeJobs_Load);
             this.grpBox_completed.ResumeLayout(false);
             this.grpBox_completed.PerformLayout();

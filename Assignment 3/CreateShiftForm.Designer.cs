@@ -181,7 +181,7 @@
             this.MaximumSize = new System.Drawing.Size(454, 277);
             this.MinimumSize = new System.Drawing.Size(454, 277);
             this.Name = "CreateShiftForm";
-            this.Text = "CreateShiftForm";
+            this.Text = "Create Shift";
             this.Load += new System.EventHandler(this.CreateShiftForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();

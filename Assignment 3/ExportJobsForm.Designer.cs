@@ -1,6 +1,6 @@
 ﻿namespace Assignment_3
 {
-    partial class ExportJobs
+    partial class ExportJobsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -77,7 +77,7 @@
             this.btn_export.Text = "Export";
             this.btn_export.UseVisualStyleBackColor = true;
             // 
-            // ExportJobs
+            // ExportJobsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,8 +87,10 @@
             this.Controls.Add(this.date_startTime);
             this.Controls.Add(this.lbl_endTime);
             this.Controls.Add(this.lbl_startTime);
-            this.Name = "ExportJobs";
-            this.Text = "ExportJobs";
+            this.MaximumSize = new System.Drawing.Size(432, 193);
+            this.MinimumSize = new System.Drawing.Size(432, 193);
+            this.Name = "ExportJobsForm";
+            this.Text = "Export Jobs";
             this.ResumeLayout(false);
             this.PerformLayout();
 
