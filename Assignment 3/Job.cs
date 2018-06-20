@@ -10,7 +10,6 @@ namespace Assignment_3
     {
         Client client;
         //possible convert into just ID's for simple relational databasing
-        List<Contractors> contractors;
 
         String ShotDescription;
         int priority;
@@ -19,6 +18,7 @@ namespace Assignment_3
         DateTime StartTime;
 
         DateTime CompletionTime;
+
 
     }
 }
