@@ -13,7 +13,6 @@ using System.Windows.Forms;
 namespace Assignment_3
 {
     public partial class MainForm : Form
-
     {
         public MainForm()
         {
@@ -22,8 +21,11 @@ namespace Assignment_3
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //IsOnline();     
-         
+
+            btn_home.BackgroundImage = Resources.HomeMenu___Faded;
+            btn_home.Enabled = false;
+            timer1.Enabled = true;
+            //IsOnline();          
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace Assignment_3
             try
             {
                 btn_home.BackgroundImage = Resources.HomeMenu;
+                
                 Object dummy = dummyTableAdapter1.GetData(0);
                 btn_home.Enabled = true;
             }
@@ -46,37 +49,20 @@ namespace Assignment_3
             }
         }
 
+        
+
         private void MainForm_VisibleChanged(object sender, EventArgs e)
         {
            
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
-        {
-            btn_home.BackgroundImage = Resources.HomeMenu;
-            btn_offline.BackgroundImage = Resources.OfflineMode;
-            IsOnline();
-        }
+        {}
 
-        private void btn_home_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            // Make sure the user really is online before preceding.
             IsOnline();
-            if (btn_home.Enabled == true) {
-                Form homeMenuForm = new HomeMenuForm(this);
-                homeMenuForm.Show();
-                this.Hide();
-            } else {
-                MessageBox.Show("Cannot connect to the internet.");
-            }
-        }
-
-        private void btn_offline_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form offlineMenuForm = new OfflineMenuForm(this);
-            offlineMenuForm.Show();
-            this.Hide();
+            timer1.Enabled = false;
         }
     }
 

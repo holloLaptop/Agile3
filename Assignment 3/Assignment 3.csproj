@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgileDevelopmentDataSet.cs">
+      <DependentUpon>AgileDevelopmentDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AgileDevelopmentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -55,6 +58,7 @@
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Contractors.cs" />
+    <Compile Include="ContractShift.cs" />
     <Compile Include="CreateEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
