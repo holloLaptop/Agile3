@@ -164,5 +164,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\HomeMenu - Faded.png" />
+    <Content Include="Images\HomeMenu.png" />
+    <Content Include="Images\OfflineMode.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
