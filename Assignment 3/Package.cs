@@ -4,15 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-//using System.Runtime.Serialization.Formatters.Soap;
-using System.Runtime.Serialization;
 using System.Windows.Forms;
 
 namespace Assignment_3
 {
-    [Serializable()]
-    public class Package : ISerializable
+    public class Package 
     {
         //saved variables
         public Contractors Contractor = new Contractors();
@@ -27,20 +23,7 @@ namespace Assignment_3
         }
 
         public Package() { /*we do nothing*/ }
-
-        public Package(SerializationInfo info, StreamingContext ctxt)
-        {
-            Contractor = (Contractors)info.GetValue("Contractor", typeof(Contractors));
-            JobInformation = (List<Job>)info.GetValue("JobInfo", typeof(List<Job>));
-        }
-
-        //Serialization function.
-        public void GetObjectData(SerializationInfo info, StreamingContext ctxt)
-        {
-            info.AddValue("Contractor", Contractor);
-            info.AddValue("JobInfo", JobInformation);
-        }
-
+        
         public void Serialise() {
             SaveFileDialog fileDialog = new SaveFileDialog();
             fileDialog.Filter = "Non Executable Binary|*.nbn";
@@ -82,7 +65,7 @@ namespace Assignment_3
                 this.Shifts = placeHolder.Shifts;
                 stream.Close();
                 //test Passed
-                //Serialise();
+                Serialise();
             }
 
         }
