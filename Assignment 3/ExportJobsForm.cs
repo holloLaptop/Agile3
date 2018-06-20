@@ -25,7 +25,6 @@ namespace Assignment_3
             DateTime End = date_endTime.Value;
             AgileDevelopmentDataSet.GetShiftForEmployeeDataTable Value;
             Value = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);
-
             for (int i = 0; i < Value.Rows.Count; i++) {
                 //Shift
                 ContractShift newShift = new ContractShift();
@@ -36,7 +35,7 @@ namespace Assignment_3
                 //not needed int id = Value.Rows[0][0].ToString();
                 Job newJob = new Job();
                 newJob.ID = (int)Value.Rows[i][3];
-                newJob.ShotDescription = (String)Value.Rows[i][4];
+                newJob.ShortDescription = (String)Value.Rows[i][4];
                 newJob.Ordered = (DateTime)Value.Rows[i][5];
                 newJob.Location = (String)Value.Rows[i][6];
                 newJob.priority = (int)Value.Rows[i][7];
@@ -66,7 +65,19 @@ namespace Assignment_3
 
         private void ExportJobsForm_Load(object sender, EventArgs e)
         {
+            this.getEmployeesTableAdapter.Fill(this.agileDevelopmentDataSet.GetEmployees);
 
+            //this.getEmployeesBindingSource.Fill(this.agileDevelopmentDataSet.GetEmployees);
+        }
+
+        private void date_startTime_ValueChanged(object sender, EventArgs e)
+        {
+            int PersonID = Convert.ToInt32(comboBox_employeeID.SelectedValue);
+            DateTime Start = date_startTime.Value;
+            DateTime End = date_endTime.Value;
+
+            dataGridView1.DataSource = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);
+            
         }
     }
 }

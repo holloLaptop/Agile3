@@ -72,6 +72,7 @@ namespace Assignment_3
                 Package placeHolder = (Package)bformatter.Deserialize(stream);
                 this.Contractor = placeHolder.Contractor;
                 this.JobInformation = placeHolder.JobInformation;
+                this.Shifts = placeHolder.Shifts;
                 stream.Close();
             }
         }

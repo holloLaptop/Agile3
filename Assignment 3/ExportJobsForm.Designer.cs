@@ -28,84 +28,275 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_startTime = new System.Windows.Forms.Label();
             this.lbl_endTime = new System.Windows.Forms.Label();
             this.date_startTime = new System.Windows.Forms.DateTimePicker();
             this.date_endTime = new System.Windows.Forms.DateTimePicker();
             this.btn_export = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.getEmployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.agileDevelopmentDataSet = new Assignment_3.AgileDevelopmentDataSet();
+            this.agileDevelopmentDataSet1 = new Assignment_3.AgileDevelopmentDataSet();
+            this.getEmployeesTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter();
+            this.getJobsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getJobsTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetJobsTableAdapter();
+            this.queriesTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter();
             this.getShiftForEmployeeTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetShiftForEmployeeTableAdapter();
-            this.getEmployeesTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter();
+            this.comboBox_employeeID = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.getShiftForEmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.landLineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.getShiftForEmployeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_startTime
             // 
             this.lbl_startTime.AutoSize = true;
-            this.lbl_startTime.Location = new System.Drawing.Point(14, 12);
+            this.lbl_startTime.Location = new System.Drawing.Point(15, 60);
             this.lbl_startTime.Name = "lbl_startTime";
-            this.lbl_startTime.Size = new System.Drawing.Size(86, 20);
+            this.lbl_startTime.Size = new System.Drawing.Size(77, 17);
             this.lbl_startTime.TabIndex = 0;
             this.lbl_startTime.Text = "Start Time:";
             // 
             // lbl_endTime
             // 
             this.lbl_endTime.AutoSize = true;
-            this.lbl_endTime.Location = new System.Drawing.Point(14, 52);
+            this.lbl_endTime.Location = new System.Drawing.Point(15, 92);
             this.lbl_endTime.Name = "lbl_endTime";
-            this.lbl_endTime.Size = new System.Drawing.Size(80, 20);
+            this.lbl_endTime.Size = new System.Drawing.Size(72, 17);
             this.lbl_endTime.TabIndex = 1;
             this.lbl_endTime.Text = "End Time:";
             // 
             // date_startTime
             // 
-            this.date_startTime.Location = new System.Drawing.Point(106, 10);
+            this.date_startTime.Location = new System.Drawing.Point(97, 58);
             this.date_startTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_startTime.Name = "date_startTime";
-            this.date_startTime.Size = new System.Drawing.Size(291, 26);
+            this.date_startTime.Size = new System.Drawing.Size(259, 22);
             this.date_startTime.TabIndex = 2;
+            this.date_startTime.ValueChanged += new System.EventHandler(this.date_startTime_ValueChanged);
             // 
             // date_endTime
             // 
-            this.date_endTime.Location = new System.Drawing.Point(106, 50);
+            this.date_endTime.Location = new System.Drawing.Point(97, 90);
             this.date_endTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_endTime.Name = "date_endTime";
-            this.date_endTime.Size = new System.Drawing.Size(291, 26);
+            this.date_endTime.Size = new System.Drawing.Size(259, 22);
             this.date_endTime.TabIndex = 3;
+            this.date_endTime.ValueChanged += new System.EventHandler(this.date_startTime_ValueChanged);
             // 
             // btn_export
             // 
-            this.btn_export.Location = new System.Drawing.Point(303, 90);
+            this.btn_export.Location = new System.Drawing.Point(272, 122);
             this.btn_export.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_export.Name = "btn_export";
-            this.btn_export.Size = new System.Drawing.Size(94, 36);
+            this.btn_export.Size = new System.Drawing.Size(84, 29);
             this.btn_export.TabIndex = 11;
             this.btn_export.Text = "Export";
             this.btn_export.UseVisualStyleBackColor = true;
             this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "label1";
+            // 
+            // getEmployeesBindingSource
+            // 
+            this.getEmployeesBindingSource.DataMember = "GetEmployees";
+            this.getEmployeesBindingSource.DataSource = this.agileDevelopmentDataSet;
+            // 
+            // agileDevelopmentDataSet
+            // 
+            this.agileDevelopmentDataSet.DataSetName = "AgileDevelopmentDataSet";
+            this.agileDevelopmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // agileDevelopmentDataSet1
+            // 
+            this.agileDevelopmentDataSet1.DataSetName = "AgileDevelopmentDataSet";
+            this.agileDevelopmentDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // getEmployeesTableAdapter
+            // 
+            this.getEmployeesTableAdapter.ClearBeforeFill = true;
+            // 
+            // getJobsBindingSource
+            // 
+            this.getJobsBindingSource.DataMember = "GetJobs";
+            this.getJobsBindingSource.DataSource = this.agileDevelopmentDataSet;
+            // 
+            // getJobsTableAdapter
+            // 
+            this.getJobsTableAdapter.ClearBeforeFill = true;
+            // 
             // getShiftForEmployeeTableAdapter1
             // 
             this.getShiftForEmployeeTableAdapter1.ClearBeforeFill = true;
             // 
-            // getEmployeesTableAdapter1
+            // comboBox_employeeID
             // 
-            this.getEmployeesTableAdapter1.ClearBeforeFill = true;
+            this.comboBox_employeeID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.getEmployeesBindingSource, "PersonID", true));
+            this.comboBox_employeeID.DataSource = this.getEmployeesBindingSource;
+            this.comboBox_employeeID.DisplayMember = "Name";
+            this.comboBox_employeeID.FormattingEnabled = true;
+            this.comboBox_employeeID.Location = new System.Drawing.Point(92, 24);
+            this.comboBox_employeeID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_employeeID.Name = "comboBox_employeeID";
+            this.comboBox_employeeID.Size = new System.Drawing.Size(264, 24);
+            this.comboBox_employeeID.TabIndex = 13;
+            this.comboBox_employeeID.ValueMember = "EmployeeID";
+            this.comboBox_employeeID.ValueMemberChanged += new System.EventHandler(this.date_startTime_ValueChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.employeeIDDataGridViewTextBoxColumn,
+            this.startTimeDataGridViewTextBoxColumn,
+            this.endTimeDataGridViewTextBoxColumn,
+            this.jobIDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.landLineDataGridViewTextBoxColumn,
+            this.mobileDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.personIDDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.getShiftForEmployeeBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(21, 169);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(860, 319);
+            this.dataGridView1.TabIndex = 14;
+            // 
+            // getShiftForEmployeeBindingSource
+            // 
+            this.getShiftForEmployeeBindingSource.DataMember = "GetShiftForEmployee";
+            this.getShiftForEmployeeBindingSource.DataSource = this.agileDevelopmentDataSet;
+            // 
+            // employeeIDDataGridViewTextBoxColumn
+            // 
+            this.employeeIDDataGridViewTextBoxColumn.DataPropertyName = "EmployeeID";
+            this.employeeIDDataGridViewTextBoxColumn.HeaderText = "EmployeeID";
+            this.employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
+            // 
+            // startTimeDataGridViewTextBoxColumn
+            // 
+            this.startTimeDataGridViewTextBoxColumn.DataPropertyName = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.HeaderText = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
+            // 
+            // endTimeDataGridViewTextBoxColumn
+            // 
+            this.endTimeDataGridViewTextBoxColumn.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
+            // 
+            // jobIDDataGridViewTextBoxColumn
+            // 
+            this.jobIDDataGridViewTextBoxColumn.DataPropertyName = "JobID";
+            this.jobIDDataGridViewTextBoxColumn.HeaderText = "JobID";
+            this.jobIDDataGridViewTextBoxColumn.Name = "jobIDDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // landLineDataGridViewTextBoxColumn
+            // 
+            this.landLineDataGridViewTextBoxColumn.DataPropertyName = "LandLine";
+            this.landLineDataGridViewTextBoxColumn.HeaderText = "LandLine";
+            this.landLineDataGridViewTextBoxColumn.Name = "landLineDataGridViewTextBoxColumn";
+            // 
+            // mobileDataGridViewTextBoxColumn
+            // 
+            this.mobileDataGridViewTextBoxColumn.DataPropertyName = "Mobile";
+            this.mobileDataGridViewTextBoxColumn.HeaderText = "Mobile";
+            this.mobileDataGridViewTextBoxColumn.Name = "mobileDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // personIDDataGridViewTextBoxColumn
+            // 
+            this.personIDDataGridViewTextBoxColumn.DataPropertyName = "PersonID";
+            this.personIDDataGridViewTextBoxColumn.HeaderText = "PersonID";
+            this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(500, 122);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 29);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Export";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_export_Click);
+            // 
+            // getShiftForEmployeeBindingSource1
+            // 
+            this.getShiftForEmployeeBindingSource1.DataMember = "GetShiftForEmployee";
+            this.getShiftForEmployeeBindingSource1.DataSource = this.agileDevelopmentDataSet;
             // 
             // ExportJobsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 135);
+            this.ClientSize = new System.Drawing.Size(913, 497);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.comboBox_employeeID);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_export);
             this.Controls.Add(this.date_endTime);
             this.Controls.Add(this.date_startTime);
             this.Controls.Add(this.lbl_endTime);
             this.Controls.Add(this.lbl_startTime);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(432, 191);
-            this.MinimumSize = new System.Drawing.Size(432, 191);
             this.Name = "ExportJobsForm";
             this.Text = "Export Jobs";
             this.Load += new System.EventHandler(this.ExportJobsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +309,29 @@
         private System.Windows.Forms.DateTimePicker date_startTime;
         private System.Windows.Forms.DateTimePicker date_endTime;
         private System.Windows.Forms.Button btn_export;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource getEmployeesBindingSource;
+        private AgileDevelopmentDataSet agileDevelopmentDataSet;
+        private AgileDevelopmentDataSet agileDevelopmentDataSet1;
+        private AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter getEmployeesTableAdapter;
+        private System.Windows.Forms.BindingSource getJobsBindingSource;
+        private AgileDevelopmentDataSetTableAdapters.GetJobsTableAdapter getJobsTableAdapter;
+        public AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter queriesTableAdapter1;
         private AgileDevelopmentDataSetTableAdapters.GetShiftForEmployeeTableAdapter getShiftForEmployeeTableAdapter1;
-        private AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter getEmployeesTableAdapter1;
+        private System.Windows.Forms.ComboBox comboBox_employeeID;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jobIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn landLineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mobileDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource getShiftForEmployeeBindingSource;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource getShiftForEmployeeBindingSource1;
     }
 }

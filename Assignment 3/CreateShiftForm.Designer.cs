@@ -44,9 +44,14 @@
             this.getEmployeesTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter();
             this.getJobsTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetJobsTableAdapter();
             this.queriesTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter();
+            this.agileDevelopmentDataSet1 = new Assignment_3.AgileDevelopmentDataSet();
+            this.queriesTableAdapter2 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_employeeID
@@ -166,6 +171,16 @@
             // 
             this.getJobsTableAdapter.ClearBeforeFill = true;
             // 
+            // agileDevelopmentDataSet1
+            // 
+            this.agileDevelopmentDataSet1.DataSetName = "AgileDevelopmentDataSet";
+            this.agileDevelopmentDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "GetEmployees";
+            this.bindingSource1.DataSource = this.agileDevelopmentDataSet1;
+            // 
             // CreateShiftForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,6 +205,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +229,8 @@
         private System.Windows.Forms.BindingSource getJobsBindingSource;
         private AgileDevelopmentDataSetTableAdapters.GetJobsTableAdapter getJobsTableAdapter;
         public AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter queriesTableAdapter1;
+        private AgileDevelopmentDataSet agileDevelopmentDataSet1;
+        public AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter queriesTableAdapter2;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
