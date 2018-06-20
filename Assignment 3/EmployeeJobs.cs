@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Assignment_3
 {
+    // This form allows the contractor to access and edit imported jobs offline.
     public partial class EmployeeJobs : Form
     {
         public EmployeeJobs()
@@ -42,8 +43,6 @@ namespace Assignment_3
 
         private void EmployeeJobs_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'agileDevelopmentDataSet.GetJobs' table. You can move, or remove it, as needed.
-            this.getJobsTableAdapter.Fill(this.agileDevelopmentDataSet.GetJobs);
             grpBox_completed.Hide();
         }
     }

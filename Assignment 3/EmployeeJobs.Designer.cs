@@ -33,22 +33,24 @@
             this.lbl_client = new System.Windows.Forms.Label();
             this.lbl_description = new System.Windows.Forms.Label();
             this.grpBox_completed = new System.Windows.Forms.GroupBox();
-            this.lbl_priceCharged = new System.Windows.Forms.Label();
-            this.lbl_notes = new System.Windows.Forms.Label();
-            this.txt_notes = new System.Windows.Forms.TextBox();
+            this.date_completedTime = new System.Windows.Forms.DateTimePicker();
+            this.lbl_dateCompleted = new System.Windows.Forms.Label();
             this.txt_amountCharged = new System.Windows.Forms.TextBox();
+            this.txt_notes = new System.Windows.Forms.TextBox();
+            this.lbl_notes = new System.Windows.Forms.Label();
+            this.lbl_priceCharged = new System.Windows.Forms.Label();
             this.checkBox_completed = new System.Windows.Forms.CheckBox();
             this.comboBox_jobs = new System.Windows.Forms.ComboBox();
-            this.agileDevelopmentDataSet = new Assignment_3.AgileDevelopmentDataSet();
             this.getJobsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.agileDevelopmentDataSet = new Assignment_3.AgileDevelopmentDataSet();
             this.getJobsTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetJobsTableAdapter();
             this.comboBox_client = new System.Windows.Forms.ComboBox();
             this.comboBox_shortDescription = new System.Windows.Forms.ComboBox();
-            this.lbl_dateCompleted = new System.Windows.Forms.Label();
-            this.date_completedTime = new System.Windows.Forms.DateTimePicker();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_import = new System.Windows.Forms.Button();
             this.grpBox_completed.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_jobs
@@ -88,18 +90,41 @@
             this.grpBox_completed.Controls.Add(this.lbl_priceCharged);
             this.grpBox_completed.Location = new System.Drawing.Point(16, 203);
             this.grpBox_completed.Name = "grpBox_completed";
-            this.grpBox_completed.Size = new System.Drawing.Size(467, 216);
+            this.grpBox_completed.Size = new System.Drawing.Size(467, 234);
             this.grpBox_completed.TabIndex = 5;
             this.grpBox_completed.TabStop = false;
             // 
-            // lbl_priceCharged
+            // date_completedTime
             // 
-            this.lbl_priceCharged.AutoSize = true;
-            this.lbl_priceCharged.Location = new System.Drawing.Point(7, 66);
-            this.lbl_priceCharged.Name = "lbl_priceCharged";
-            this.lbl_priceCharged.Size = new System.Drawing.Size(130, 20);
-            this.lbl_priceCharged.TabIndex = 0;
-            this.lbl_priceCharged.Text = "Amount Charged";
+            this.date_completedTime.Location = new System.Drawing.Point(162, 23);
+            this.date_completedTime.Name = "date_completedTime";
+            this.date_completedTime.Size = new System.Drawing.Size(290, 26);
+            this.date_completedTime.TabIndex = 6;
+            // 
+            // lbl_dateCompleted
+            // 
+            this.lbl_dateCompleted.AutoSize = true;
+            this.lbl_dateCompleted.Location = new System.Drawing.Point(7, 26);
+            this.lbl_dateCompleted.Name = "lbl_dateCompleted";
+            this.lbl_dateCompleted.Size = new System.Drawing.Size(129, 20);
+            this.lbl_dateCompleted.TabIndex = 5;
+            this.lbl_dateCompleted.Text = "Date Completed:";
+            // 
+            // txt_amountCharged
+            // 
+            this.txt_amountCharged.Location = new System.Drawing.Point(162, 63);
+            this.txt_amountCharged.Name = "txt_amountCharged";
+            this.txt_amountCharged.Size = new System.Drawing.Size(138, 26);
+            this.txt_amountCharged.TabIndex = 4;
+            this.txt_amountCharged.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_amountCharged_KeyPress);
+            // 
+            // txt_notes
+            // 
+            this.txt_notes.Location = new System.Drawing.Point(162, 103);
+            this.txt_notes.Multiline = true;
+            this.txt_notes.Name = "txt_notes";
+            this.txt_notes.Size = new System.Drawing.Size(290, 118);
+            this.txt_notes.TabIndex = 3;
             // 
             // lbl_notes
             // 
@@ -110,21 +135,14 @@
             this.lbl_notes.TabIndex = 1;
             this.lbl_notes.Text = "Notes";
             // 
-            // txt_notes
+            // lbl_priceCharged
             // 
-            this.txt_notes.Location = new System.Drawing.Point(162, 103);
-            this.txt_notes.Multiline = true;
-            this.txt_notes.Name = "txt_notes";
-            this.txt_notes.Size = new System.Drawing.Size(290, 118);
-            this.txt_notes.TabIndex = 3;
-            // 
-            // txt_amountCharged
-            // 
-            this.txt_amountCharged.Location = new System.Drawing.Point(162, 63);
-            this.txt_amountCharged.Name = "txt_amountCharged";
-            this.txt_amountCharged.Size = new System.Drawing.Size(138, 26);
-            this.txt_amountCharged.TabIndex = 4;
-            this.txt_amountCharged.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_amountCharged_KeyPress);
+            this.lbl_priceCharged.AutoSize = true;
+            this.lbl_priceCharged.Location = new System.Drawing.Point(7, 66);
+            this.lbl_priceCharged.Name = "lbl_priceCharged";
+            this.lbl_priceCharged.Size = new System.Drawing.Size(130, 20);
+            this.lbl_priceCharged.TabIndex = 0;
+            this.lbl_priceCharged.Text = "Amount Charged";
             // 
             // checkBox_completed
             // 
@@ -140,24 +158,21 @@
             // 
             // comboBox_jobs
             // 
-            this.comboBox_jobs.DataSource = this.getJobsBindingSource;
-            this.comboBox_jobs.DisplayMember = "BusinessName";
             this.comboBox_jobs.FormattingEnabled = true;
             this.comboBox_jobs.Location = new System.Drawing.Point(113, 10);
             this.comboBox_jobs.Name = "comboBox_jobs";
             this.comboBox_jobs.Size = new System.Drawing.Size(203, 28);
             this.comboBox_jobs.TabIndex = 6;
-            this.comboBox_jobs.ValueMember = "JobID";
-            // 
-            // agileDevelopmentDataSet
-            // 
-            this.agileDevelopmentDataSet.DataSetName = "AgileDevelopmentDataSet";
-            this.agileDevelopmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // getJobsBindingSource
             // 
             this.getJobsBindingSource.DataMember = "GetJobs";
             this.getJobsBindingSource.DataSource = this.agileDevelopmentDataSet;
+            // 
+            // agileDevelopmentDataSet
+            // 
+            this.agileDevelopmentDataSet.DataSetName = "AgileDevelopmentDataSet";
+            this.agileDevelopmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // getJobsTableAdapter
             // 
@@ -187,27 +202,33 @@
             this.comboBox_shortDescription.TabIndex = 8;
             this.comboBox_shortDescription.ValueMember = "ShortDescription";
             // 
-            // lbl_dateCompleted
+            // btn_save
             // 
-            this.lbl_dateCompleted.AutoSize = true;
-            this.lbl_dateCompleted.Location = new System.Drawing.Point(7, 26);
-            this.lbl_dateCompleted.Name = "lbl_dateCompleted";
-            this.lbl_dateCompleted.Size = new System.Drawing.Size(129, 20);
-            this.lbl_dateCompleted.TabIndex = 5;
-            this.lbl_dateCompleted.Text = "Date Completed:";
+            this.btn_save.Location = new System.Drawing.Point(389, 446);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(94, 36);
+            this.btn_save.TabIndex = 10;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = true;
             // 
-            // date_completedTime
+            // btn_import
             // 
-            this.date_completedTime.Location = new System.Drawing.Point(162, 23);
-            this.date_completedTime.Name = "date_completedTime";
-            this.date_completedTime.Size = new System.Drawing.Size(290, 26);
-            this.date_completedTime.TabIndex = 6;
+            this.btn_import.Location = new System.Drawing.Point(350, 10);
+            this.btn_import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_import.Name = "btn_import";
+            this.btn_import.Size = new System.Drawing.Size(118, 28);
+            this.btn_import.TabIndex = 11;
+            this.btn_import.Text = "Import Jobs";
+            this.btn_import.UseVisualStyleBackColor = true;
             // 
             // EmployeeJobs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 468);
+            this.ClientSize = new System.Drawing.Size(496, 493);
+            this.Controls.Add(this.btn_import);
+            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.comboBox_shortDescription);
             this.Controls.Add(this.comboBox_client);
             this.Controls.Add(this.comboBox_jobs);
@@ -221,8 +242,8 @@
             this.Load += new System.EventHandler(this.EmployeeJobs_Load);
             this.grpBox_completed.ResumeLayout(false);
             this.grpBox_completed.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +268,7 @@
         private System.Windows.Forms.Label lbl_dateCompleted;
         private System.Windows.Forms.ComboBox comboBox_client;
         private System.Windows.Forms.ComboBox comboBox_shortDescription;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_import;
     }
 }
