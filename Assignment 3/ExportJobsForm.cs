@@ -12,9 +12,13 @@ namespace Assignment_3
 {
     public partial class ExportJobsForm : Form
     {
-        public ExportJobsForm()
+        // Keeps track of the parent form.
+        Form homeMenuForm = new HomeMenuForm(null);
+
+        public ExportJobsForm(Form homeMenuForm)
         {
             InitializeComponent();
+            this.homeMenuForm = homeMenuForm;
         }
 
         private void btn_export_Click(object sender, EventArgs e)
@@ -98,7 +102,11 @@ namespace Assignment_3
             //so simple, nothing else needed
             Package p = new Package();
             p.Deserialise();
+        }
 
+        private void ExportJobsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            homeMenuForm.Show();
         }
     }
 }

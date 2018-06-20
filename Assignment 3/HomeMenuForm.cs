@@ -49,9 +49,21 @@ namespace Assignment_3
             this.Hide();
         }
 
+        private void btn_importAndExportJobs_Click(object sender, EventArgs e)
+        {
+            Form exportJobsForm = new ExportJobsForm(this);
+            exportJobsForm.Show();
+            this.Hide();
+        }
+
         private void HomeMenuForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.Show();
+        }
+
+        private void btn_return_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

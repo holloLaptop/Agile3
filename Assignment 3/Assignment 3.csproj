@@ -198,5 +198,23 @@
   <ItemGroup>
     <None Include="Resources\OfflineMode.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateClient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateEmployee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateShifts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImportAndExportJobs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateJob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewJobs.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

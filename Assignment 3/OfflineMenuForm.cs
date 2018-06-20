@@ -32,5 +32,15 @@ namespace Assignment_3
         {
             mainForm.Show();
         }
+
+        private void OfflineMenuForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_return_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -63,6 +63,46 @@ namespace Assignment_3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CreateClient {
+            get {
+                object obj = ResourceManager.GetObject("CreateClient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CreateEmployee {
+            get {
+                object obj = ResourceManager.GetObject("CreateEmployee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CreateJob {
+            get {
+                object obj = ResourceManager.GetObject("CreateJob", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CreateShifts {
+            get {
+                object obj = ResourceManager.GetObject("CreateShifts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HomeMenu {
             get {
                 object obj = ResourceManager.GetObject("HomeMenu", resourceCulture);
@@ -83,9 +123,29 @@ namespace Assignment_3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImportAndExportJobs {
+            get {
+                object obj = ResourceManager.GetObject("ImportAndExportJobs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OfflineMode {
             get {
                 object obj = ResourceManager.GetObject("OfflineMode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ViewJobs {
+            get {
+                object obj = ResourceManager.GetObject("ViewJobs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
