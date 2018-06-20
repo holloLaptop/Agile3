@@ -22,11 +22,10 @@ namespace Assignment_3
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            // Fade the background image of Home until an SQL connection is established.
             btn_home.BackgroundImage = Resources.HomeMenu___Faded;
             btn_home.Enabled = false;
-            timer1.Enabled = true;
-            //IsOnline();          
+            timer1.Enabled = true; // Timer to delay the time before an SQL connection is attempted.
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -37,10 +36,9 @@ namespace Assignment_3
         private void IsOnline()
         {
             try
-            {
-                btn_home.BackgroundImage = Resources.HomeMenu;
-                
+            {                
                 Object dummy = dummyTableAdapter1.GetData(0);
+                btn_home.BackgroundImage = Resources.HomeMenu;
                 btn_home.Enabled = true;
             }
             catch
@@ -65,11 +63,31 @@ namespace Assignment_3
             btn_home.BackgroundImage = Resources.HomeMenu;
             btn_offline.BackgroundImage = Resources.OfflineMode;
 
-            Timer myTimer = new Timer();
-            myTimer.Interval = 5000;
-            myTimer.Start();
-
             IsOnline();
+            timer1.Enabled = false;
+
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            // Make sure that the user really is online before connecting.
+            IsOnline();
+            if (btn_home.Enabled == true)
+            {
+                Form homeMenuForm = new HomeMenuForm(this);
+                homeMenuForm.Show();
+                this.Hide();
+            } else
+            {
+                MessageBox.Show("Cannot connect to the internet.");
+            }
+        }
+
+        private void btn_offline_Click(object sender, EventArgs e)
+        {
+            Form offlineMenuForm = new OfflineMenuForm(this);
+            offlineMenuForm.Show();
+            this.Hide();
         }
     }
 

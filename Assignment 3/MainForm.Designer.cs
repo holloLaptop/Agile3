@@ -43,13 +43,14 @@
             this.btn_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_home.Location = new System.Drawing.Point(11, 10);
+            this.btn_home.Location = new System.Drawing.Point(12, 12);
             this.btn_home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(226, 172);
+            this.btn_home.Size = new System.Drawing.Size(254, 215);
             this.btn_home.TabIndex = 0;
             this.btn_home.Text = "Home";
             this.btn_home.UseVisualStyleBackColor = true;
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // btn_offline
             // 
@@ -57,13 +58,14 @@
             this.btn_offline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_offline.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_offline.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_offline.Location = new System.Drawing.Point(252, 10);
+            this.btn_offline.Location = new System.Drawing.Point(284, 12);
             this.btn_offline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_offline.Name = "btn_offline";
-            this.btn_offline.Size = new System.Drawing.Size(226, 172);
+            this.btn_offline.Size = new System.Drawing.Size(254, 215);
             this.btn_offline.TabIndex = 1;
             this.btn_offline.Text = "Offline Mode";
             this.btn_offline.UseVisualStyleBackColor = true;
+            this.btn_offline.Click += new System.EventHandler(this.btn_offline_Click);
             // 
             // dummyTableAdapter1
             // 
@@ -71,10 +73,10 @@
             // 
             // btn_refresh
             // 
-            this.btn_refresh.Location = new System.Drawing.Point(387, 187);
+            this.btn_refresh.Location = new System.Drawing.Point(435, 234);
             this.btn_refresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(91, 30);
+            this.btn_refresh.Size = new System.Drawing.Size(102, 38);
             this.btn_refresh.TabIndex = 2;
             this.btn_refresh.Text = "Refresh";
             this.btn_refresh.UseVisualStyleBackColor = true;
@@ -86,15 +88,15 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 226);
+            this.ClientSize = new System.Drawing.Size(546, 271);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_offline);
             this.Controls.Add(this.btn_home);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(507, 273);
-            this.MinimumSize = new System.Drawing.Size(507, 273);
+            this.MaximumSize = new System.Drawing.Size(568, 327);
+            this.MinimumSize = new System.Drawing.Size(568, 327);
             this.Name = "MainForm";
             this.Text = "IQ Incorporated";
             this.Load += new System.EventHandler(this.MainForm_Load);
