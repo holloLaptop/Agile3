@@ -36,19 +36,19 @@
             this.lbl_startTime = new System.Windows.Forms.Label();
             this.lbl_endTime = new System.Windows.Forms.Label();
             this.comboBox_clientID = new System.Windows.Forms.ComboBox();
+            this.getClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.agileDevelopmentDataSet = new Assignment_3.AgileDevelopmentDataSet();
             this.txt_shortDescription = new System.Windows.Forms.TextBox();
             this.txt_location = new System.Windows.Forms.TextBox();
             this.numUD_priority = new System.Windows.Forms.NumericUpDown();
             this.date_startTime = new System.Windows.Forms.DateTimePicker();
             this.date_endTime = new System.Windows.Forms.DateTimePicker();
             this.btn_submit = new System.Windows.Forms.Button();
-            this.agileDevelopmentDataSet = new Assignment_3.AgileDevelopmentDataSet();
-            this.getClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getClientsTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetClientsTableAdapter();
             this.queriesTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.numUD_priority)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_priority)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_clientID
@@ -117,6 +117,16 @@
             this.comboBox_clientID.TabIndex = 7;
             this.comboBox_clientID.ValueMember = "PersonID";
             // 
+            // getClientsBindingSource
+            // 
+            this.getClientsBindingSource.DataMember = "GetClients";
+            this.getClientsBindingSource.DataSource = this.agileDevelopmentDataSet;
+            // 
+            // agileDevelopmentDataSet
+            // 
+            this.agileDevelopmentDataSet.DataSetName = "AgileDevelopmentDataSet";
+            this.agileDevelopmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txt_shortDescription
             // 
             this.txt_shortDescription.Location = new System.Drawing.Point(140, 42);
@@ -158,6 +168,8 @@
             // 
             // date_startTime
             // 
+            this.date_startTime.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
+            this.date_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.date_startTime.Location = new System.Drawing.Point(140, 138);
             this.date_startTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_startTime.Name = "date_startTime";
@@ -166,6 +178,8 @@
             // 
             // date_endTime
             // 
+            this.date_endTime.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
+            this.date_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.date_endTime.Location = new System.Drawing.Point(140, 170);
             this.date_endTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_endTime.Name = "date_endTime";
@@ -182,16 +196,6 @@
             this.btn_submit.Text = "Submit";
             this.btn_submit.UseVisualStyleBackColor = true;
             this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
-            // 
-            // agileDevelopmentDataSet
-            // 
-            this.agileDevelopmentDataSet.DataSetName = "AgileDevelopmentDataSet";
-            this.agileDevelopmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getClientsBindingSource
-            // 
-            this.getClientsBindingSource.DataMember = "GetClients";
-            this.getClientsBindingSource.DataSource = this.agileDevelopmentDataSet;
             // 
             // getClientsTableAdapter
             // 
@@ -222,9 +226,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "CreateJobForm";
             this.Load += new System.EventHandler(this.CreateJobForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numUD_priority)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUD_priority)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
