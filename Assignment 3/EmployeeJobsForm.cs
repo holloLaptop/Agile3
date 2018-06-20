@@ -64,5 +64,15 @@ namespace Assignment_3
         {
             offlineMenuForm.Show();
         }
+
+        private void txt_amountCharged_TextChanged(object sender, EventArgs e)
+        {
+            String t = "0123456789.";
+            for (int i = 0; i < txt_amountCharged.Text.Length; i++) {
+                if (!t.Contains(txt_amountCharged.Text.Substring(i, 1))){
+                    txt_amountCharged.Text = "0";
+                }
+            }
+        }
     }
 }
