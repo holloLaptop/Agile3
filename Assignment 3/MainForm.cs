@@ -13,6 +13,7 @@ using System.Windows.Forms;
 namespace Assignment_3
 {
     public partial class MainForm : Form
+
     {
         public MainForm()
         {
@@ -61,8 +62,14 @@ namespace Assignment_3
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            btn_home.BackgroundImage = Resources.HomeMenu;
+            btn_offline.BackgroundImage = Resources.OfflineMode;
+
+            Timer myTimer = new Timer();
+            myTimer.Interval = 5000;
+            myTimer.Start();
+
             IsOnline();
-            timer1.Enabled = false;
         }
     }
 
