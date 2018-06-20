@@ -221,6 +221,7 @@
             this.Name = "CreateJobForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "New Job";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateJobForm_FormClosed);
             this.Load += new System.EventHandler(this.CreateJobForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();

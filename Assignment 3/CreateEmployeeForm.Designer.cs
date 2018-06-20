@@ -159,6 +159,7 @@
             this.MinimumSize = new System.Drawing.Size(528, 318);
             this.Name = "CreateEmployeeForm";
             this.Text = "New Employee";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateEmployeeForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

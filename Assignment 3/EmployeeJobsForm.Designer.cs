@@ -211,13 +211,14 @@
             this.btn_save.TabIndex = 10;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_import
             // 
-            this.btn_import.Location = new System.Drawing.Point(350, 10);
+            this.btn_import.Location = new System.Drawing.Point(349, 4);
             this.btn_import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_import.Name = "btn_import";
-            this.btn_import.Size = new System.Drawing.Size(118, 28);
+            this.btn_import.Size = new System.Drawing.Size(119, 38);
             this.btn_import.TabIndex = 11;
             this.btn_import.Text = "Import Jobs";
             this.btn_import.UseVisualStyleBackColor = true;
@@ -240,6 +241,7 @@
             this.Controls.Add(this.lbl_jobs);
             this.Name = "EmployeeJobsForm";
             this.Text = "View Jobs";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EmployeeJobsForm_FormClosed);
             this.Load += new System.EventHandler(this.EmployeeJobs_Load);
             this.grpBox_completed.ResumeLayout(false);
             this.grpBox_completed.PerformLayout();

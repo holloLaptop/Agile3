@@ -180,6 +180,7 @@
             this.MinimumSize = new System.Drawing.Size(547, 361);
             this.Name = "CreateNewClientForm";
             this.Text = "New Client";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateNewClientForm_FormClosed);
             this.Load += new System.EventHandler(this.CreateNewClientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

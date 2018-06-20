@@ -12,9 +12,13 @@ namespace Assignment_3
 {
     public partial class CreateShiftForm : Form
     {
-        public CreateShiftForm()
+        // Keeps track of the parent form.
+        Form homeMenuForm = new HomeMenuForm(null);
+
+        public CreateShiftForm(Form homeMenuForm)
         {
             InitializeComponent();
+            this.homeMenuForm = homeMenuForm;
         }
 
         private void CreateShiftForm_Load(object sender, EventArgs e)
@@ -38,6 +42,11 @@ namespace Assignment_3
                 this.Close();
             }
             catch { Console.Out.WriteLine("oops");}            
+        }
+
+        private void CreateShiftForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            homeMenuForm.Show();
         }
     }
 }

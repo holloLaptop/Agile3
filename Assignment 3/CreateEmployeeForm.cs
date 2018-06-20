@@ -12,9 +12,13 @@ namespace Assignment_3
 {
     public partial class CreateEmployeeForm : Form
     {
-        public CreateEmployeeForm()
+        // Keeps track of the parent form.
+        Form homeMenuForm = new HomeMenuForm(null);
+
+        public CreateEmployeeForm(Form homeMenuForm)
         {
             InitializeComponent();
+            this.homeMenuForm = homeMenuForm;
         }
 
         private void btn_submit_Click(object sender, EventArgs e)
@@ -26,5 +30,10 @@ namespace Assignment_3
         }
             catch { Console.Out.WriteLine("oops"); }
 }
+
+        private void CreateEmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            homeMenuForm.Show();
+        }
     }
 }

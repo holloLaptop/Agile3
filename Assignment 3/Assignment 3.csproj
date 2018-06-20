@@ -97,6 +97,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeMenuForm.Designer.cs">
+      <DependentUpon>HomeMenuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Job.cs" />
+    <Compile Include="OfflineMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfflineMenuForm.Designer.cs">
+      <DependentUpon>OfflineMenuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Package.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
@@ -129,8 +141,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomeMenuForm.resx">
+      <DependentUpon>HomeMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfflineMenuForm.resx">
+      <DependentUpon>OfflineMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
