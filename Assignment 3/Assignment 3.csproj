@@ -85,6 +85,12 @@
     <Compile Include="EmployeeJobs.Designer.cs">
       <DependentUpon>EmployeeJobs.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExportJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportJobs.Designer.cs">
+      <DependentUpon>ExportJobs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeJobs.resx">
       <DependentUpon>EmployeeJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportJobs.resx">
+      <DependentUpon>ExportJobs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
