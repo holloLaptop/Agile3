@@ -27,8 +27,6 @@ namespace Assignment_3
             Value = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);
 
             for (int i = 0; i < Value.Rows.Count; i++) {
-                
-
                 //Shift
                 ContractShift newShift = new ContractShift();
                 newShift.StartTime = (DateTime)Value.Rows[i][1];
@@ -42,7 +40,7 @@ namespace Assignment_3
                 newJob.Ordered = (DateTime)Value.Rows[i][5];
                 newJob.Location = (String)Value.Rows[i][6];
                 newJob.priority = (int)Value.Rows[i][7];
-                //exp 2
+                newJob.StartTime = (DateTime)Value.Rows[i][8];
                 newJob.CompletionTime = (DateTime)Value.Rows[i][9];
                 newJob.Charged =  (int)Value.Rows[i][10];
                 newJob.Paid = (Boolean)Value.Rows[i][11];
