@@ -50,13 +50,11 @@ namespace Assignment_3
             if (fileDialog.FileName != null)
             {
                 Stream stream = File.Open(fileDialog.FileName, FileMode.Create);
-                //BinaryFormatter bformatter = new BinaryFormatter();
 
                 System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(GetType());
                 x.Serialize(stream, this);
 
                 Console.WriteLine("Writing Job Information");
-                //bformatter.Serialize(stream, this);
                 stream.Close();
             }
         }
@@ -69,16 +67,24 @@ namespace Assignment_3
             if (fileDialog.FileName != null)
             {
                 Stream stream = File.Open(fileDialog.FileName, FileMode.Open);
-                BinaryFormatter bformatter = new BinaryFormatter();
+                //BinaryFormatter bformatter = new BinaryFormatter();
+
+                System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(GetType());
+                Package placeHolder =  (Package) x.Deserialize(stream);                
 
 
                 Console.WriteLine("Reading Employee Information");
-                Package placeHolder = (Package)bformatter.Deserialize(stream);
+
+
+                //Package placeHolder = (Package)bformatter.Deserialize(stream);
                 this.Contractor = placeHolder.Contractor;
                 this.JobInformation = placeHolder.JobInformation;
                 this.Shifts = placeHolder.Shifts;
                 stream.Close();
+                //test Passed
+                //Serialise();
             }
+
         }
     }
 }
