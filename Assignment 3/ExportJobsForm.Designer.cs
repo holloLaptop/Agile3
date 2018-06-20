@@ -55,16 +55,16 @@
             this.mobileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getShiftForEmployeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.getShiftForEmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getShiftForEmployeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_startTime
@@ -186,10 +186,12 @@
             this.emailDataGridViewTextBoxColumn,
             this.personIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.getShiftForEmployeeBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 169);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 178);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(860, 319);
+            this.dataGridView1.Size = new System.Drawing.Size(913, 319);
             this.dataGridView1.TabIndex = 14;
             // 
             // employeeIDDataGridViewTextBoxColumn
@@ -252,24 +254,24 @@
             this.personIDDataGridViewTextBoxColumn.HeaderText = "PersonID";
             this.personIDDataGridViewTextBoxColumn.Name = "personIDDataGridViewTextBoxColumn";
             // 
-            // getShiftForEmployeeBindingSource1
-            // 
-            this.getShiftForEmployeeBindingSource1.DataMember = "GetShiftForEmployee";
-            this.getShiftForEmployeeBindingSource1.DataSource = this.agileDevelopmentDataSet;
-            // 
             // getShiftForEmployeeBindingSource
             // 
             this.getShiftForEmployeeBindingSource.DataMember = "GetShiftForEmployee";
             this.getShiftForEmployeeBindingSource.DataSource = this.agileDevelopmentDataSet;
             // 
+            // getShiftForEmployeeBindingSource1
+            // 
+            this.getShiftForEmployeeBindingSource1.DataMember = "GetShiftForEmployee";
+            this.getShiftForEmployeeBindingSource1.DataSource = this.agileDevelopmentDataSet;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(500, 122);
+            this.button1.Location = new System.Drawing.Point(182, 122);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 29);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Export";
+            this.button1.Text = "Import";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -296,8 +298,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getShiftForEmployeeBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
