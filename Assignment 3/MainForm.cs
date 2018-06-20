@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment_3.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,15 +21,44 @@ namespace Assignment_3
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //IsOnline();          
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            IsOnline();
+        }
+
+        private void IsOnline()
+        {
             try
             {
-                queriesTableAdapter1.Dummy;
+                btn_home.BackgroundImage = Resources.HomeMenu;
+                Object dummy = dummyTableAdapter1.GetData(0);
+                btn_home.Enabled = true;
             }
-            catch {
-                MessageBox.Show("Offline Mode only available.");
+            catch
+            {
+                btn_home.BackgroundImage = Resources.HomeMenu___Faded;
                 btn_home.Enabled = false;
-                btn_home.BackgroundImage = System.Drawing.Image.FromFile("HomeMenu - Faded.png");
             }
+        }
+
+        private void MainForm_VisibleChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            btn_home.BackgroundImage = Resources.HomeMenu;
+            btn_offline.BackgroundImage = Resources.OfflineMode;
+
+            Timer myTimer = new Timer();
+            myTimer.Interval = 5000;
+            myTimer.Start();
+
+            IsOnline();
         }
     }
 

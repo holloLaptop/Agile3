@@ -140,6 +140,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="AgileDevelopmentDataSet.xsc">
       <DependentUpon>AgileDevelopmentDataSet.xsd</DependentUpon>
@@ -166,9 +167,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\HomeMenu - Faded.png" />
-    <Content Include="Images\HomeMenu.png" />
-    <Content Include="Images\OfflineMode.png" />
+    <None Include="Resources\HomeMenu - Faded.png" />
+    <None Include="Resources\HomeMenuFaded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OfflineMode.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
