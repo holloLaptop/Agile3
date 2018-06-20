@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_3
 {
-    class Client:Person
+    public class Client:Person
     {
         public String BusinessName;
     }

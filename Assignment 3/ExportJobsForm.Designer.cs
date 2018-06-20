@@ -33,6 +33,8 @@
             this.date_startTime = new System.Windows.Forms.DateTimePicker();
             this.date_endTime = new System.Windows.Forms.DateTimePicker();
             this.btn_export = new System.Windows.Forms.Button();
+            this.getShiftForEmployeeTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetShiftForEmployeeTableAdapter();
+            this.getEmployeesTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter();
             this.SuspendLayout();
             // 
             // lbl_startTime
@@ -80,6 +82,14 @@
             this.btn_export.UseVisualStyleBackColor = true;
             this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
+            // getShiftForEmployeeTableAdapter1
+            // 
+            this.getShiftForEmployeeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // getEmployeesTableAdapter1
+            // 
+            this.getEmployeesTableAdapter1.ClearBeforeFill = true;
+            // 
             // ExportJobsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -107,5 +117,7 @@
         private System.Windows.Forms.DateTimePicker date_startTime;
         private System.Windows.Forms.DateTimePicker date_endTime;
         private System.Windows.Forms.Button btn_export;
+        private AgileDevelopmentDataSetTableAdapters.GetShiftForEmployeeTableAdapter getShiftForEmployeeTableAdapter1;
+        private AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter getEmployeesTableAdapter1;
     }
 }

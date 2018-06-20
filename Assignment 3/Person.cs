@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Assignment_3
 {
-    class Person
-    {
-        private String name;
+    public class Person {     
+        public int id;
+        public String name;
         private String address;
         //phone numbers
         private String landLine;
@@ -44,10 +44,10 @@ namespace Assignment_3
             return Output;
         }
         //Set methods for phone numbers
-        void SetLandLine(int input) {
+        public void SetLandLine(int input) {
             landLine = PhoneToString(input);
         }
-        void SetMobile(int input)
+        public void SetMobile(int input)
         {
             mobile = PhoneToString(input);
         }

@@ -16,6 +16,14 @@ namespace Assignment_3
         //saved variables
         Contractors Contractor = new Contractors();
         List<Job> JobInformation = new List<Job>();
+        List<ContractShift> Shifts = new List<ContractShift>();
+
+        public void AddJob(Job add) {
+            JobInformation.Add(add);
+        }
+        public void AddShift(ContractShift add) {
+            Shifts.Add(add);
+        }
 
         public Package() { /*we do nothing*/ }
 

@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 
 namespace Assignment_3
 {
-    class Job
+    public class Job
     {
-        Client client;
+        public int ID;
+        public Client client;
         //possible convert into just ID's for simple relational databasing
+        public int Charged;
+        public Boolean Paid;
 
-        String ShotDescription;
-        int priority;
-        String Location;
-        DateTime Ordered;
-        DateTime StartTime;
+        public String ShotDescription;
+        public int priority;
+        public String Location;
+        public DateTime Ordered;
+        public DateTime StartTime;
 
-        DateTime CompletionTime;
+        public DateTime CompletionTime;
 
 
     }
