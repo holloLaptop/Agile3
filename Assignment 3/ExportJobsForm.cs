@@ -22,12 +22,11 @@ namespace Assignment_3
             Package p = new Package();
             DateTime Start = date_startTime.Value;
             DateTime End = date_endTime.Value;
-
-
+            //fetches data from sql server
             DataTable table = getShiftForEmployeeTableAdapter1.GetData(Convert.ToInt32(comboBox_employeeID.SelectedValue), Start, End);
-            
+            //counting rows
             Console.WriteLine(table.Rows.Count);
-
+            //for each row
             for (int i = 0; i < table.Rows.Count; i++) {
                 Console.WriteLine("Writing Shift");
                 //Shift
@@ -69,13 +68,12 @@ namespace Assignment_3
                 //add client to Job
                 newJob.client = client;
 
-                Console.WriteLine(newJob.ToString());
+                //Console.WriteLine(newJob.ToString());
                 //setting values of the new Job
                 p.AddJob(newJob);
                 p.AddShift(newShift);
             }
-
-                        
+            //save file
             p.Serialise();
         }
 
@@ -97,9 +95,10 @@ namespace Assignment_3
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //so simple, nothing else needed
             Package p = new Package();
             p.Deserialise();
-            Console.WriteLine(p.ToString());
+
         }
     }
 }
