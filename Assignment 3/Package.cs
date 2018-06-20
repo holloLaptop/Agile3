@@ -30,8 +30,9 @@ namespace Assignment_3
             fileDialog.Title = "Export Data";
             fileDialog.ShowDialog();
 
-            if (fileDialog.FileName != null)
+            if (fileDialog.FileName != null && fileDialog.FileName != "" && fileDialog.CheckPathExists)
             {
+                //stream
                 Stream stream = File.Open(fileDialog.FileName, FileMode.Create);
 
                 System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(GetType());
@@ -47,22 +48,19 @@ namespace Assignment_3
             fileDialog.Title = "Import Data";
             fileDialog.ShowDialog();
 
-            if (fileDialog.FileName != null)
+            if (fileDialog.FileName != null && fileDialog.FileName != "" && fileDialog.CheckPathExists)
             {
                 Stream stream = File.Open(fileDialog.FileName, FileMode.Open);
-                //BinaryFormatter bformatter = new BinaryFormatter();
-
+                
+                //serializer
                 System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(GetType());
                 Package placeHolder =  (Package) x.Deserialize(stream);                
-
-
                 Console.WriteLine("Reading Employee Information");
-
-
-                //Package placeHolder = (Package)bformatter.Deserialize(stream);
+                //copying over information
                 this.Contractor = placeHolder.Contractor;
                 this.JobInformation = placeHolder.JobInformation;
                 this.Shifts = placeHolder.Shifts;
+                //closing stream
                 stream.Close();
                 //test Passed
                 Serialise();
