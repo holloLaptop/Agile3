@@ -11,9 +11,9 @@ using System.Windows.Forms;
 namespace Assignment_3
 {
     // This form allows the contractor to access and edit imported jobs offline.
-    public partial class EmployeeJobs : Form
+    public partial class EmployeeJobsForm : Form
     {
-        public EmployeeJobs()
+        public EmployeeJobsForm()
         {
             InitializeComponent();
         }

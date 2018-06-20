@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Assignment_3
 {
-    public partial class ExportJobs : Form
+    public partial class MainForm : Form
     {
-        public ExportJobs()
+        public MainForm()
         {
             InitializeComponent();
         }
