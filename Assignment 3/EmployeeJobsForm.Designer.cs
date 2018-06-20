@@ -221,6 +221,7 @@
             this.btn_import.TabIndex = 11;
             this.btn_import.Text = "Import Jobs";
             this.btn_import.UseVisualStyleBackColor = true;
+            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
             // 
             // EmployeeJobsForm
             // 

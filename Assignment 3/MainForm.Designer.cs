@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_offline = new System.Windows.Forms.Button();
-            this.tableAdapterManager1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.TableAdapterManager();
+            this.dummyTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.DummyTableAdapter();
+            this.btn_refresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_home
@@ -39,7 +40,7 @@
             this.btn_home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_home.BackgroundImage")));
             this.btn_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_home.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_home.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btn_home.Location = new System.Drawing.Point(12, 12);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(254, 215);
@@ -60,24 +61,35 @@
             this.btn_offline.Text = "Offline Mode";
             this.btn_offline.UseVisualStyleBackColor = true;
             // 
-            // tableAdapterManager1
+            // dummyTableAdapter1
             // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.UpdateOrder = Assignment_3.AgileDevelopmentDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.dummyTableAdapter1.ClearBeforeFill = true;
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Location = new System.Drawing.Point(435, 234);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(102, 38);
+            this.btn_refresh.TabIndex = 2;
+            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 239);
+            this.ClientSize = new System.Drawing.Size(546, 274);
+            this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_offline);
             this.Controls.Add(this.btn_home);
-            this.MaximumSize = new System.Drawing.Size(571, 295);
-            this.MinimumSize = new System.Drawing.Size(571, 295);
+            this.MaximumSize = new System.Drawing.Size(568, 330);
+            this.MinimumSize = new System.Drawing.Size(568, 330);
             this.Name = "MainForm";
             this.Text = "IQ Incorporated";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
+            this.VisibleChanged += new System.EventHandler(this.MainForm_VisibleChanged);
             this.ResumeLayout(false);
 
         }
@@ -86,6 +98,7 @@
 
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button btn_offline;
-        private AgileDevelopmentDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private AgileDevelopmentDataSetTableAdapters.DummyTableAdapter dummyTableAdapter1;
+        private System.Windows.Forms.Button btn_refresh;
     }
 }
