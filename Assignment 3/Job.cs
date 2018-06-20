@@ -19,7 +19,7 @@ namespace Assignment_3
             
             ID = (int)info.GetValue("ID", typeof(int));
             client = (Client)info.GetValue("Client", typeof(Client));
-            Charged = (int)info.GetValue("Charged", typeof(int));
+            Charged = (decimal)info.GetValue("Charged", typeof(decimal));
             Paid = (Boolean)info.GetValue("Paid", typeof(Boolean));
             ShortDescription = (String)info.GetValue("ShortDesc", typeof(String));
             priority = (int)info.GetValue("priority", typeof(int));
@@ -48,7 +48,7 @@ namespace Assignment_3
         public int ID;
         public Client client;
         //possible convert into just ID's for simple relational databasing
-        public int Charged;
+        public decimal Charged;
         public Boolean Paid;
 
         public String ShortDescription;

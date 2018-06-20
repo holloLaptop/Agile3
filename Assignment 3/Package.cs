@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization.Formatters.Soap;
+using System.Runtime.Serialization;
 using System.Windows.Forms;
 
 namespace Assignment_3
@@ -14,9 +15,9 @@ namespace Assignment_3
     public class Package : ISerializable
     {
         //saved variables
-        Contractors Contractor = new Contractors();
-        List<Job> JobInformation = new List<Job>();
-        List<ContractShift> Shifts = new List<ContractShift>();
+        public Contractors Contractor = new Contractors();
+        public List<Job> JobInformation = new List<Job>();
+        public List<ContractShift> Shifts = new List<ContractShift>();
 
         public void AddJob(Job add) {
             JobInformation.Add(add);
@@ -64,7 +65,7 @@ namespace Assignment_3
 
             if (fileDialog.FileName != null)
             {
-                Stream stream = File.Open("JobInfo.osl", FileMode.Create);
+                Stream stream = File.Open(fileDialog.FileName, FileMode.Open);
                 BinaryFormatter bformatter = new BinaryFormatter();
 
 
