@@ -13,6 +13,7 @@ namespace Assignment_3
     // This form allows the contractor to access and edit imported jobs offline.
     public partial class EmployeeJobsForm : Form
     {
+        Package p = new Package();
         // Keeps track of the parent form of this form.
         Form offlineMenuForm = new OfflineMenuForm(null);
 
@@ -52,7 +53,20 @@ namespace Assignment_3
 
         private void btn_import_Click(object sender, EventArgs e)
         {
+            p.Deserialise();
+            //clears imported jobs to prevent duplicates
+            comboBox_jobs.Controls.Clear();
+            //importing jobs into dropdown box
+            for (int i = 0; i < p.JobInformation.Count; i++) {
+                Job currentJob = p.JobInformation[i];
+                //used the custom class for simplification
+                ComboboxItem item = new ComboboxItem();
+                item.Text = currentJob.client.BusinessName + ", " + currentJob.Location;
+                while (item.Text.Contains("  ")) item.Text = item.Text.Replace("  ", " ");
+                item.Value = currentJob.ID;
 
+                comboBox_jobs.Items.Add(item);
+            }
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -73,6 +87,14 @@ namespace Assignment_3
                     txt_amountCharged.Text = "0";
                 }
             }
+        }
+
+        private void comboBox_jobs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //int x = int.Parse(comboBox_jobs.SelectedValue.ToString());
+            //fetch and load information in dynamically.
+            comboBox_client.Text = p.JobInformation[comboBox_jobs.SelectedIndex].client.Name ;
+            
         }
     }
 }

@@ -171,6 +171,7 @@
             this.comboBox_jobs.Name = "comboBox_jobs";
             this.comboBox_jobs.Size = new System.Drawing.Size(181, 24);
             this.comboBox_jobs.TabIndex = 6;
+            this.comboBox_jobs.SelectedIndexChanged += new System.EventHandler(this.comboBox_jobs_SelectedIndexChanged);
             // 
             // getJobsBindingSource
             // 
@@ -191,6 +192,7 @@
             this.comboBox_client.DataSource = this.getJobsBindingSource;
             this.comboBox_client.DisplayMember = "Name";
             this.comboBox_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox_client.Enabled = false;
             this.comboBox_client.FormattingEnabled = true;
             this.comboBox_client.Location = new System.Drawing.Point(100, 40);
             this.comboBox_client.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -204,6 +206,7 @@
             this.comboBox_shortDescription.DataSource = this.getJobsBindingSource;
             this.comboBox_shortDescription.DisplayMember = "ShortDescription";
             this.comboBox_shortDescription.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox_shortDescription.Enabled = false;
             this.comboBox_shortDescription.FormattingEnabled = true;
             this.comboBox_shortDescription.Location = new System.Drawing.Point(100, 72);
             this.comboBox_shortDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

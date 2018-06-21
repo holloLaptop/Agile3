@@ -57,6 +57,7 @@
       <DependentUpon>AgileDevelopmentDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
+    <Compile Include="ComboboxItem.cs" />
     <Compile Include="Contractors.cs" />
     <Compile Include="ContractShift.cs" />
     <Compile Include="CreateEmployeeForm.cs">
