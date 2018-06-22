@@ -13,13 +13,33 @@ namespace Assignment_3
         //saved variables
         public Contractors Contractor = new Contractors();
         public List<Job> JobInformation = new List<Job>();
-        public List<ContractShift> Shifts = new List<ContractShift>();
-
-        public void AddJob(Job add) {
-            JobInformation.Add(add);
+        
+        public bool UniqueJobID(int x)
+        {
+            for (int i = 0; i < JobInformation.Count; i++) if (JobInformation[i].ID == x) return false;
+            return true;
         }
+
+        //adds and prevents duplications of jobs
+        public void AddJob(Job add) {
+            bool toggle = true;
+            for (int i = 0; i < JobInformation.Count; i++)
+            {
+                if (JobInformation[i].ID == add.ID) { toggle = false; i = JobInformation.Count; }
+            }
+            if(toggle) JobInformation.Add(add);
+        }
+
+        //finds the Job and adds the shift
         public void AddShift(ContractShift add) {
-            Shifts.Add(add);
+            for (int i = 0; i < JobInformation.Count; i++)
+            {
+                if (JobInformation[i].ID == add.JobID)
+                {
+                    JobInformation[i].Shifts.Add(add);
+                    i = JobInformation.Count;
+                }
+            }
         }
 
         public Package() { /*we do nothing*/ }
@@ -59,13 +79,12 @@ namespace Assignment_3
                 //copying over information
                 this.Contractor = placeHolder.Contractor;
                 this.JobInformation = placeHolder.JobInformation;
-                this.Shifts = placeHolder.Shifts;
+                //this.Shifts = placeHolder.Shifts;
                 //closing stream
                 stream.Close();
                 //test Passed
-                Serialise();
+                //Serialise();
             }
-
         }
     }
 }

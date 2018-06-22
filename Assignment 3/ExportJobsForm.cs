@@ -33,48 +33,53 @@ namespace Assignment_3
             //for each row
             for (int i = 0; i < table.Rows.Count; i++) {
                 Console.WriteLine("Writing Shift");
-                //Shift
+                //New Shift
                 ContractShift newShift = new ContractShift();
                 newShift.StartTime = DateTime.Parse(table.Rows[i][1].ToString());
                 newShift.EndTime = DateTime.Parse(table.Rows[i][2].ToString());
                 newShift.JobID = int.Parse(table.Rows[i][3].ToString());
                 Console.WriteLine(newShift.ToString());
 
-                //not needed int id = table.Rows[0][0].ToString();
-                Job newJob = new Job();
-                newJob.ID = int.Parse(table.Rows[i][3].ToString());
-                newJob.ShortDescription = (String)table.Rows[i][4].ToString();
-                newJob.Ordered = DateTime.Parse(table.Rows[i][5].ToString());
-                newJob.Location = (String)table.Rows[i][6].ToString();
-                newJob.priority = int.Parse(table.Rows[i][7].ToString());
-                newJob.StartTime = DateTime.Parse(table.Rows[i][8].ToString());
-                newJob.CompletionTime = DateTime.Parse(table.Rows[i][9].ToString());
-                newJob.Charged =  decimal.Parse(table.Rows[i][10].ToString());
-                newJob.Paid = Boolean.Parse(table.Rows[i][11].ToString());
+                //New Job if Job doesn't already exist
+                int JobID = int.Parse(table.Rows[i][3].ToString());
+                if (p.UniqueJobID(JobID))
+                {
+                    Job newJob = new Job();
+                    newJob.ID = JobID;
+                    newJob.ShortDescription = (String)table.Rows[i][4].ToString();
+                    newJob.Ordered = DateTime.Parse(table.Rows[i][5].ToString());
+                    newJob.Location = (String)table.Rows[i][6].ToString();
+                    newJob.priority = int.Parse(table.Rows[i][7].ToString());
+                    newJob.StartTime = DateTime.Parse(table.Rows[i][8].ToString());
+                    newJob.CompletionTime = DateTime.Parse(table.Rows[i][9].ToString());
+                    newJob.Charged = decimal.Parse(table.Rows[i][10].ToString());
+                    newJob.Paid = Boolean.Parse(table.Rows[i][11].ToString());
 
-                //Client info
-                Client client = new Client();
-                client.id = int.Parse(table.Rows[i][13].ToString());
-                client.name = (String)table.Rows[i][14].ToString();
-                client.BusinessName = (String)table.Rows[i][12].ToString();
-                client.Address = (String)table.Rows[i][15].ToString();
-                try
-                {
-                    client.SetLandLine(int.Parse(table.Rows[i][16].ToString()));
-                } catch { client.SetLandLine(0); }
-                try
-                {
-                    client.SetMobile(int.Parse(table.Rows[i][17].ToString()));
+                    //Client info
+                    Client client = new Client();
+                    client.id = int.Parse(table.Rows[i][13].ToString());
+                    client.name = (String)table.Rows[i][14].ToString();
+                    client.BusinessName = (String)table.Rows[i][12].ToString();
+                    client.Address = (String)table.Rows[i][15].ToString();
+                    try
+                    {
+                        client.SetLandLine(int.Parse(table.Rows[i][16].ToString()));
+                    }
+                    catch { client.SetLandLine(0); }
+                    try
+                    {
+                        client.SetMobile(int.Parse(table.Rows[i][17].ToString()));
+                    }
+                    catch { client.SetMobile(0); }
+                    client.Email = (String)table.Rows[i][18].ToString();
+
+                    //add client to Job
+                    newJob.client = client;
+
+                    //Console.WriteLine(newJob.ToString());
+                    //setting values of the new Job
+                    p.AddJob(newJob);
                 }
-                catch { client.SetMobile(0); }
-                client.Email = (String)table.Rows[i][18].ToString();
-
-                //add client to Job
-                newJob.client = client;
-
-                //Console.WriteLine(newJob.ToString());
-                //setting values of the new Job
-                p.AddJob(newJob);
                 p.AddShift(newShift);
             }
             //save file
