@@ -96,5 +96,25 @@ namespace Assignment_3
             comboBox_client.Text = p.JobInformation[comboBox_jobs.SelectedIndex].client.Name ;
             
         }
+
+        private void lbl_client_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_client_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_description_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_shortDescription_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
