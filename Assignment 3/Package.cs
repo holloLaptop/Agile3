@@ -45,18 +45,12 @@ namespace Assignment_3
             }
         }
 
+        //adding client to the list
         public void AddClient(Client add)
         {
-            bool toggle = true;
-            for (int i = 0; i < Clients.Count; i++)
-            {
-                if (Clients[i].id == add.id)
-                {
-                    toggle = false;
-                }
-            }
-            if (toggle) Clients.Add(add);
+            if (getClient(add.id) == null) Clients.Add(add);
         }
+        //fetching client by id (Slow but is O(N) )
         public Client getClient(int id)
         {
             for (int i = 0; i < Clients.Count; i++) if (Clients[i].id == id) return Clients[i];
@@ -94,7 +88,6 @@ namespace Assignment_3
             if (fileDialog.FileName != null && fileDialog.FileName != "" && fileDialog.CheckPathExists)
             {
                 Stream stream = File.Open(fileDialog.FileName, FileMode.Open);
-
                 //serializer
                 System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(GetType());
                 Package placeHolder = (Package)x.Deserialize(stream);
@@ -107,24 +100,24 @@ namespace Assignment_3
                 //this shall prevent inconsistancy errors
                 for (int i = 0; i < JobInformation.Count; i++)
                 {
-                    Job CJ = this.JobInformation[i];
+                    Job CJ = this.JobInformation[i];   
                     for (int j = 0; j < Clients.Count; j++)
                     {
                         if (CJ.client.id == Clients[j].id)
                         {
                             CJ.client = Clients[j];
-                            j = Clients.Count;
+                            j = Clients.Count;//short circuits the Loop to save time
                         }
 
                     }
                 }
-
                 //closing stream
                 stream.Close();
                 //test Passed
                 //Serialise();
-            }
-            
+            }    
         }
+
+
     }
 }
