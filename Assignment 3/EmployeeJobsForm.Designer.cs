@@ -73,6 +73,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dtp_ShiftCompleted = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn_export = new System.Windows.Forms.Button();
             this.grpBox_completed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
@@ -491,6 +492,7 @@
             this.btn_editClientInfo.TabIndex = 9;
             this.btn_editClientInfo.Text = "Edit Client Info";
             this.btn_editClientInfo.UseVisualStyleBackColor = true;
+            this.btn_editClientInfo.Click += new System.EventHandler(this.btn_editClientInfo_Click);
             // 
             // btn_updateClientInfo
             // 
@@ -500,6 +502,7 @@
             this.btn_updateClientInfo.TabIndex = 9;
             this.btn_updateClientInfo.Text = "Update Info";
             this.btn_updateClientInfo.UseVisualStyleBackColor = true;
+            this.btn_updateClientInfo.Click += new System.EventHandler(this.btn_updateClientInfo_Click);
             // 
             // label8
             // 
@@ -527,13 +530,25 @@
             this.button1.Text = "Update Shift";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // btn_export
+            // 
+            this.btn_export.Location = new System.Drawing.Point(752, 418);
+            this.btn_export.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_export.Name = "btn_export";
+            this.btn_export.Size = new System.Drawing.Size(106, 30);
+            this.btn_export.TabIndex = 11;
+            this.btn_export.Text = "Export";
+            this.btn_export.UseVisualStyleBackColor = true;
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
+            // 
             // EmployeeJobsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 432);
+            this.ClientSize = new System.Drawing.Size(874, 488);
             this.Controls.Add(this.tabControl3);
             this.Controls.Add(this.tabControl2);
+            this.Controls.Add(this.btn_export);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btn_save);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -604,5 +619,6 @@
         private System.Windows.Forms.DateTimePicker dtp_ShiftCompleted;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_export;
     }
 }

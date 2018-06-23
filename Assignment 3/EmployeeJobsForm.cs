@@ -94,13 +94,14 @@ namespace Assignment_3
         {
             Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
             //Client information loaded in
-            Client CurrentClient = SelectedJob.client;
+            /*Client CurrentClient = SelectedJob.client;
             comboBox_client.Text = CurrentClient.Name ;
             txt_address.Text = CurrentClient.address;
             txt_businessName.Text = CurrentClient.BusinessName;
             txt_email.Text = CurrentClient.Email;
             txt_landLine.Text = CurrentClient.LandLine.ToString();
-            txt_mobile.Text = CurrentClient.Mobile.ToString();
+            txt_mobile.Text = CurrentClient.Mobile.ToString();*/
+            LoadClientDetail();
 
             //Update List of Shifts then selects the first one to trigger auto-load of details.
             comboBox_shifts.Items.Clear();
@@ -114,8 +115,6 @@ namespace Assignment_3
             }
             if (Shifts.Count > 0) comboBox_shifts.SelectedIndex = 0;
             
-
-
         }
 
         private void lbl_client_Click(object sender, EventArgs e)
@@ -149,6 +148,56 @@ namespace Assignment_3
                 dtp_ShiftStarted.Value = Shift.StartTime;
                 dtp_ShiftCompleted.Value = Shift.EndTime;
             }
+        }
+
+        private void btn_editClientInfo_Click(object sender, EventArgs e)
+        {
+            txt_businessName.Enabled = true;
+            txt_address.Enabled = true;
+            txt_landLine.Enabled = true;
+            txt_mobile.Enabled = true;
+            txt_email.Enabled = true;
+            
+        }
+
+        private void btn_updateClientInfo_Click(object sender, EventArgs e)
+        {
+            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+            Client CC = SelectedJob.client;
+
+            CC.BusinessName = txt_businessName.Text;
+            CC.Address = txt_address.Text;
+            CC.SetLandLine(Person.PhoneToInt(txt_landLine.Text));
+            CC.SetMobile(Person.PhoneToInt(txt_mobile.Text));
+            CC.email = txt_email.Text;
+
+            txt_businessName.Enabled = false;
+            txt_address.Enabled = false;
+            txt_landLine.Enabled = false;
+            txt_mobile.Enabled = false;
+            txt_email.Enabled = false;
+
+            
+
+            LoadClientDetail();
+        }
+
+        private void LoadClientDetail()
+        {
+            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+            //Client information loaded in
+            Client CurrentClient = SelectedJob.client;
+            comboBox_client.Text = CurrentClient.Name;
+            txt_address.Text = CurrentClient.address;
+            txt_businessName.Text = CurrentClient.BusinessName;
+            txt_email.Text = CurrentClient.Email;
+            txt_landLine.Text = CurrentClient.LandLine.ToString();
+            txt_mobile.Text = CurrentClient.Mobile.ToString();
+        }
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            p.Serialise();
         }
     }
 }

@@ -73,8 +73,12 @@ namespace Assignment_3
                     catch { client.SetMobile(0); }
                     client.Email = (String)table.Rows[i][18].ToString();
 
+                    
+                    p.AddClient(client);
+
+
                     //add client to Job
-                    newJob.client = client;
+                    newJob.client = p.getClient(client.id);
 
                     //Console.WriteLine(newJob.ToString());
                     //setting values of the new Job
