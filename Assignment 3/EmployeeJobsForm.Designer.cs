@@ -56,7 +56,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_ShiftStarted = new System.Windows.Forms.DateTimePicker();
             this.comboBox_shifts = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@
             this.btn_editClientInfo = new System.Windows.Forms.Button();
             this.btn_updateClientInfo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_ShiftCompleted = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.grpBox_completed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
@@ -336,8 +336,8 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.dateTimePicker2);
-            this.tabPage3.Controls.Add(this.dateTimePicker1);
+            this.tabPage3.Controls.Add(this.dtp_ShiftCompleted);
+            this.tabPage3.Controls.Add(this.dtp_ShiftStarted);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.label2);
@@ -369,27 +369,29 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Shift Started:";
             // 
-            // dateTimePicker1
+            // dtp_ShiftStarted
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(144, 41);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(258, 22);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtp_ShiftStarted.Enabled = false;
+            this.dtp_ShiftStarted.Location = new System.Drawing.Point(144, 41);
+            this.dtp_ShiftStarted.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtp_ShiftStarted.Name = "dtp_ShiftStarted";
+            this.dtp_ShiftStarted.Size = new System.Drawing.Size(258, 22);
+            this.dtp_ShiftStarted.TabIndex = 6;
             // 
             // comboBox_shifts
             // 
             this.comboBox_shifts.DisplayMember = "Name";
-            this.comboBox_shifts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox_shifts.FormattingEnabled = true;
             this.comboBox_shifts.Location = new System.Drawing.Point(144, 9);
             this.comboBox_shifts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox_shifts.Name = "comboBox_shifts";
-            this.comboBox_shifts.Size = new System.Drawing.Size(258, 25);
+            this.comboBox_shifts.Size = new System.Drawing.Size(258, 24);
             this.comboBox_shifts.TabIndex = 7;
             this.comboBox_shifts.ValueMember = "PersonID";
-            this.comboBox_shifts.SelectedIndexChanged += new System.EventHandler(this.comboBox_client_SelectedIndexChanged);
+            this.comboBox_shifts.SelectedIndexChanged += new System.EventHandler(this.comboBox_shifts_SelectedIndexChanged);
+            this.comboBox_shifts.TextUpdate += new System.EventHandler(this.comboBox_shifts_SelectedIndexChanged);
+            this.comboBox_shifts.SelectedValueChanged += new System.EventHandler(this.comboBox_shifts_SelectedIndexChanged);
+            this.comboBox_shifts.TextChanged += new System.EventHandler(this.comboBox_shifts_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -508,13 +510,13 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Shift Completed:";
             // 
-            // dateTimePicker2
+            // dtp_ShiftCompleted
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(144, 67);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(258, 22);
-            this.dateTimePicker2.TabIndex = 6;
+            this.dtp_ShiftCompleted.Location = new System.Drawing.Point(144, 67);
+            this.dtp_ShiftCompleted.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtp_ShiftCompleted.Name = "dtp_ShiftCompleted";
+            this.dtp_ShiftCompleted.Size = new System.Drawing.Size(258, 22);
+            this.dtp_ShiftCompleted.TabIndex = 6;
             // 
             // button1
             // 
@@ -583,7 +585,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_ShiftStarted;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox_shifts;
@@ -599,7 +601,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_updateClientInfo;
         private System.Windows.Forms.Button btn_editClientInfo;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtp_ShiftCompleted;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
     }

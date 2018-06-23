@@ -67,6 +67,7 @@ namespace Assignment_3
 
                 comboBox_jobs.Items.Add(item);
             }
+            if (p.JobInformation.Count > 0) comboBox_jobs.SelectedIndex = 0;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -107,11 +108,12 @@ namespace Assignment_3
             for(int i = 0; i < Shifts.Count; i++)
             {
                 ComboboxItem item = new ComboboxItem();
-                item.Text = Shifts[i].StartTime.ToString();
+                item.Text = Shifts[i].StartTime.Date.ToString();
                 item.Value = i;
                 comboBox_shifts.Items.Add(item);
             }
             if (Shifts.Count > 0) comboBox_shifts.SelectedIndex = 0;
+            
 
 
         }
@@ -123,7 +125,7 @@ namespace Assignment_3
 
         private void comboBox_client_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void lbl_description_Click(object sender, EventArgs e)
@@ -134,6 +136,19 @@ namespace Assignment_3
         private void comboBox_shortDescription_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox_shifts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+            List<ContractShift> Shifts = SelectedJob.Shifts;
+            if (comboBox_shifts.SelectedIndex >= 0)
+            {
+                int index = comboBox_shifts.SelectedIndex;
+                ContractShift Shift = Shifts[index];
+                dtp_ShiftStarted.Value = Shift.StartTime;
+                dtp_ShiftCompleted.Value = Shift.EndTime;
+            }
         }
     }
 }
