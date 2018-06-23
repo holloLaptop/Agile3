@@ -199,5 +199,15 @@ namespace Assignment_3
         {
             p.Serialise();
         }
+
+        private void txt_landLine_TextChanged(object sender, EventArgs e)
+        {
+            
+            TextBox Parent = (TextBox)sender;
+            int x = Parent.SelectionStart;
+
+            Parent.Text = Person.PhoneToString(Person.PhoneToInt(Parent.Text));
+            Parent.SelectionStart = x;
+        }
     }
 }

@@ -467,6 +467,7 @@
             this.txt_landLine.Name = "txt_landLine";
             this.txt_landLine.Size = new System.Drawing.Size(258, 22);
             this.txt_landLine.TabIndex = 8;
+            this.txt_landLine.TextChanged += new System.EventHandler(this.txt_landLine_TextChanged);
             // 
             // txt_mobile
             // 
@@ -475,6 +476,7 @@
             this.txt_mobile.Name = "txt_mobile";
             this.txt_mobile.Size = new System.Drawing.Size(258, 22);
             this.txt_mobile.TabIndex = 8;
+            this.txt_mobile.TextChanged += new System.EventHandler(this.txt_landLine_TextChanged);
             // 
             // txt_email
             // 
