@@ -93,8 +93,16 @@ namespace Assignment_3
         {
             //int x = int.Parse(comboBox_jobs.SelectedValue.ToString());
             //fetch and load information in dynamically.
-            comboBox_client.Text = p.JobInformation[comboBox_jobs.SelectedIndex].client.Name ;
-            
+            Client CurrentClient = p.JobInformation[comboBox_jobs.SelectedIndex].client;
+            comboBox_client.Text = CurrentClient.Name ;
+            txt_address.Text = CurrentClient.address;
+            txt_businessName.Text = CurrentClient.BusinessName;
+            txt_email.Text = CurrentClient.Email;
+            txt_landLine.Text = CurrentClient.LandLine.ToString();
+            txt_mobile.Text = CurrentClient.Mobile.ToString();
+
+
+
         }
 
         private void lbl_client_Click(object sender, EventArgs e)

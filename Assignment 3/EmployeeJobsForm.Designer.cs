@@ -70,6 +70,9 @@
             this.txt_email = new System.Windows.Forms.TextBox();
             this.btn_editClientInfo = new System.Windows.Forms.Button();
             this.btn_updateClientInfo = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.grpBox_completed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
@@ -260,7 +263,7 @@
             this.tabControl1.Location = new System.Drawing.Point(7, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(423, 400);
+            this.tabControl1.Size = new System.Drawing.Size(423, 409);
             this.tabControl1.TabIndex = 12;
             // 
             // tabPage1
@@ -275,7 +278,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(415, 371);
+            this.tabPage1.Size = new System.Drawing.Size(415, 380);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Job Information";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -283,7 +286,7 @@
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Location = new System.Drawing.Point(432, 156);
+            this.tabControl2.Location = new System.Drawing.Point(432, 165);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(430, 248);
@@ -327,19 +330,22 @@
             this.tabControl3.Location = new System.Drawing.Point(432, 4);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(430, 146);
+            this.tabControl3.Size = new System.Drawing.Size(430, 155);
             this.tabControl3.TabIndex = 12;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.dateTimePicker2);
             this.tabPage3.Controls.Add(this.dateTimePicker1);
+            this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.comboBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(422, 117);
+            this.tabPage3.Size = new System.Drawing.Size(422, 126);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Shift Information";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -359,12 +365,13 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(90, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Shift Completed:";
+            this.label2.Text = "Shift Started:";
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(144, 41);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -436,6 +443,7 @@
             // 
             // txt_businessName
             // 
+            this.txt_businessName.Enabled = false;
             this.txt_businessName.Location = new System.Drawing.Point(144, 42);
             this.txt_businessName.Name = "txt_businessName";
             this.txt_businessName.Size = new System.Drawing.Size(258, 22);
@@ -443,6 +451,7 @@
             // 
             // txt_address
             // 
+            this.txt_address.Enabled = false;
             this.txt_address.Location = new System.Drawing.Point(144, 70);
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(258, 22);
@@ -450,6 +459,7 @@
             // 
             // txt_landLine
             // 
+            this.txt_landLine.Enabled = false;
             this.txt_landLine.Location = new System.Drawing.Point(144, 99);
             this.txt_landLine.Name = "txt_landLine";
             this.txt_landLine.Size = new System.Drawing.Size(258, 22);
@@ -457,6 +467,7 @@
             // 
             // txt_mobile
             // 
+            this.txt_mobile.Enabled = false;
             this.txt_mobile.Location = new System.Drawing.Point(144, 127);
             this.txt_mobile.Name = "txt_mobile";
             this.txt_mobile.Size = new System.Drawing.Size(258, 22);
@@ -464,6 +475,7 @@
             // 
             // txt_email
             // 
+            this.txt_email.Enabled = false;
             this.txt_email.Location = new System.Drawing.Point(144, 155);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(258, 22);
@@ -487,11 +499,37 @@
             this.btn_updateClientInfo.Text = "Update Info";
             this.btn_updateClientInfo.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(111, 17);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Shift Completed:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(144, 67);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(258, 22);
+            this.dateTimePicker2.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(279, 98);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Update Shift";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // EmployeeJobsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 415);
+            this.ClientSize = new System.Drawing.Size(874, 432);
             this.Controls.Add(this.tabControl3);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.tabControl1);
@@ -561,5 +599,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_updateClientInfo;
         private System.Windows.Forms.Button btn_editClientInfo;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
     }
 }

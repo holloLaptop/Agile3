@@ -23,11 +23,11 @@ namespace Assignment_3
         //Email
         public String email;
 
-        public string LandLine { get => LandLine; }
-        public string Mobile { get => mobile; }
-        public string Name { get => name; set => name = value; }
-        public string Address { get => address; set => address = value; }
-        public string Email { get => email; set => email = value; }
+        public String LandLine { get => landLine; }
+        public String Mobile { get => mobile; }
+        public String Name { get => name; set => name = value; }
+        public String Address { get => address; set => address = value; }
+        public String Email { get => email; set => email = value; }
 
         //Phone Number from int to string
         String PhoneToString(int phonenumber) {
