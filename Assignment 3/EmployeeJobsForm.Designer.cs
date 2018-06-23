@@ -57,7 +57,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_shifts = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -341,7 +341,7 @@
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.label2);
-            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.comboBox_shifts);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -378,18 +378,18 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(258, 22);
             this.dateTimePicker1.TabIndex = 6;
             // 
-            // comboBox1
+            // comboBox_shifts
             // 
-            this.comboBox1.DisplayMember = "Name";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(144, 9);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(258, 25);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.ValueMember = "PersonID";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox_client_SelectedIndexChanged);
+            this.comboBox_shifts.DisplayMember = "Name";
+            this.comboBox_shifts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox_shifts.FormattingEnabled = true;
+            this.comboBox_shifts.Location = new System.Drawing.Point(144, 9);
+            this.comboBox_shifts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_shifts.Name = "comboBox_shifts";
+            this.comboBox_shifts.Size = new System.Drawing.Size(258, 25);
+            this.comboBox_shifts.TabIndex = 7;
+            this.comboBox_shifts.ValueMember = "PersonID";
+            this.comboBox_shifts.SelectedIndexChanged += new System.EventHandler(this.comboBox_client_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -586,7 +586,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_shifts;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

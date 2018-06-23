@@ -91,9 +91,9 @@ namespace Assignment_3
 
         private void comboBox_jobs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //int x = int.Parse(comboBox_jobs.SelectedValue.ToString());
-            //fetch and load information in dynamically.
-            Client CurrentClient = p.JobInformation[comboBox_jobs.SelectedIndex].client;
+            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+            //Client information loaded in
+            Client CurrentClient = SelectedJob.client;
             comboBox_client.Text = CurrentClient.Name ;
             txt_address.Text = CurrentClient.address;
             txt_businessName.Text = CurrentClient.BusinessName;
@@ -101,6 +101,17 @@ namespace Assignment_3
             txt_landLine.Text = CurrentClient.LandLine.ToString();
             txt_mobile.Text = CurrentClient.Mobile.ToString();
 
+            //Update List of Shifts then selects the first one to trigger auto-load of details.
+            comboBox_shifts.Items.Clear();
+            List<ContractShift> Shifts = SelectedJob.Shifts;
+            for(int i = 0; i < Shifts.Count; i++)
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = Shifts[i].StartTime.ToString();
+                item.Value = i;
+                comboBox_shifts.Items.Add(item);
+            }
+            if (Shifts.Count > 0) comboBox_shifts.SelectedIndex = 0;
 
 
         }
