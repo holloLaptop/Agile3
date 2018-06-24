@@ -42,8 +42,16 @@ namespace Assignment_3
 
             String temp = phoneNumber;
             Char[] characters = {' ', '(', ')', ':', '-' };
+            String Numbers = "0123456789";
             for (int i = 0; i < characters.Length; i++) {
                while(temp.Contains(characters[i].ToString())) temp = temp.Replace(characters[i].ToString(), "");
+            }
+            for(int i = 0; i < temp.Length; i++)
+            {
+                if(!Numbers.Contains(temp.Substring(i, 1))) {
+                    temp = temp.Replace(temp.Substring(i, 1), "");//replaces all occurances of the dissallowed character
+                    i--;
+                }
             }
             //replace below with conversion script
             //Output = (int) temp;
