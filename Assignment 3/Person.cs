@@ -41,11 +41,9 @@ namespace Assignment_3
             long Output = 0;
 
             String temp = phoneNumber;
-            Char[] characters = {' ', '(', ')', ':', '-' };
+            //Validation
             String Numbers = "0123456789";
-            for (int i = 0; i < characters.Length; i++) {
-               while(temp.Contains(characters[i].ToString())) temp = temp.Replace(characters[i].ToString(), "");
-            }
+            //Stripping all foreign Characters
             for(int i = 0; i < temp.Length; i++)
             {
                 if(!Numbers.Contains(temp.Substring(i, 1))) {
@@ -53,12 +51,7 @@ namespace Assignment_3
                     i--;
                 }
             }
-            //replace below with conversion script
-            //Output = (int) temp;
             if (temp == "") temp = "0";
-            /*only need to check as above example is always 0 character longs,
-            * And Phone numbers are 10 digits long
-            */
             else if (temp.Length > 10) temp = temp.Substring(0, 10);
             Output = long.Parse(temp);
 
