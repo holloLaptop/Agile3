@@ -127,12 +127,11 @@ namespace Assignment_3
             {
                 //updates Job
                 queriesTableAdapter1.UpdateJob(J.ID, J.ShortDescription, J.Location, (byte)J.priority, J.StartTime, J.CompletionTime, J.Charged, J.Paid);
-                foreach(ContractShift CS in J.Shifts)
+                //update each Shift
+                foreach (ContractShift CS in J.Shifts)
                 {
-                    //updates shift
-
+                    queriesTableAdapter1.UpdateShiftEndTime(p.Contractor.id, J.ID, CS.StartTime, CS.EndTime);
                 }
-                //upload data
             }
             
         }
