@@ -111,6 +111,17 @@ namespace Assignment_3
             //so simple, nothing else needed
             Package p = new Package();
             p.Deserialise();
+            //Updates All client information
+            foreach (Client c in p.Clients)
+            {
+                int ID = c.id;
+                queriesTableAdapter1.UpdateClientBusinessName(ID, c.BusinessName);
+                queriesTableAdapter1.UpdatePersonAddress(ID, c.address);
+                queriesTableAdapter1.UpdatePersonEmail(ID, c.email);
+                queriesTableAdapter1.UpdatePersonLandLine(ID, c.LandLine);
+                queriesTableAdapter1.UpdatePersonMobile(ID, c.Mobile);
+                queriesTableAdapter1.UpdatePersonName(ID, c.name);
+            }
         }
 
         private void ExportJobsForm_FormClosed(object sender, FormClosedEventArgs e)

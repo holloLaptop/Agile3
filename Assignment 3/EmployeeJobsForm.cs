@@ -53,14 +53,14 @@ namespace Assignment_3
 
         private void btn_import_Click(object sender, EventArgs e)
         {
+            //clears imported jobs to prevent duplicates
             p.Clients.Clear();
             p.JobInformation.Clear();
             p.Contractor = null;
-
-            p.Deserialise();
-            //clears imported jobs to prevent duplicates
             comboBox_jobs.Controls.Clear();
             comboBox_jobs.Items.Clear();
+            //Loads data
+            p.Deserialise();
             //importing jobs into dropdown box
             for (int i = 0; i < p.JobInformation.Count; i++) {
                 Job currentJob = p.JobInformation[i];
@@ -69,7 +69,6 @@ namespace Assignment_3
                 item.Text = currentJob.client.BusinessName + ", " + currentJob.Location;
                 while (item.Text.Contains("  ")) item.Text = item.Text.Replace("  ", " ");
                 item.Value = currentJob.ID;
-
                 comboBox_jobs.Items.Add(item);
             }
             if (p.JobInformation.Count > 0) comboBox_jobs.SelectedIndex = 0;
@@ -157,13 +156,8 @@ namespace Assignment_3
 
         private void btn_editClientInfo_Click(object sender, EventArgs e)
         {
-            txt_businessName.Enabled = true;
-            txt_address.Enabled = true;
-            txt_landLine.Enabled = true;
-            txt_mobile.Enabled = true;
-            txt_email.Enabled = true;
-            
-        }
+            EnableClientFields(true);
+        }    
 
         private void btn_updateClientInfo_Click(object sender, EventArgs e)
         {
@@ -176,13 +170,7 @@ namespace Assignment_3
             CC.SetMobile(Person.PhoneToInt(txt_mobile.Text));
             CC.email = txt_email.Text;
 
-            txt_businessName.Enabled = false;
-            txt_address.Enabled = false;
-            txt_landLine.Enabled = false;
-            txt_mobile.Enabled = false;
-            txt_email.Enabled = false;
-
-            
+            EnableClientFields(false);
 
             LoadClientDetail();
         }
@@ -198,6 +186,15 @@ namespace Assignment_3
             txt_email.Text = CurrentClient.Email;
             txt_landLine.Text = CurrentClient.LandLine.ToString();
             txt_mobile.Text = CurrentClient.Mobile.ToString();
+        }
+
+        private void EnableClientFields(bool value)
+        {
+            txt_businessName.Enabled = value;
+            txt_address.Enabled = value;
+            txt_landLine.Enabled = value;
+            txt_mobile.Enabled = value;
+            txt_email.Enabled = value;
         }
 
         private void btn_export_Click(object sender, EventArgs e)
