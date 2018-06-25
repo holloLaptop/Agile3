@@ -53,9 +53,14 @@ namespace Assignment_3
 
         private void btn_import_Click(object sender, EventArgs e)
         {
+            p.Clients.Clear();
+            p.JobInformation.Clear();
+            p.Contractor = null;
+
             p.Deserialise();
             //clears imported jobs to prevent duplicates
             comboBox_jobs.Controls.Clear();
+            comboBox_jobs.Items.Clear();
             //importing jobs into dropdown box
             for (int i = 0; i < p.JobInformation.Count; i++) {
                 Job currentJob = p.JobInformation[i];
@@ -208,6 +213,11 @@ namespace Assignment_3
 
             Parent.Text = Person.PhoneToString(Person.PhoneToInt(Parent.Text));
             Parent.SelectionStart = x;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //updating shift
         }
     }
 }

@@ -49,30 +49,30 @@
             this.btn_import = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btn_updateClientInfo = new System.Windows.Forms.Button();
+            this.btn_editClientInfo = new System.Windows.Forms.Button();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.txt_mobile = new System.Windows.Forms.TextBox();
+            this.txt_landLine = new System.Windows.Forms.TextBox();
+            this.txt_address = new System.Windows.Forms.TextBox();
+            this.txt_businessName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dtp_ShiftCompleted = new System.Windows.Forms.DateTimePicker();
+            this.dtp_ShiftStarted = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtp_ShiftStarted = new System.Windows.Forms.DateTimePicker();
             this.comboBox_shifts = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_businessName = new System.Windows.Forms.TextBox();
-            this.txt_address = new System.Windows.Forms.TextBox();
-            this.txt_landLine = new System.Windows.Forms.TextBox();
-            this.txt_mobile = new System.Windows.Forms.TextBox();
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.btn_editClientInfo = new System.Windows.Forms.Button();
-            this.btn_updateClientInfo = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dtp_ShiftCompleted = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.btn_export = new System.Windows.Forms.Button();
             this.grpBox_completed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
@@ -132,6 +132,8 @@
             // 
             // date_completedTime
             // 
+            this.date_completedTime.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
+            this.date_completedTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.date_completedTime.Location = new System.Drawing.Point(144, 18);
             this.date_completedTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_completedTime.Name = "date_completedTime";
@@ -284,6 +286,14 @@
             this.tabPage1.Text = "Job Information";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(95, 41);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(310, 71);
+            this.richTextBox1.TabIndex = 12;
+            this.richTextBox1.Text = "";
+            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage2);
@@ -317,13 +327,117 @@
             this.tabPage2.Text = "Client Information";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // btn_updateClientInfo
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(95, 41);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(310, 71);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
+            this.btn_updateClientInfo.Location = new System.Drawing.Point(279, 183);
+            this.btn_updateClientInfo.Name = "btn_updateClientInfo";
+            this.btn_updateClientInfo.Size = new System.Drawing.Size(123, 23);
+            this.btn_updateClientInfo.TabIndex = 9;
+            this.btn_updateClientInfo.Text = "Update Info";
+            this.btn_updateClientInfo.UseVisualStyleBackColor = true;
+            this.btn_updateClientInfo.Click += new System.EventHandler(this.btn_updateClientInfo_Click);
+            // 
+            // btn_editClientInfo
+            // 
+            this.btn_editClientInfo.Location = new System.Drawing.Point(144, 184);
+            this.btn_editClientInfo.Name = "btn_editClientInfo";
+            this.btn_editClientInfo.Size = new System.Drawing.Size(123, 23);
+            this.btn_editClientInfo.TabIndex = 9;
+            this.btn_editClientInfo.Text = "Edit Client Info";
+            this.btn_editClientInfo.UseVisualStyleBackColor = true;
+            this.btn_editClientInfo.Click += new System.EventHandler(this.btn_editClientInfo_Click);
+            // 
+            // txt_email
+            // 
+            this.txt_email.Enabled = false;
+            this.txt_email.Location = new System.Drawing.Point(144, 155);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(258, 22);
+            this.txt_email.TabIndex = 8;
+            // 
+            // txt_mobile
+            // 
+            this.txt_mobile.Enabled = false;
+            this.txt_mobile.Location = new System.Drawing.Point(144, 127);
+            this.txt_mobile.Name = "txt_mobile";
+            this.txt_mobile.Size = new System.Drawing.Size(258, 22);
+            this.txt_mobile.TabIndex = 8;
+            this.txt_mobile.TextChanged += new System.EventHandler(this.txt_landLine_TextChanged);
+            // 
+            // txt_landLine
+            // 
+            this.txt_landLine.Enabled = false;
+            this.txt_landLine.Location = new System.Drawing.Point(144, 99);
+            this.txt_landLine.Name = "txt_landLine";
+            this.txt_landLine.Size = new System.Drawing.Size(258, 22);
+            this.txt_landLine.TabIndex = 8;
+            this.txt_landLine.TextChanged += new System.EventHandler(this.txt_landLine_TextChanged);
+            // 
+            // txt_address
+            // 
+            this.txt_address.Enabled = false;
+            this.txt_address.Location = new System.Drawing.Point(144, 70);
+            this.txt_address.Name = "txt_address";
+            this.txt_address.Size = new System.Drawing.Size(258, 22);
+            this.txt_address.TabIndex = 8;
+            // 
+            // txt_businessName
+            // 
+            this.txt_businessName.Enabled = false;
+            this.txt_businessName.Location = new System.Drawing.Point(144, 42);
+            this.txt_businessName.Name = "txt_businessName";
+            this.txt_businessName.Size = new System.Drawing.Size(258, 22);
+            this.txt_businessName.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 157);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 17);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Email";
+            this.label7.Click += new System.EventHandler(this.lbl_client_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 128);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 17);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Mobile";
+            this.label6.Click += new System.EventHandler(this.lbl_client_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 99);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 17);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "LandLine";
+            this.label5.Click += new System.EventHandler(this.lbl_client_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Address";
+            this.label4.Click += new System.EventHandler(this.lbl_client_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Business Name";
+            this.label3.Click += new System.EventHandler(this.lbl_client_Click);
             // 
             // tabControl3
             // 
@@ -351,6 +465,46 @@
             this.tabPage3.Text = "Shift Information";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(279, 98);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Update Shift";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dtp_ShiftCompleted
+            // 
+            this.dtp_ShiftCompleted.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
+            this.dtp_ShiftCompleted.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ShiftCompleted.Location = new System.Drawing.Point(144, 67);
+            this.dtp_ShiftCompleted.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtp_ShiftCompleted.Name = "dtp_ShiftCompleted";
+            this.dtp_ShiftCompleted.Size = new System.Drawing.Size(258, 22);
+            this.dtp_ShiftCompleted.TabIndex = 6;
+            // 
+            // dtp_ShiftStarted
+            // 
+            this.dtp_ShiftStarted.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
+            this.dtp_ShiftStarted.Enabled = false;
+            this.dtp_ShiftStarted.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ShiftStarted.Location = new System.Drawing.Point(144, 41);
+            this.dtp_ShiftStarted.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtp_ShiftStarted.Name = "dtp_ShiftStarted";
+            this.dtp_ShiftStarted.Size = new System.Drawing.Size(258, 22);
+            this.dtp_ShiftStarted.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(111, 17);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Shift Completed:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -370,15 +524,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Shift Started:";
             // 
-            // dtp_ShiftStarted
-            // 
-            this.dtp_ShiftStarted.Enabled = false;
-            this.dtp_ShiftStarted.Location = new System.Drawing.Point(144, 41);
-            this.dtp_ShiftStarted.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtp_ShiftStarted.Name = "dtp_ShiftStarted";
-            this.dtp_ShiftStarted.Size = new System.Drawing.Size(258, 22);
-            this.dtp_ShiftStarted.TabIndex = 6;
-            // 
             // comboBox_shifts
             // 
             this.comboBox_shifts.DisplayMember = "Name";
@@ -393,144 +538,6 @@
             this.comboBox_shifts.TextUpdate += new System.EventHandler(this.comboBox_shifts_SelectedIndexChanged);
             this.comboBox_shifts.SelectedValueChanged += new System.EventHandler(this.comboBox_shifts_SelectedIndexChanged);
             this.comboBox_shifts.TextChanged += new System.EventHandler(this.comboBox_shifts_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Business Name";
-            this.label3.Click += new System.EventHandler(this.lbl_client_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Address";
-            this.label4.Click += new System.EventHandler(this.lbl_client_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 99);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 17);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "LandLine";
-            this.label5.Click += new System.EventHandler(this.lbl_client_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 128);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 17);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Mobile";
-            this.label6.Click += new System.EventHandler(this.lbl_client_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 157);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 17);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Email";
-            this.label7.Click += new System.EventHandler(this.lbl_client_Click);
-            // 
-            // txt_businessName
-            // 
-            this.txt_businessName.Enabled = false;
-            this.txt_businessName.Location = new System.Drawing.Point(144, 42);
-            this.txt_businessName.Name = "txt_businessName";
-            this.txt_businessName.Size = new System.Drawing.Size(258, 22);
-            this.txt_businessName.TabIndex = 8;
-            // 
-            // txt_address
-            // 
-            this.txt_address.Enabled = false;
-            this.txt_address.Location = new System.Drawing.Point(144, 70);
-            this.txt_address.Name = "txt_address";
-            this.txt_address.Size = new System.Drawing.Size(258, 22);
-            this.txt_address.TabIndex = 8;
-            // 
-            // txt_landLine
-            // 
-            this.txt_landLine.Enabled = false;
-            this.txt_landLine.Location = new System.Drawing.Point(144, 99);
-            this.txt_landLine.Name = "txt_landLine";
-            this.txt_landLine.Size = new System.Drawing.Size(258, 22);
-            this.txt_landLine.TabIndex = 8;
-            this.txt_landLine.TextChanged += new System.EventHandler(this.txt_landLine_TextChanged);
-            // 
-            // txt_mobile
-            // 
-            this.txt_mobile.Enabled = false;
-            this.txt_mobile.Location = new System.Drawing.Point(144, 127);
-            this.txt_mobile.Name = "txt_mobile";
-            this.txt_mobile.Size = new System.Drawing.Size(258, 22);
-            this.txt_mobile.TabIndex = 8;
-            this.txt_mobile.TextChanged += new System.EventHandler(this.txt_landLine_TextChanged);
-            // 
-            // txt_email
-            // 
-            this.txt_email.Enabled = false;
-            this.txt_email.Location = new System.Drawing.Point(144, 155);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(258, 22);
-            this.txt_email.TabIndex = 8;
-            // 
-            // btn_editClientInfo
-            // 
-            this.btn_editClientInfo.Location = new System.Drawing.Point(144, 184);
-            this.btn_editClientInfo.Name = "btn_editClientInfo";
-            this.btn_editClientInfo.Size = new System.Drawing.Size(123, 23);
-            this.btn_editClientInfo.TabIndex = 9;
-            this.btn_editClientInfo.Text = "Edit Client Info";
-            this.btn_editClientInfo.UseVisualStyleBackColor = true;
-            this.btn_editClientInfo.Click += new System.EventHandler(this.btn_editClientInfo_Click);
-            // 
-            // btn_updateClientInfo
-            // 
-            this.btn_updateClientInfo.Location = new System.Drawing.Point(279, 183);
-            this.btn_updateClientInfo.Name = "btn_updateClientInfo";
-            this.btn_updateClientInfo.Size = new System.Drawing.Size(123, 23);
-            this.btn_updateClientInfo.TabIndex = 9;
-            this.btn_updateClientInfo.Text = "Update Info";
-            this.btn_updateClientInfo.UseVisualStyleBackColor = true;
-            this.btn_updateClientInfo.Click += new System.EventHandler(this.btn_updateClientInfo_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 70);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 17);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Shift Completed:";
-            // 
-            // dtp_ShiftCompleted
-            // 
-            this.dtp_ShiftCompleted.Location = new System.Drawing.Point(144, 67);
-            this.dtp_ShiftCompleted.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtp_ShiftCompleted.Name = "dtp_ShiftCompleted";
-            this.dtp_ShiftCompleted.Size = new System.Drawing.Size(258, 22);
-            this.dtp_ShiftCompleted.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(279, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Update Shift";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // btn_export
             // 
@@ -547,7 +554,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 488);
+            this.ClientSize = new System.Drawing.Size(874, 455);
             this.Controls.Add(this.tabControl3);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.btn_export);
