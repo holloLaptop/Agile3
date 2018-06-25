@@ -122,6 +122,19 @@ namespace Assignment_3
                 queriesTableAdapter1.UpdatePersonMobile(ID, c.Mobile);
                 queriesTableAdapter1.UpdatePersonName(ID, c.name);
             }
+            //updating all jobs and shifts
+            foreach (Job J in p.JobInformation)
+            {
+                //updates Job
+                queriesTableAdapter1.UpdateJob(J.ID, J.ShortDescription, J.Location, (byte)J.priority, J.StartTime, J.CompletionTime, J.Charged, J.Paid);
+                foreach(ContractShift CS in J.Shifts)
+                {
+                    //updates shift
+
+                }
+                //upload data
+            }
+            
         }
 
         private void ExportJobsForm_FormClosed(object sender, FormClosedEventArgs e)
