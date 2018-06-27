@@ -8,23 +8,59 @@ using System.Windows.Forms;
 
 namespace Assignment_3
 {
-    public class Package 
+    public class Package
     {
         //saved variables
         public Contractors Contractor = new Contractors();
         public List<Job> JobInformation = new List<Job>();
-        public List<ContractShift> Shifts = new List<ContractShift>();
+        public List<Client> Clients = new List<Client>();
 
-        public void AddJob(Job add) {
-            JobInformation.Add(add);
+        public bool UniqueJobID(int x)
+        {
+            for (int i = 0; i < JobInformation.Count; i++) if (JobInformation[i].ID == x) return false;
+            return true;
         }
-        public void AddShift(ContractShift add) {
-            Shifts.Add(add);
+
+        //adds and prevents duplications of jobs
+        public void AddJob(Job add)
+        {
+            bool toggle = true;
+            for (int i = 0; i < JobInformation.Count; i++)
+            {
+                if (JobInformation[i].ID == add.ID) { toggle = false; i = JobInformation.Count; }
+            }
+            if (toggle) JobInformation.Add(add);
+        }
+
+        //finds the Job and adds the shift
+        public void AddShift(ContractShift add)
+        {
+            for (int i = 0; i < JobInformation.Count; i++)
+            {
+                if (JobInformation[i].ID == add.JobID)
+                {
+                    JobInformation[i].Shifts.Add(add);
+                    i = JobInformation.Count;
+                }
+            }
+        }
+
+        //adding client to the list
+        public void AddClient(Client add)
+        {
+            if (getClient(add.id) == null) Clients.Add(add);
+        }
+        //fetching client by id (Slow but is O(N) )
+        public Client getClient(int id)
+        {
+            for (int i = 0; i < Clients.Count; i++) if (Clients[i].id == id) return Clients[i];
+            return null;
         }
 
         public Package() { /*we do nothing*/ }
-        
-        public void Serialise() {
+
+        public void Serialise()
+        {
             SaveFileDialog fileDialog = new SaveFileDialog();
             fileDialog.Filter = "Non Executable Binary|*.nbn";
             fileDialog.Title = "Export Data";
@@ -42,7 +78,8 @@ namespace Assignment_3
                 stream.Close();
             }
         }
-        public void Deserialise() {
+        public void Deserialise()
+        {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Non Executable Binary|*.nbn";
             fileDialog.Title = "Import Data";
@@ -51,21 +88,36 @@ namespace Assignment_3
             if (fileDialog.FileName != null && fileDialog.FileName != "" && fileDialog.CheckPathExists)
             {
                 Stream stream = File.Open(fileDialog.FileName, FileMode.Open);
-                
                 //serializer
                 System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(GetType());
-                Package placeHolder =  (Package) x.Deserialize(stream);                
+                Package placeHolder = (Package)x.Deserialize(stream);
                 Console.WriteLine("Reading Employee Information");
                 //copying over information
                 this.Contractor = placeHolder.Contractor;
                 this.JobInformation = placeHolder.JobInformation;
-                this.Shifts = placeHolder.Shifts;
+                this.Clients = placeHolder.Clients;
+                //now due to the binding we'll rebind the Clients to JobInformation
+                //this shall prevent inconsistancy errors
+                for (int i = 0; i < JobInformation.Count; i++)
+                {
+                    Job CJ = this.JobInformation[i];   
+                    for (int j = 0; j < Clients.Count; j++)
+                    {
+                        if (CJ.client.id == Clients[j].id)
+                        {
+                            CJ.client = Clients[j];
+                            j = Clients.Count;//short circuits the Loop to save time
+                        }
+
+                    }
+                }
                 //closing stream
                 stream.Close();
                 //test Passed
-                Serialise();
-            }
-
+                //Serialise();
+            }    
         }
+
+
     }
 }

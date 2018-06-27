@@ -53,9 +53,14 @@ namespace Assignment_3
 
         private void btn_import_Click(object sender, EventArgs e)
         {
-            p.Deserialise();
             //clears imported jobs to prevent duplicates
+            p.Clients.Clear();
+            p.JobInformation.Clear();
+            p.Contractor = null;
             comboBox_jobs.Controls.Clear();
+            comboBox_jobs.Items.Clear();
+            //Loads data
+            p.Deserialise();
             //importing jobs into dropdown box
             for (int i = 0; i < p.JobInformation.Count; i++) {
                 Job currentJob = p.JobInformation[i];
@@ -64,9 +69,9 @@ namespace Assignment_3
                 item.Text = currentJob.client.BusinessName + ", " + currentJob.Location;
                 while (item.Text.Contains("  ")) item.Text = item.Text.Replace("  ", " ");
                 item.Value = currentJob.ID;
-
                 comboBox_jobs.Items.Add(item);
             }
+            if (p.JobInformation.Count > 0) comboBox_jobs.SelectedIndex = 0;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -91,10 +96,125 @@ namespace Assignment_3
 
         private void comboBox_jobs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //int x = int.Parse(comboBox_jobs.SelectedValue.ToString());
-            //fetch and load information in dynamically.
-            comboBox_client.Text = p.JobInformation[comboBox_jobs.SelectedIndex].client.Name ;
+            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+            //Client information loaded in
+            /*Client CurrentClient = SelectedJob.client;
+            comboBox_client.Text = CurrentClient.Name ;
+            txt_address.Text = CurrentClient.address;
+            txt_businessName.Text = CurrentClient.BusinessName;
+            txt_email.Text = CurrentClient.Email;
+            txt_landLine.Text = CurrentClient.LandLine.ToString();
+            txt_mobile.Text = CurrentClient.Mobile.ToString();*/
+            LoadClientDetail();
+
+            //Update List of Shifts then selects the first one to trigger auto-load of details.
+            comboBox_shifts.Items.Clear();
+            List<ContractShift> Shifts = SelectedJob.Shifts;
+            for(int i = 0; i < Shifts.Count; i++)
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = Shifts[i].StartTime.Date.ToString();
+                item.Value = i;
+                comboBox_shifts.Items.Add(item);
+            }
+            if (Shifts.Count > 0) comboBox_shifts.SelectedIndex = 0;
             
+        }
+
+        private void lbl_client_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_client_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lbl_description_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_shortDescription_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_shifts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+            List<ContractShift> Shifts = SelectedJob.Shifts;
+            if (comboBox_shifts.SelectedIndex >= 0)
+            {
+                int index = comboBox_shifts.SelectedIndex;
+                ContractShift Shift = Shifts[index];
+                dtp_ShiftStarted.Value = Shift.StartTime;
+                dtp_ShiftCompleted.Value = Shift.EndTime;
+            }
+        }
+
+        private void btn_editClientInfo_Click(object sender, EventArgs e)
+        {
+            EnableClientFields(true);
+        }    
+
+        private void btn_updateClientInfo_Click(object sender, EventArgs e)
+        {
+            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+            Client CC = SelectedJob.client;
+
+            CC.BusinessName = txt_businessName.Text;
+            CC.Address = txt_address.Text;
+            CC.SetLandLine(Person.PhoneToInt(txt_landLine.Text));
+            CC.SetMobile(Person.PhoneToInt(txt_mobile.Text));
+            CC.email = txt_email.Text;
+
+            EnableClientFields(false);
+
+            LoadClientDetail();
+        }
+
+        private void LoadClientDetail()
+        {
+            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+            //Client information loaded in
+            Client CurrentClient = SelectedJob.client;
+            comboBox_client.Text = CurrentClient.Name;
+            txt_address.Text = CurrentClient.address;
+            txt_businessName.Text = CurrentClient.BusinessName;
+            txt_email.Text = CurrentClient.Email;
+            txt_landLine.Text = CurrentClient.LandLine.ToString();
+            txt_mobile.Text = CurrentClient.Mobile.ToString();
+        }
+
+        private void EnableClientFields(bool value)
+        {
+            txt_businessName.Enabled = value;
+            txt_address.Enabled = value;
+            txt_landLine.Enabled = value;
+            txt_mobile.Enabled = value;
+            txt_email.Enabled = value;
+        }
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            p.Serialise();
+        }
+
+        private void txt_landLine_TextChanged(object sender, EventArgs e)
+        {
+            
+            TextBox Parent = (TextBox)sender;
+            int x = Parent.SelectionStart;
+
+            Parent.Text = Person.PhoneToString(Person.PhoneToInt(Parent.Text));
+            Parent.SelectionStart = x;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //updating shift
         }
     }
 }

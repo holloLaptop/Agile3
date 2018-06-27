@@ -24,6 +24,7 @@ namespace Assignment_3
         public DateTime StartTime;
         public DateTime CompletionTime;
 
+        public List<ContractShift> Shifts = new List<ContractShift>();
 
     }
 }
