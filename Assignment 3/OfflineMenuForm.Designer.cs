@@ -59,6 +59,7 @@
             this.btn_printJobs.Text = "Print Jobs";
             this.btn_printJobs.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_printJobs.UseVisualStyleBackColor = false;
+            this.btn_printJobs.Click += new System.EventHandler(this.btn_printJobs_Click);
             // 
             // btn_viewJobs
             // 

@@ -28,9 +28,21 @@ namespace Assignment_3
             this.Hide();
         }
 
+        private void btn_printJobs_Click(object sender, EventArgs e)
+        {
+            Form printJobForm = new PrintJobForm(this);
+            printJobForm.Show();
+            this.Hide();
+        }
+
         private void OfflineMenuForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainForm.Show();
+        }
+
+        private void btn_return_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void OfflineMenuForm_Load(object sender, EventArgs e)
@@ -38,9 +50,5 @@ namespace Assignment_3
 
         }
 
-        private void btn_return_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
