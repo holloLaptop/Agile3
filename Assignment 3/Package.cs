@@ -50,6 +50,7 @@ namespace Assignment_3
         {
             if (getClient(add.id) == null) Clients.Add(add);
         }
+
         //fetching client by id (Slow but is O(N) )
         public Client getClient(int id)
         {
@@ -78,6 +79,7 @@ namespace Assignment_3
                 stream.Close();
             }
         }
+
         public void Deserialise()
         {
             OpenFileDialog fileDialog = new OpenFileDialog();

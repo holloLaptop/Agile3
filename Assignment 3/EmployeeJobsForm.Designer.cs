@@ -74,6 +74,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox_shifts = new System.Windows.Forms.ComboBox();
             this.btn_export = new System.Windows.Forms.Button();
+            this.checkBox_paid = new System.Windows.Forms.CheckBox();
             this.grpBox_completed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
@@ -116,6 +117,7 @@
             // 
             // grpBox_completed
             // 
+            this.grpBox_completed.Controls.Add(this.checkBox_paid);
             this.grpBox_completed.Controls.Add(this.date_completedTime);
             this.grpBox_completed.Controls.Add(this.lbl_dateCompleted);
             this.grpBox_completed.Controls.Add(this.txt_amountCharged);
@@ -565,6 +567,18 @@
             this.btn_export.UseVisualStyleBackColor = true;
             this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
+            // checkBox_paid
+            // 
+            this.checkBox_paid.AutoSize = true;
+            this.checkBox_paid.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox_paid.Location = new System.Drawing.Point(327, 66);
+            this.checkBox_paid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBox_paid.Name = "checkBox_paid";
+            this.checkBox_paid.Size = new System.Drawing.Size(75, 24);
+            this.checkBox_paid.TabIndex = 7;
+            this.checkBox_paid.Text = "Paid?";
+            this.checkBox_paid.UseVisualStyleBackColor = true;
+            // 
             // EmployeeJobsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -644,5 +658,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_export;
+        private System.Windows.Forms.CheckBox checkBox_paid;
     }
 }
