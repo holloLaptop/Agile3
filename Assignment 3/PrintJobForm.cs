@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace Assignment_3
     public partial class PrintJobForm : Form
     {
         Package p = new Package();
+
+        PaintEventArgs paintEventArg; // Creates a global PEA that can be used for Print (without having to pass as parameter).
 
         // Keeps track of the parent form.
         Form offlineMenuForm = new OfflineMenuForm(null);
@@ -107,7 +110,7 @@ namespace Assignment_3
             txt_email.Text = currentJob.client.email;
         }
 
-        // Print the current form in an invoice format.
+        // Prepare the information for printing.
         private void btn_confirmPrint_Click(object sender, EventArgs e)
         {
             // Check if Fee is null; safest value to check as we already check this when we import jobs.
@@ -123,10 +126,51 @@ namespace Assignment_3
                     "Land Line No.: " + txt_landLine.Text + "\n" +
                     "Mobile Ph. No.: " + txt_mobile.Text + "\n" +
                     "Email: " + txt_email.Text + "\n";
+
+                Print(text);
             } else
             {
                 MessageBox.Show("Error: Required fields missing.", "Fields Missing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        // Print the page in an invoice format.
+        private void Print(string text)
+        {
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(this.PrintPageEvent);
+
+            Graphics g = paintEventArg.Graphics;
+
+            SolidBrush solidBlackBrush = new SolidBrush(Color.Black);
+            Font arial12 = new Font("Arial", 12);
+            g.DrawString(text, arial12, solidBlackBrush, 10, 10);
+
+            base.OnPaint(paintEventArg);
+
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = pd;
+
+            PrintPreviewDialog printPreview = new PrintPreviewDialog();
+            printPreview.Document = pd;
+            printPreview.ShowDialog();
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                pd.Print();
+            }
+        }
+
+        private void PrintPageEvent(object sender, PrintPageEventArgs ev)
+        {
+            Graphics g = ev.Graphics;
+
+            float maxHeight = ev.PageSettings.PrintableArea.Height;
+            float maxWidth = ev.PageSettings.PrintableArea.Width;
+            float marginLeft = ev.PageSettings.Margins.Left;
+            float marginRight = ev.PageSettings.Margins.Right;
+            float marginTop = ev.PageSettings.Margins.Top;
+            float marginBottom = ev.PageSettings.Margins.Bottom;
         }
     }
 }
