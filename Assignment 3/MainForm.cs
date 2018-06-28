@@ -29,11 +29,6 @@ namespace Assignment_3
             timer1.Enabled = true; // Timer to delay the time before an SQL connection is attempted.
         }
 
-        private void btn_refresh_Click(object sender, EventArgs e)
-        {
-            IsOnline();
-        }
-
         private void IsOnline()
         {
             Ping ping = new Ping();
@@ -44,7 +39,7 @@ namespace Assignment_3
 
                 if (pingReply.Status == IPStatus.Success) //Preference of succeeding...
                 {
-                    Object dummy = dummyTableAdapter1.GetData(0);
+                    //Object dummy = dummyTableAdapter1.GetData(0);
                     btn_home.BackgroundImage = Resources.HomeMenu;
                     btn_home.Enabled = true;
                 }
