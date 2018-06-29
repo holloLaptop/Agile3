@@ -10,6 +10,8 @@ namespace Assignment_3
     public class Contractors : Person { 
         public Contractors() { }        
         public int EmployeeID;
-        //this is a comit
+
+        //this is already in Person under name, use has been updated for consistancy
+        //public string EmployeeName;
     }
 }

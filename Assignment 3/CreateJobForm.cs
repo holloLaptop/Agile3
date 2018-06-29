@@ -30,7 +30,8 @@ namespace Assignment_3
         private void btn_submit_Click(object sender, EventArgs e) {
             try
             {
-                this.getClientsTableAdapter.FillBy(this.agileDevelopmentDataSet.GetClients);
+                this.getClientsTableAdapter.Fill(this.agileDevelopmentDataSet.GetClients);
+
             }
             catch (System.Exception ex)
             {
