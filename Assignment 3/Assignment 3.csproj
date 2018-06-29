@@ -123,6 +123,12 @@
     </Compile>
     <Compile Include="Package.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PrintJobForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintJobForm.Designer.cs">
+      <DependentUpon>PrintJobForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateEmployeeForm.resx">
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OfflineMenuForm.resx">
       <DependentUpon>OfflineMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintJobForm.resx">
+      <DependentUpon>PrintJobForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

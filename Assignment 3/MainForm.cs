@@ -31,11 +31,6 @@ namespace Assignment_3
             //IsOnline();
         }
 
-        private void btn_refresh_Click(object sender, EventArgs e)
-        {
-            IsOnline();
-        }
-
         private void IsOnline()
         {
             Ping ping = new Ping();
