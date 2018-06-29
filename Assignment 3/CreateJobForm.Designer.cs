@@ -107,6 +107,7 @@
             // 
             // comboBox_clientID
             // 
+            this.comboBox_clientID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.getClientsBindingSource, "PersonID", true));
             this.comboBox_clientID.DataSource = this.getClientsBindingSource;
             this.comboBox_clientID.DisplayMember = "Name";
             this.comboBox_clientID.FormattingEnabled = true;
