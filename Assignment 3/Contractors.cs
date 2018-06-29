@@ -10,8 +10,8 @@ namespace Assignment_3
     public class Contractors : Person { 
         public Contractors() { }        
         public int EmployeeID;
-        //this needs to be removed, name variable is already in person
+
+        //this is already in Person under name, use has been updated for consistancy
         //public string EmployeeName;
-        //this is a comit
     }
 }
