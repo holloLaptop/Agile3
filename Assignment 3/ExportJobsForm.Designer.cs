@@ -292,7 +292,7 @@
             this.Controls.Add(this.lbl_startTime);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ExportJobsForm";
-            this.Text = "Export Jobs";
+            this.Text = "Import and Export Jobs";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExportJobsForm_FormClosed);
             this.Load += new System.EventHandler(this.ExportJobsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).EndInit();

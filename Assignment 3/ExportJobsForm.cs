@@ -83,6 +83,15 @@ namespace Assignment_3
                     //Console.WriteLine(newJob.ToString());
                     //setting values of the new Job
                     p.AddJob(newJob);
+
+                    // Contractor info
+                    //  Retrieves data on the employee based on their ID.
+                    DataTable employeeTable = getEmployeesTableAdapter.GetData();
+                    DataRow employeeRow = employeeTable.Rows.Find(table.Rows[i][0]);
+
+                    Contractors contractor = new Contractors();
+                    contractor.EmployeeID = int.Parse(table.Rows[i][0].ToString());
+                    contractor.name = employeeRow[2].ToString();
                 }
                 p.AddShift(newShift);
             }
@@ -108,7 +117,7 @@ namespace Assignment_3
                 dataGridView1.DataSource = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);
             } catch
             {
-              MessageBox.Show("Error: Client/Date selected is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+              MessageBox.Show("Error: Client/Date selected is invalid.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
