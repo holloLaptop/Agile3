@@ -33,6 +33,7 @@
             this.lbl_client = new System.Windows.Forms.Label();
             this.lbl_description = new System.Windows.Forms.Label();
             this.grpBox_completed = new System.Windows.Forms.GroupBox();
+            this.checkBox_paid = new System.Windows.Forms.CheckBox();
             this.date_completedTime = new System.Windows.Forms.DateTimePicker();
             this.lbl_dateCompleted = new System.Windows.Forms.Label();
             this.txt_amountCharged = new System.Windows.Forms.TextBox();
@@ -74,7 +75,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox_shifts = new System.Windows.Forms.ComboBox();
             this.btn_export = new System.Windows.Forms.Button();
-            this.checkBox_paid = new System.Windows.Forms.CheckBox();
             this.grpBox_completed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
@@ -131,6 +131,19 @@
             this.grpBox_completed.Size = new System.Drawing.Size(467, 234);
             this.grpBox_completed.TabIndex = 5;
             this.grpBox_completed.TabStop = false;
+            // 
+            // checkBox_paid
+            // 
+            this.checkBox_paid.AutoSize = true;
+            this.checkBox_paid.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox_paid.Location = new System.Drawing.Point(327, 66);
+            this.checkBox_paid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBox_paid.Name = "checkBox_paid";
+            this.checkBox_paid.Size = new System.Drawing.Size(75, 24);
+            this.checkBox_paid.TabIndex = 7;
+            this.checkBox_paid.Text = "Paid?";
+            this.checkBox_paid.UseVisualStyleBackColor = true;
+            this.checkBox_paid.CheckStateChanged += new System.EventHandler(this.checkBox_paid_CheckStateChanged);
             // 
             // date_completedTime
             // 
@@ -205,6 +218,7 @@
             // 
             // comboBox_jobs
             // 
+            this.comboBox_jobs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_jobs.FormattingEnabled = true;
             this.comboBox_jobs.Location = new System.Drawing.Point(107, 8);
             this.comboBox_jobs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -255,7 +269,7 @@
             // 
             // btn_import
             // 
-            this.btn_import.Location = new System.Drawing.Point(343, 1);
+            this.btn_import.Location = new System.Drawing.Point(336, 5);
             this.btn_import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_import.Name = "btn_import";
             this.btn_import.Size = new System.Drawing.Size(119, 38);
@@ -548,6 +562,7 @@
             // comboBox_shifts
             // 
             this.comboBox_shifts.DisplayMember = "Name";
+            this.comboBox_shifts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_shifts.FormattingEnabled = true;
             this.comboBox_shifts.Location = new System.Drawing.Point(162, 11);
             this.comboBox_shifts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -570,19 +585,6 @@
             this.btn_export.Text = "Export";
             this.btn_export.UseVisualStyleBackColor = true;
             this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
-            // 
-            // checkBox_paid
-            // 
-            this.checkBox_paid.AutoSize = true;
-            this.checkBox_paid.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox_paid.Location = new System.Drawing.Point(327, 66);
-            this.checkBox_paid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox_paid.Name = "checkBox_paid";
-            this.checkBox_paid.Size = new System.Drawing.Size(75, 24);
-            this.checkBox_paid.TabIndex = 7;
-            this.checkBox_paid.Text = "Paid?";
-            this.checkBox_paid.UseVisualStyleBackColor = true;
-            this.checkBox_paid.CheckStateChanged += new System.EventHandler(this.checkBox_paid_CheckStateChanged);
             // 
             // EmployeeJobsForm
             // 

@@ -57,7 +57,7 @@
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getShiftForEmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getShiftForEmployeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_import = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.getEmployeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet1)).BeginInit();
@@ -160,6 +160,7 @@
             this.comboBox_employeeID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.getEmployeesBindingSource, "EmployeeID", true));
             this.comboBox_employeeID.DataSource = this.getEmployeesBindingSource;
             this.comboBox_employeeID.DisplayMember = "Name";
+            this.comboBox_employeeID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_employeeID.FormattingEnabled = true;
             this.comboBox_employeeID.Location = new System.Drawing.Point(109, 10);
             this.comboBox_employeeID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -264,16 +265,16 @@
             this.getShiftForEmployeeBindingSource1.DataMember = "GetShiftForEmployee";
             this.getShiftForEmployeeBindingSource1.DataSource = this.agileDevelopmentDataSet;
             // 
-            // button1
+            // btn_import
             // 
-            this.button1.Location = new System.Drawing.Point(211, 133);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 36);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Import";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_import.Location = new System.Drawing.Point(211, 133);
+            this.btn_import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_import.Name = "btn_import";
+            this.btn_import.Size = new System.Drawing.Size(94, 36);
+            this.btn_import.TabIndex = 11;
+            this.btn_import.Text = "Import";
+            this.btn_import.UseVisualStyleBackColor = true;
+            this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
             // 
             // ExportJobsForm
             // 
@@ -283,7 +284,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox_employeeID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_import);
             this.Controls.Add(this.btn_export);
             this.Controls.Add(this.date_endTime);
             this.Controls.Add(this.date_startTime);
@@ -334,7 +335,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource getShiftForEmployeeBindingSource;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_import;
         private System.Windows.Forms.BindingSource getShiftForEmployeeBindingSource1;
         private System.Windows.Forms.ComboBox comboBox_employeeID;
     }

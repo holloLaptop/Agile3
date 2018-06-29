@@ -68,6 +68,7 @@
             this.comboBox_employeeID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.getEmployeesBindingSource, "EmployeeID", true));
             this.comboBox_employeeID.DataSource = this.getEmployeesBindingSource;
             this.comboBox_employeeID.DisplayMember = "Name";
+            this.comboBox_employeeID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_employeeID.FormattingEnabled = true;
             this.comboBox_employeeID.Location = new System.Drawing.Point(145, 10);
             this.comboBox_employeeID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -99,6 +100,7 @@
             // 
             this.comboBox_job.DataSource = this.getJobsBindingSource;
             this.comboBox_job.DisplayMember = "BusinessName";
+            this.comboBox_job.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_job.FormattingEnabled = true;
             this.comboBox_job.Location = new System.Drawing.Point(145, 50);
             this.comboBox_job.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

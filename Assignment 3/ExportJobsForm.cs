@@ -103,10 +103,16 @@ namespace Assignment_3
             DateTime Start = date_startTime.Value;
             DateTime End = date_endTime.Value;
 
-            dataGridView1.DataSource = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);            
+            try
+            {
+                dataGridView1.DataSource = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);
+            } catch
+            {
+              MessageBox.Show("Error: Client/Date selected is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_import_Click(object sender, EventArgs e)
         {
             //so simple, nothing else needed
             Package p = new Package();
