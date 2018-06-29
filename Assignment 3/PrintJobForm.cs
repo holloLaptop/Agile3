@@ -82,7 +82,7 @@ namespace Assignment_3
             comboBox_jobs.Items.Add(item);
 
             //  Contractor
-            txt_contractor.Text = contractor.EmployeeName.ToString();
+            txt_contractor.Text = contractor.Name.ToString();
 
             //  Description
             txt_description.Text = currentJob.ShortDescription;

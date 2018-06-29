@@ -49,7 +49,7 @@
             this.btn_import = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txt_description = new System.Windows.Forms.RichTextBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_updateClientInfo = new System.Windows.Forms.Button();
@@ -141,6 +141,7 @@
             this.date_completedTime.Name = "date_completedTime";
             this.date_completedTime.Size = new System.Drawing.Size(290, 26);
             this.date_completedTime.TabIndex = 6;
+            this.date_completedTime.ValueChanged += new System.EventHandler(this.date_completedTime_ValueChanged);
             // 
             // lbl_dateCompleted
             // 
@@ -169,6 +170,7 @@
             this.txt_notes.Name = "txt_notes";
             this.txt_notes.Size = new System.Drawing.Size(290, 118);
             this.txt_notes.TabIndex = 3;
+            this.txt_notes.TextChanged += new System.EventHandler(this.txt_notes_TextChanged);
             // 
             // lbl_notes
             // 
@@ -274,7 +276,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.richTextBox1);
+            this.tabPage1.Controls.Add(this.txt_description);
             this.tabPage1.Controls.Add(this.lbl_jobs);
             this.tabPage1.Controls.Add(this.btn_import);
             this.tabPage1.Controls.Add(this.grpBox_completed);
@@ -290,14 +292,16 @@
             this.tabPage1.Text = "Job Information";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // txt_description
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(107, 51);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(348, 88);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
+            this.txt_description.Enabled = false;
+            this.txt_description.Location = new System.Drawing.Point(107, 51);
+            this.txt_description.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_description.Name = "txt_description";
+            this.txt_description.ReadOnly = true;
+            this.txt_description.Size = new System.Drawing.Size(348, 88);
+            this.txt_description.TabIndex = 12;
+            this.txt_description.Text = "";
             // 
             // tabControl2
             // 
@@ -578,6 +582,7 @@
             this.checkBox_paid.TabIndex = 7;
             this.checkBox_paid.Text = "Paid?";
             this.checkBox_paid.UseVisualStyleBackColor = true;
+            this.checkBox_paid.CheckStateChanged += new System.EventHandler(this.checkBox_paid_CheckStateChanged);
             // 
             // EmployeeJobsForm
             // 
@@ -635,7 +640,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txt_description;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DateTimePicker dtp_ShiftStarted;

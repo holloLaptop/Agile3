@@ -84,6 +84,7 @@ namespace Assignment_3
             offlineMenuForm.Show();
         }
 
+        // Ensure only valid text is entered; automatically save the value when it is changed.
         private void txt_amountCharged_TextChanged(object sender, EventArgs e)
         {
             String t = "0123456789.";
@@ -92,11 +93,24 @@ namespace Assignment_3
                     txt_amountCharged.Text = "0";
                 }
             }
+
+            // Make sure we're assigning the value to a non-null job; crashes otherwise.
+            if (comboBox_jobs.SelectedIndex != -1)
+            {
+                try
+                {
+                    p.JobInformation[comboBox_jobs.SelectedIndex].Charged = Convert.ToDecimal(txt_amountCharged.Text);
+                } catch
+                {
+                    p.JobInformation[comboBox_jobs.SelectedIndex].Charged = 0; // Default
+                }
+            }
         }
 
         private void comboBox_jobs_SelectedIndexChanged(object sender, EventArgs e)
         {
             Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+            txt_description.Text = SelectedJob.ShortDescription;
             //Client information loaded in
             /*Client CurrentClient = SelectedJob.client;
             comboBox_client.Text = CurrentClient.Name ;
@@ -215,6 +229,57 @@ namespace Assignment_3
         private void button1_Click(object sender, EventArgs e)
         {
             //updating shift
+        }
+
+        // Automatically save the completion time when it is changed.
+        private void date_completedTime_ValueChanged(object sender, EventArgs e)
+        {
+            // Make sure we're assigning the value to a non-null job; crashes otherwise.
+            if (comboBox_jobs.SelectedIndex != -1)
+            {
+                try
+                {
+                    p.JobInformation[comboBox_jobs.SelectedIndex].CompletionTime = date_completedTime.Value;
+                }
+                catch
+                {
+                    MessageBox.Show("Error: Chosen calendar date is invalid.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
+        // Automatically update the paid status when it is changed.
+        private void checkBox_paid_CheckStateChanged(object sender, EventArgs e)
+        {
+            // Make sure we're assigning the value to a non-null job; crashes otherwise.
+            if (comboBox_jobs.SelectedIndex != -1)
+            {
+                try
+                {
+                    p.JobInformation[comboBox_jobs.SelectedIndex].Paid = checkBox_paid.Checked;
+                }
+                catch
+                {
+                    p.JobInformation[comboBox_jobs.SelectedIndex].Paid = false; // Default
+                }
+            }
+        }
+
+        // Automatically update the notes of the contractor.
+        private void txt_notes_TextChanged(object sender, EventArgs e)
+        {
+            // Make sure we're assigning the value to a non-null job; crashes otherwise.
+            if (comboBox_jobs.SelectedIndex != -1)
+            {
+                try
+                {
+                    p.JobInformation[comboBox_jobs.SelectedIndex].Notes = txt_notes.Text;
+                }
+                catch
+                {
+                    p.JobInformation[comboBox_jobs.SelectedIndex].Notes = "None";
+                }
+            }
         }
     }
 }

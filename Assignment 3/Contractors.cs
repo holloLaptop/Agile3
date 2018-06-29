@@ -10,7 +10,6 @@ namespace Assignment_3
     public class Contractors : Person { 
         public Contractors() { }        
         public int EmployeeID;
-        public string EmployeeName;
         //this is a comit
     }
 }
