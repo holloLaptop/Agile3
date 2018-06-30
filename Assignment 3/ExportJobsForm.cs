@@ -63,7 +63,7 @@ namespace Assignment_3
                     client.id = int.Parse(table.Rows[i][13].ToString());
                     client.name = (String)table.Rows[i][14].ToString();
                     client.BusinessName = (String)table.Rows[i][12].ToString();
-                    client.Address = (String)table.Rows[i][15].ToString();
+                    client.address = (String)table.Rows[i][15].ToString();
                     try
                     {
                         client.SetLandLine(int.Parse(table.Rows[i][16].ToString()));
@@ -74,7 +74,7 @@ namespace Assignment_3
                         client.SetMobile(int.Parse(table.Rows[i][17].ToString()));
                     }
                     catch { client.SetMobile(0); }
-                    client.Email = (String)table.Rows[i][18].ToString();
+                    client.email = (String)table.Rows[i][18].ToString();
 
 
                     p.AddClient(client);
@@ -104,11 +104,9 @@ namespace Assignment_3
                     i = employeeTable.Rows.Count;
                 }
             }
-
-            Contractors contractor = new Contractors();
-            contractor.EmployeeID = int.Parse(table.Rows[0][0].ToString());
-            contractor.name = employeeRow[2].ToString();
-            p.Contractor = contractor;
+            //attempt too fix issue
+            p.Contractor.EmployeeID = int.Parse(table.Rows[0][0].ToString());
+            p.Contractor.name = employeeRow[2].ToString();
 
             //save file
             p.Serialise();
@@ -156,8 +154,8 @@ namespace Assignment_3
                 queriesTableAdapter1.UpdateClientBusinessName(ID, c.BusinessName);
                 queriesTableAdapter1.UpdatePersonAddress(ID, c.address);
                 queriesTableAdapter1.UpdatePersonEmail(ID, c.email);
-                queriesTableAdapter1.UpdatePersonLandLine(ID, c.LandLine);
-                queriesTableAdapter1.UpdatePersonMobile(ID, c.Mobile);
+                queriesTableAdapter1.UpdatePersonLandLine(ID, c.landLine);
+                queriesTableAdapter1.UpdatePersonMobile(ID, c.mobile);
                 queriesTableAdapter1.UpdatePersonName(ID, c.name);
             }
             //updating all jobs and shifts

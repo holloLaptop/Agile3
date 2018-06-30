@@ -179,7 +179,7 @@ namespace Assignment_3
             Client CC = SelectedJob.client;
 
             CC.BusinessName = txt_businessName.Text;
-            CC.Address = txt_address.Text;
+            CC.address = txt_address.Text;
             CC.SetLandLine(Person.PhoneToInt(txt_landLine.Text));
             CC.SetMobile(Person.PhoneToInt(txt_mobile.Text));
             CC.email = txt_email.Text;
@@ -194,12 +194,12 @@ namespace Assignment_3
             Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
             //Client information loaded in
             Client CurrentClient = SelectedJob.client;
-            comboBox_client.Text = CurrentClient.Name;
+            comboBox_client.Text = CurrentClient.name;
             txt_address.Text = CurrentClient.address;
             txt_businessName.Text = CurrentClient.BusinessName;
-            txt_email.Text = CurrentClient.Email;
-            txt_landLine.Text = CurrentClient.LandLine.ToString();
-            txt_mobile.Text = CurrentClient.Mobile.ToString();
+            txt_email.Text = CurrentClient.email;
+            txt_landLine.Text = CurrentClient.landLine.ToString();
+            txt_mobile.Text = CurrentClient.mobile.ToString();
         }
 
         private void EnableClientFields(bool value)
