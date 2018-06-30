@@ -27,21 +27,40 @@ namespace Assignment_3
             this.getJobsTableAdapter.Fill(this.agileDevelopmentDataSet.GetJobs);
             // TODO: This line of code loads data into the 'agileDevelopmentDataSet.GetEmployees' table. You can move, or remove it, as needed.
             this.getEmployeesTableAdapter.Fill(this.agileDevelopmentDataSet.GetEmployees);
+            DataTable jobs = agileDevelopmentDataSet.GetJobs;
+            foreach (DataRow row in jobs.Rows)
+            {
+                ComboboxItem CI = new ComboboxItem();
+                CI.Text = row[9].ToString() + "," + row[11].ToString();
+                while (CI.Text.Contains("  ")) CI.Text = CI.Text.Replace("  ", " ");
+                CI.Value = row[0].ToString();
+                comboBox_job.Items.Add(CI);
+            }
+
+            DataTable Employees = agileDevelopmentDataSet.GetEmployees;
+            foreach (DataRow row in Employees.Rows)
+            {
+                ComboboxItem CI = new ComboboxItem();
+                CI.Text = row[2].ToString();
+                CI.Value = row[0].ToString();
+                comboBox_employeeID.Items.Add(CI);
+            }
+
 
         }
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int EmployeeID = Convert.ToInt32(comboBox_employeeID.SelectedValue.ToString());
-                int JobID = Convert.ToInt32(comboBox_job.SelectedValue.ToString());
+            //try
+           // {
+                int EmployeeID = Convert.ToInt32(((ComboboxItem)comboBox_employeeID.SelectedItem).Value);
+                int JobID = Convert.ToInt32(((ComboboxItem)comboBox_job.SelectedItem).Value);
                 queriesTableAdapter1.CreateShift(EmployeeID, JobID, date_startTime.Value, date_endTime.Value);
                 //make it safe please
                 queriesTableAdapter1.Dispose();
                 this.Close();
-            }
-            catch { Console.Out.WriteLine("oops");}            
+            //}
+            //catch { Console.Out.WriteLine("oops");}            
         }
 
         private void CreateShiftForm_FormClosed(object sender, FormClosedEventArgs e)

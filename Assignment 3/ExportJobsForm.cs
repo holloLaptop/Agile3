@@ -102,23 +102,31 @@ namespace Assignment_3
         private void ExportJobsForm_Load(object sender, EventArgs e)
         {
             this.getEmployeesTableAdapter.Fill(this.agileDevelopmentDataSet.GetEmployees);
-            
+
+            //precise binding
+            DataTable Employees = agileDevelopmentDataSet.GetEmployees;
+            foreach (DataRow row in Employees.Rows)
+            {
+                ComboboxItem CI = new ComboboxItem();
+                CI.Text = row[2].ToString();
+                CI.Value = row[0].ToString();
+                comboBox_employeeID.Items.Add(CI);
+            }
             //this.getEmployeesBindingSource.Fill(this.agileDevelopmentDataSet.GetEmployees);
         }
 
         private void date_startTime_ValueChanged(object sender, EventArgs e)
         {
-            int PersonID = Convert.ToInt32(comboBox_employeeID.SelectedValue);
+            int PersonID = Convert.ToInt32(((ComboboxItem)comboBox_employeeID.SelectedItem).Value);
             DateTime Start = date_startTime.Value;
             DateTime End = date_endTime.Value;
 
-            try
-            {
+            //try{
                 dataGridView1.DataSource = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);
-            } catch
+            /*} catch
             {
               MessageBox.Show("Error: Client/Date selected is invalid.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            }*/
         }
 
         private void btn_import_Click(object sender, EventArgs e)

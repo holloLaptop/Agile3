@@ -57,25 +57,22 @@
             // lbl_employeeName
             // 
             this.lbl_employeeName.AutoSize = true;
-            this.lbl_employeeName.Location = new System.Drawing.Point(14, 13);
+            this.lbl_employeeName.Location = new System.Drawing.Point(12, 10);
             this.lbl_employeeName.Name = "lbl_employeeName";
-            this.lbl_employeeName.Size = new System.Drawing.Size(125, 20);
+            this.lbl_employeeName.Size = new System.Drawing.Size(111, 17);
             this.lbl_employeeName.TabIndex = 0;
             this.lbl_employeeName.Text = "Employee Name";
             // 
             // comboBox_employeeID
             // 
             this.comboBox_employeeID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.getEmployeesBindingSource, "EmployeeID", true));
-            this.comboBox_employeeID.DataSource = this.getEmployeesBindingSource;
-            this.comboBox_employeeID.DisplayMember = "Name";
             this.comboBox_employeeID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_employeeID.FormattingEnabled = true;
-            this.comboBox_employeeID.Location = new System.Drawing.Point(145, 10);
+            this.comboBox_employeeID.Location = new System.Drawing.Point(129, 8);
             this.comboBox_employeeID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox_employeeID.Name = "comboBox_employeeID";
-            this.comboBox_employeeID.Size = new System.Drawing.Size(296, 28);
+            this.comboBox_employeeID.Size = new System.Drawing.Size(264, 24);
             this.comboBox_employeeID.TabIndex = 1;
-            this.comboBox_employeeID.ValueMember = "EmployeeID";
             // 
             // getEmployeesBindingSource
             // 
@@ -90,25 +87,22 @@
             // lbl_job
             // 
             this.lbl_job.AutoSize = true;
-            this.lbl_job.Location = new System.Drawing.Point(14, 53);
+            this.lbl_job.Location = new System.Drawing.Point(12, 42);
             this.lbl_job.Name = "lbl_job";
-            this.lbl_job.Size = new System.Drawing.Size(35, 20);
+            this.lbl_job.Size = new System.Drawing.Size(31, 17);
             this.lbl_job.TabIndex = 2;
             this.lbl_job.Text = "Job";
             // 
             // comboBox_job
             // 
-            this.comboBox_job.DataSource = this.getJobsBindingSource;
-            this.comboBox_job.DisplayMember = "BusinessName";
             this.comboBox_job.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_job.FormattingEnabled = true;
-            this.comboBox_job.Location = new System.Drawing.Point(145, 50);
+            this.comboBox_job.Location = new System.Drawing.Point(129, 40);
             this.comboBox_job.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox_job.Name = "comboBox_job";
             this.comboBox_job.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboBox_job.Size = new System.Drawing.Size(296, 28);
+            this.comboBox_job.Size = new System.Drawing.Size(264, 24);
             this.comboBox_job.TabIndex = 3;
-            this.comboBox_job.ValueMember = "JobID";
             // 
             // getJobsBindingSource
             // 
@@ -118,9 +112,9 @@
             // lbl_startTime
             // 
             this.lbl_startTime.AutoSize = true;
-            this.lbl_startTime.Location = new System.Drawing.Point(14, 93);
+            this.lbl_startTime.Location = new System.Drawing.Point(12, 74);
             this.lbl_startTime.Name = "lbl_startTime";
-            this.lbl_startTime.Size = new System.Drawing.Size(86, 20);
+            this.lbl_startTime.Size = new System.Drawing.Size(77, 17);
             this.lbl_startTime.TabIndex = 4;
             this.lbl_startTime.Text = "Start Time:";
             // 
@@ -128,29 +122,29 @@
             // 
             this.date_endTime.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
             this.date_endTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.date_endTime.Location = new System.Drawing.Point(145, 130);
+            this.date_endTime.Location = new System.Drawing.Point(129, 104);
             this.date_endTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_endTime.Name = "date_endTime";
-            this.date_endTime.Size = new System.Drawing.Size(296, 26);
+            this.date_endTime.Size = new System.Drawing.Size(264, 22);
             this.date_endTime.TabIndex = 7;
             // 
             // date_startTime
             // 
             this.date_startTime.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
             this.date_startTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.date_startTime.Location = new System.Drawing.Point(145, 90);
+            this.date_startTime.Location = new System.Drawing.Point(129, 72);
             this.date_startTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_startTime.Name = "date_startTime";
-            this.date_startTime.Size = new System.Drawing.Size(296, 26);
+            this.date_startTime.Size = new System.Drawing.Size(264, 22);
             this.date_startTime.TabIndex = 8;
             this.date_startTime.Value = new System.DateTime(2018, 6, 18, 0, 0, 0, 0);
             // 
             // btn_submit
             // 
-            this.btn_submit.Location = new System.Drawing.Point(347, 173);
+            this.btn_submit.Location = new System.Drawing.Point(308, 138);
             this.btn_submit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(94, 36);
+            this.btn_submit.Size = new System.Drawing.Size(84, 29);
             this.btn_submit.TabIndex = 9;
             this.btn_submit.Text = "Submit";
             this.btn_submit.UseVisualStyleBackColor = true;
@@ -159,9 +153,9 @@
             // lbl_endTime
             // 
             this.lbl_endTime.AutoSize = true;
-            this.lbl_endTime.Location = new System.Drawing.Point(14, 133);
+            this.lbl_endTime.Location = new System.Drawing.Point(12, 106);
             this.lbl_endTime.Name = "lbl_endTime";
-            this.lbl_endTime.Size = new System.Drawing.Size(80, 20);
+            this.lbl_endTime.Size = new System.Drawing.Size(72, 17);
             this.lbl_endTime.TabIndex = 10;
             this.lbl_endTime.Text = "End Time:";
             // 
@@ -185,10 +179,10 @@
             // 
             // CreateShiftForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(450, 214);
+            this.ClientSize = new System.Drawing.Size(404, 178);
             this.Controls.Add(this.lbl_endTime);
             this.Controls.Add(this.btn_submit);
             this.Controls.Add(this.date_startTime);
@@ -199,8 +193,8 @@
             this.Controls.Add(this.comboBox_employeeID);
             this.Controls.Add(this.lbl_employeeName);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximumSize = new System.Drawing.Size(472, 270);
-            this.MinimumSize = new System.Drawing.Size(472, 270);
+            this.MaximumSize = new System.Drawing.Size(422, 225);
+            this.MinimumSize = new System.Drawing.Size(422, 225);
             this.Name = "CreateShiftForm";
             this.Text = "Create Shift";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateShiftForm_FormClosed);
