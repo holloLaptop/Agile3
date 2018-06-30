@@ -119,9 +119,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Client";
+            this.label1.Text = "Contractor";
             // 
             // getEmployeesBindingSource
             // 
@@ -186,7 +186,7 @@
             this.dataGridView1.DataSource = this.getShiftForEmployeeBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 144);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(25, 25, 25, 25);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(913, 353);

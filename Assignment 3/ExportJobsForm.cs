@@ -51,7 +51,10 @@ namespace Assignment_3
                     newJob.Location = (String)table.Rows[i][6].ToString();
                     newJob.priority = int.Parse(table.Rows[i][7].ToString());
                     newJob.StartTime = DateTime.Parse(table.Rows[i][8].ToString());
-                    newJob.CompletionTime = DateTime.Parse(table.Rows[i][9].ToString());
+                    try{
+                        newJob.CompletionTime = DateTime.Parse(table.Rows[i][9].ToString());
+                    }
+                    catch { }//oops
                     newJob.Charged = decimal.Parse(table.Rows[i][10].ToString());
                     newJob.Paid = Boolean.Parse(table.Rows[i][11].ToString());
 
@@ -73,7 +76,7 @@ namespace Assignment_3
                     catch { client.SetMobile(0); }
                     client.Email = (String)table.Rows[i][18].ToString();
 
-                    
+
                     p.AddClient(client);
 
 
@@ -86,13 +89,21 @@ namespace Assignment_3
 
                     // Contractor info
                     //  Retrieves data on the employee based on their ID.
-                    
+
                 }
                 p.AddShift(newShift);
             }
             //get contractor info here
             DataTable employeeTable = getEmployeesTableAdapter.GetData();
-            DataRow employeeRow = employeeTable.Rows[0];
+            DataRow employeeRow = null;
+            for (int i = 0; i < employeeTable.Rows.Count; i++)
+            {
+                if (employeeTable.Rows[i][0].ToString() == ((ComboboxItem)comboBox_employeeID.SelectedItem).Value.ToString())
+                {
+                    employeeRow = employeeTable.Rows[i];
+                    i = employeeTable.Rows.Count;
+                }
+            }
 
             Contractors contractor = new Contractors();
             contractor.EmployeeID = int.Parse(table.Rows[0][0].ToString());
