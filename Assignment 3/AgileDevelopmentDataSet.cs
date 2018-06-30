@@ -4,6 +4,10 @@
 
     partial class AgileDevelopmentDataSet
     {
+        partial class GetEmployeesDataTable
+        {
+        }
+
         partial class GetShiftForEmployeeDataTable
         {
         }

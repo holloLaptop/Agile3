@@ -25,6 +25,16 @@ namespace Assignment_3
         {
             // TODO: This line of code loads data into the 'agileDevelopmentDataSet.GetClients' table. You can move, or remove it, as needed.
             this.getClientsTableAdapter.Fill(this.agileDevelopmentDataSet.GetClients);
+
+            DataTable Clients = agileDevelopmentDataSet.GetClients;
+            foreach (DataRow row in Clients.Rows)
+            {
+                ComboboxItem CI = new ComboboxItem();
+                CI.Text = row[0].ToString() + ", " + row[2].ToString();
+                while (CI.Text.Contains("  ")) CI.Text = CI.Text.Replace("  ", " ");
+                CI.Value = row[1].ToString();
+                comboBox_clientID.Items.Add(CI);
+            }
         }
 
         private void btn_submit_Click(object sender, EventArgs e) {
@@ -42,7 +52,7 @@ namespace Assignment_3
             try
             {
 
-                int ClientID = Convert.ToInt32(comboBox_clientID.SelectedValue);
+                int ClientID = Convert.ToInt32(((ComboboxItem)comboBox_clientID.SelectedItem).Value);
                 //please this work
                 queriesTableAdapter1.CreateJob(ClientID, txt_shortDescription.Text, txt_location.Text, (byte)numUD_priority.Value, date_startTime.Value, null, 0, false);
                 queriesTableAdapter1.Dispose();

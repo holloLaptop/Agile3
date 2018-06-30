@@ -27,7 +27,7 @@ namespace Assignment_3
             DateTime Start = date_startTime.Value;
             DateTime End = date_endTime.Value;
             //fetches data from sql server
-            DataTable table = getShiftForEmployeeTableAdapter1.GetData(Convert.ToInt32(comboBox_employeeID.SelectedValue), Start, End);
+            DataTable table = getShiftForEmployeeTableAdapter1.GetData(Convert.ToInt32(((ComboboxItem)comboBox_employeeID.SelectedItem).Value), Start, End);
             //counting rows
             Console.WriteLine(table.Rows.Count);
             //for each row
@@ -86,15 +86,19 @@ namespace Assignment_3
 
                     // Contractor info
                     //  Retrieves data on the employee based on their ID.
-                    DataTable employeeTable = getEmployeesTableAdapter.GetData();
-                    DataRow employeeRow = employeeTable.Rows.Find(table.Rows[i][0]);
-
-                    Contractors contractor = new Contractors();
-                    contractor.EmployeeID = int.Parse(table.Rows[i][0].ToString());
-                    contractor.name = employeeRow[2].ToString();
+                    
                 }
                 p.AddShift(newShift);
             }
+            //get contractor info here
+            DataTable employeeTable = getEmployeesTableAdapter.GetData();
+            DataRow employeeRow = employeeTable.Rows[0];
+
+            Contractors contractor = new Contractors();
+            contractor.EmployeeID = int.Parse(table.Rows[0][0].ToString());
+            contractor.name = employeeRow[2].ToString();
+            p.Contractor = contractor;
+
             //save file
             p.Serialise();
         }
@@ -121,12 +125,12 @@ namespace Assignment_3
             DateTime Start = date_startTime.Value;
             DateTime End = date_endTime.Value;
 
-            //try{
+            try{
                 dataGridView1.DataSource = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);
-            /*} catch
+            } catch
             {
               MessageBox.Show("Error: Client/Date selected is invalid.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }*/
+            }
         }
 
         private void btn_import_Click(object sender, EventArgs e)
