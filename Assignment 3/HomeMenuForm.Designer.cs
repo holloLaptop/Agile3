@@ -147,6 +147,8 @@
             this.Controls.Add(this.btn_newJob);
             this.Controls.Add(this.btn_newEmployee);
             this.Controls.Add(this.btn_newClient);
+            this.MaximumSize = new System.Drawing.Size(796, 567);
+            this.MinimumSize = new System.Drawing.Size(796, 567);
             this.Name = "HomeMenuForm";
             this.Text = "Home";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomeMenuForm_FormClosed);

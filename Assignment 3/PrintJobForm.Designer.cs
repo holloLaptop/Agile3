@@ -277,11 +277,11 @@
             // 
             // btn_confirmPrint
             // 
-            this.btn_confirmPrint.Location = new System.Drawing.Point(419, 492);
+            this.btn_confirmPrint.Location = new System.Drawing.Point(421, 492);
             this.btn_confirmPrint.Name = "btn_confirmPrint";
             this.btn_confirmPrint.Size = new System.Drawing.Size(90, 36);
             this.btn_confirmPrint.TabIndex = 30;
-            this.btn_confirmPrint.Text = "Confirm";
+            this.btn_confirmPrint.Text = "Print";
             this.btn_confirmPrint.UseVisualStyleBackColor = true;
             this.btn_confirmPrint.Click += new System.EventHandler(this.btn_confirmPrint_Click);
             // 
@@ -301,6 +301,8 @@
             this.Controls.Add(this.btn_importJobs);
             this.Controls.Add(this.comboBox_jobs);
             this.Controls.Add(this.lbl_job);
+            this.MaximumSize = new System.Drawing.Size(540, 596);
+            this.MinimumSize = new System.Drawing.Size(540, 596);
             this.Name = "PrintJobForm";
             this.Text = "Print Invoice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PrintJobForm_FormClosed);

@@ -74,7 +74,7 @@
             this.btn_viewJobs.Name = "btn_viewJobs";
             this.btn_viewJobs.Size = new System.Drawing.Size(230, 230);
             this.btn_viewJobs.TabIndex = 0;
-            this.btn_viewJobs.Text = "View Jobs";
+            this.btn_viewJobs.Text = "Edit Jobs";
             this.btn_viewJobs.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_viewJobs.UseVisualStyleBackColor = false;
             this.btn_viewJobs.Click += new System.EventHandler(this.btn_viewJobs_Click);
@@ -87,6 +87,8 @@
             this.Controls.Add(this.btn_printJobs);
             this.Controls.Add(this.btn_return);
             this.Controls.Add(this.btn_viewJobs);
+            this.MaximumSize = new System.Drawing.Size(534, 357);
+            this.MinimumSize = new System.Drawing.Size(534, 357);
             this.Name = "OfflineMenuForm";
             this.Text = "Offline Mode";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OfflineMenuForm_FormClosed);

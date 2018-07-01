@@ -13,12 +13,12 @@ namespace Assignment_3
     public partial class OfflineMenuForm : Form
     {
         // Keeps track of the parent form.
-        private Form mainForm = new MainForm();
+        private MainForm _mainForm;
 
-        public OfflineMenuForm(Form mainForm)
+        public OfflineMenuForm(MainForm mainForm)
         {
             InitializeComponent();
-            this.mainForm = mainForm;
+            _mainForm = mainForm;
         }
 
         private void btn_viewJobs_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace Assignment_3
 
         private void OfflineMenuForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            mainForm.Show();
+            _mainForm.Show();
         }
 
         private void btn_return_Click(object sender, EventArgs e)

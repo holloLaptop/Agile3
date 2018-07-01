@@ -13,27 +13,31 @@ namespace Assignment_3
     public partial class CreateEmployeeForm : Form
     {
         // Keeps track of the parent form.
-        Form homeMenuForm = new HomeMenuForm(null);
+        private HomeMenuForm _homeMenuForm;
 
-        public CreateEmployeeForm(Form homeMenuForm)
+        public CreateEmployeeForm(HomeMenuForm homeMenuForm)
         {
             InitializeComponent();
-            this.homeMenuForm = homeMenuForm;
+            _homeMenuForm = homeMenuForm;
         }
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            try {
-                queriesTableAdapter1.CreateEmployee(txt_name.Text, txt_address.Text, txt_landLine.Text, txt_mobilePhone.Text, txt_email.Text);
-            queriesTableAdapter1.Dispose();
-            this.Close();
-        }
-            catch { Console.Out.WriteLine("oops"); }
+            if (_homeMenuForm.IsOnline())
+            {
+                try
+                {
+                    queriesTableAdapter1.CreateEmployee(txt_name.Text, txt_address.Text, txt_landLine.Text, txt_mobilePhone.Text, txt_email.Text);
+                    queriesTableAdapter1.Dispose();
+                    this.Close();
+                }
+                catch { Console.Out.WriteLine("oops"); }
+            }
 }
 
         private void CreateEmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            homeMenuForm.Show();
+            _homeMenuForm.Show();
         }
 
         private void txt_landLine_TextChanged(object sender, EventArgs e)

@@ -13,12 +13,12 @@ namespace Assignment_3
     public partial class CreateJobForm : Form
     {
         // Keeps track of the parent form.
-        Form homeMenuForm = new HomeMenuForm(null);
+        private HomeMenuForm _homeMenuForm;
 
-        public CreateJobForm(Form homeMenuForm)
+        public CreateJobForm(HomeMenuForm homeMenuForm)
         {
             InitializeComponent();
-            this.homeMenuForm = homeMenuForm;
+            _homeMenuForm = homeMenuForm;
         }
 
         private void CreateJobForm_Load(object sender, EventArgs e)
@@ -38,27 +38,29 @@ namespace Assignment_3
         }
 
         private void btn_submit_Click(object sender, EventArgs e) {
-            try
+            if (_homeMenuForm.IsOnline())
             {
-                this.getClientsTableAdapter.Fill(this.agileDevelopmentDataSet.GetClients);
+                try
+                {
+                    this.getClientsTableAdapter.Fill(this.agileDevelopmentDataSet.GetClients);
 
+                }
+                catch (System.Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+
+
+                try
+                {
+                    int ClientID = Convert.ToInt32(((ComboboxItem)comboBox_clientID.SelectedItem).Value);
+                    //please this work
+                    queriesTableAdapter1.CreateJob(ClientID, txt_shortDescription.Text, txt_location.Text, (byte)numUD_priority.Value, date_startTime.Value, null, 0, false);
+                    queriesTableAdapter1.Dispose();
+                    this.Close();
+                }
+                catch { Console.Out.WriteLine("oops"); }
             }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-
-            try
-            {
-
-                int ClientID = Convert.ToInt32(((ComboboxItem)comboBox_clientID.SelectedItem).Value);
-                //please this work
-                queriesTableAdapter1.CreateJob(ClientID, txt_shortDescription.Text, txt_location.Text, (byte)numUD_priority.Value, date_startTime.Value, null, 0, false);
-                queriesTableAdapter1.Dispose();
-                this.Close();
-            }
-            catch { Console.Out.WriteLine("oops"); }
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -68,7 +70,7 @@ namespace Assignment_3
 
         private void CreateJobForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            homeMenuForm.Show();
+            _homeMenuForm.Show();
         }
     }
 }

@@ -13,12 +13,12 @@ namespace Assignment_3
     public partial class CreateShiftForm : Form
     {
         // Keeps track of the parent form.
-        Form homeMenuForm = new HomeMenuForm(null);
+        private HomeMenuForm _homeMenuForm;
 
-        public CreateShiftForm(Form homeMenuForm)
+        public CreateShiftForm(HomeMenuForm homeMenuForm)
         {
             InitializeComponent();
-            this.homeMenuForm = homeMenuForm;
+            _homeMenuForm = homeMenuForm;
         }
 
         private void CreateShiftForm_Load(object sender, EventArgs e)
@@ -51,21 +51,24 @@ namespace Assignment_3
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            //try
-           // {
+            if (_homeMenuForm.IsOnline())
+            {
+                //try
+                // {
                 int EmployeeID = Convert.ToInt32(((ComboboxItem)comboBox_employeeID.SelectedItem).Value);
                 int JobID = Convert.ToInt32(((ComboboxItem)comboBox_job.SelectedItem).Value);
                 queriesTableAdapter1.CreateShift(EmployeeID, JobID, date_startTime.Value, date_endTime.Value);
                 //make it safe please
                 queriesTableAdapter1.Dispose();
                 this.Close();
-            //}
-            //catch { Console.Out.WriteLine("oops");}            
+                //}
+                //catch { Console.Out.WriteLine("oops");}   
+            }
         }
 
         private void CreateShiftForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            homeMenuForm.Show();
+            _homeMenuForm.Show();
         }
     }
 }

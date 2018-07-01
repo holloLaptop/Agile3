@@ -13,12 +13,12 @@ namespace Assignment_3
     public partial class CreateNewClientForm : Form
     {
         // Keeps track of the parent form.
-        Form homeMenuForm = new HomeMenuForm(null);
+        private HomeMenuForm _homeMenuForm;
 
-        public CreateNewClientForm(Form homeMenuForm)
+        public CreateNewClientForm(HomeMenuForm homeMenuForm)
         {
             InitializeComponent();
-            this.homeMenuForm = homeMenuForm;
+            _homeMenuForm = homeMenuForm;
         }
 
         private void CreateNewClientForm_Load(object sender, EventArgs e)
@@ -28,20 +28,23 @@ namespace Assignment_3
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            try
+            if (_homeMenuForm.IsOnline())
             {
-                queriesTableAdapter1.CreateClient(txt_name.Text, txt_address.Text, txt_landLine.Text, txt_mobilePhone.Text, txt_email.Text, txt_businessName.Text);
+                try
+                {
+                    queriesTableAdapter1.CreateClient(txt_name.Text, txt_address.Text, txt_landLine.Text, txt_mobilePhone.Text, txt_email.Text, txt_businessName.Text);
 
-                //make it safe please
-                queriesTableAdapter1.Dispose();
-                this.Close();
+                    //make it safe please
+                    queriesTableAdapter1.Dispose();
+                    this.Close();
+                }
+                catch { Console.Out.WriteLine("oops"); }
             }
-            catch { Console.Out.WriteLine("oops"); }
         }
 
         private void CreateNewClientForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            homeMenuForm.Show();
+            _homeMenuForm.Show();
         }
 
         private void txt_mobilePhone_TextChanged(object sender, EventArgs e)

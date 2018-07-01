@@ -15,12 +15,12 @@ namespace Assignment_3
     {
         Package p = new Package();
         // Keeps track of the parent form of this form.
-        Form offlineMenuForm = new OfflineMenuForm(null);
+        private OfflineMenuForm _offlineMenuForm;
 
-        public EmployeeJobsForm(Form offlineMenuForm)
+        public EmployeeJobsForm(OfflineMenuForm offlineMenuForm)
         {
             InitializeComponent();
-            this.offlineMenuForm = offlineMenuForm;
+            _offlineMenuForm = offlineMenuForm;
         }
 
         private void txt_amountCharged_KeyPress(object sender, KeyPressEventArgs e)
@@ -74,14 +74,9 @@ namespace Assignment_3
             if (p.JobInformation.Count > 0) comboBox_jobs.SelectedIndex = 0;
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void EmployeeJobsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            offlineMenuForm.Show();
+            _offlineMenuForm.Show();
         }
 
         // Ensure only valid text is entered; automatically save the value when it is changed.

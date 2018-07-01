@@ -70,45 +70,45 @@
             // lbl_startTime
             // 
             this.lbl_startTime.AutoSize = true;
-            this.lbl_startTime.Location = new System.Drawing.Point(15, 42);
+            this.lbl_startTime.Location = new System.Drawing.Point(17, 52);
             this.lbl_startTime.Name = "lbl_startTime";
-            this.lbl_startTime.Size = new System.Drawing.Size(77, 17);
+            this.lbl_startTime.Size = new System.Drawing.Size(86, 20);
             this.lbl_startTime.TabIndex = 0;
             this.lbl_startTime.Text = "Start Time:";
             // 
             // lbl_endTime
             // 
             this.lbl_endTime.AutoSize = true;
-            this.lbl_endTime.Location = new System.Drawing.Point(15, 74);
+            this.lbl_endTime.Location = new System.Drawing.Point(17, 92);
             this.lbl_endTime.Name = "lbl_endTime";
-            this.lbl_endTime.Size = new System.Drawing.Size(72, 17);
+            this.lbl_endTime.Size = new System.Drawing.Size(80, 20);
             this.lbl_endTime.TabIndex = 1;
             this.lbl_endTime.Text = "End Time:";
             // 
             // date_startTime
             // 
-            this.date_startTime.Location = new System.Drawing.Point(97, 40);
+            this.date_startTime.Location = new System.Drawing.Point(109, 50);
             this.date_startTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_startTime.Name = "date_startTime";
-            this.date_startTime.Size = new System.Drawing.Size(264, 22);
+            this.date_startTime.Size = new System.Drawing.Size(296, 26);
             this.date_startTime.TabIndex = 2;
             this.date_startTime.ValueChanged += new System.EventHandler(this.date_startTime_ValueChanged);
             // 
             // date_endTime
             // 
-            this.date_endTime.Location = new System.Drawing.Point(97, 72);
+            this.date_endTime.Location = new System.Drawing.Point(109, 90);
             this.date_endTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_endTime.Name = "date_endTime";
-            this.date_endTime.Size = new System.Drawing.Size(264, 22);
+            this.date_endTime.Size = new System.Drawing.Size(296, 26);
             this.date_endTime.TabIndex = 3;
             this.date_endTime.ValueChanged += new System.EventHandler(this.date_startTime_ValueChanged);
             // 
             // btn_export
             // 
-            this.btn_export.Location = new System.Drawing.Point(276, 106);
+            this.btn_export.Location = new System.Drawing.Point(310, 132);
             this.btn_export.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_export.Name = "btn_export";
-            this.btn_export.Size = new System.Drawing.Size(84, 29);
+            this.btn_export.Size = new System.Drawing.Size(94, 36);
             this.btn_export.TabIndex = 11;
             this.btn_export.Text = "Export";
             this.btn_export.UseVisualStyleBackColor = true;
@@ -117,9 +117,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 10);
+            this.label1.Location = new System.Drawing.Point(17, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 17);
+            this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Contractor";
             // 
@@ -160,10 +160,10 @@
             this.comboBox_employeeID.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.getEmployeesBindingSource, "EmployeeID", true));
             this.comboBox_employeeID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_employeeID.FormattingEnabled = true;
-            this.comboBox_employeeID.Location = new System.Drawing.Point(97, 8);
+            this.comboBox_employeeID.Location = new System.Drawing.Point(109, 10);
             this.comboBox_employeeID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox_employeeID.Name = "comboBox_employeeID";
-            this.comboBox_employeeID.Size = new System.Drawing.Size(264, 24);
+            this.comboBox_employeeID.Size = new System.Drawing.Size(296, 28);
             this.comboBox_employeeID.TabIndex = 13;
             this.comboBox_employeeID.SelectedIndexChanged += new System.EventHandler(this.date_startTime_ValueChanged);
             this.comboBox_employeeID.ValueMemberChanged += new System.EventHandler(this.date_startTime_ValueChanged);
@@ -185,11 +185,11 @@
             this.personIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.getShiftForEmployeeBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 144);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(25);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 184);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(28, 31, 28, 31);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(913, 353);
+            this.dataGridView1.Size = new System.Drawing.Size(1043, 441);
             this.dataGridView1.TabIndex = 14;
             // 
             // employeeIDDataGridViewTextBoxColumn
@@ -264,10 +264,10 @@
             // 
             // btn_import
             // 
-            this.btn_import.Location = new System.Drawing.Point(188, 106);
+            this.btn_import.Location = new System.Drawing.Point(212, 132);
             this.btn_import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_import.Name = "btn_import";
-            this.btn_import.Size = new System.Drawing.Size(84, 29);
+            this.btn_import.Size = new System.Drawing.Size(94, 36);
             this.btn_import.TabIndex = 11;
             this.btn_import.Text = "Import";
             this.btn_import.UseVisualStyleBackColor = true;
@@ -275,9 +275,9 @@
             // 
             // ExportJobsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 497);
+            this.ClientSize = new System.Drawing.Size(1043, 625);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox_employeeID);
             this.Controls.Add(this.label1);
@@ -288,6 +288,7 @@
             this.Controls.Add(this.lbl_endTime);
             this.Controls.Add(this.lbl_startTime);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1065, 681);
             this.Name = "ExportJobsForm";
             this.Text = "Import and Export Jobs";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExportJobsForm_FormClosed);

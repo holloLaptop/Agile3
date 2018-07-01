@@ -46,7 +46,6 @@
             this.agileDevelopmentDataSet = new Assignment_3.AgileDevelopmentDataSet();
             this.getJobsTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetJobsTableAdapter();
             this.comboBox_client = new System.Windows.Forms.ComboBox();
-            this.btn_save = new System.Windows.Forms.Button();
             this.btn_import = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -255,17 +254,6 @@
             this.comboBox_client.TabIndex = 7;
             this.comboBox_client.ValueMember = "PersonID";
             this.comboBox_client.SelectedIndexChanged += new System.EventHandler(this.comboBox_client_SelectedIndexChanged);
-            // 
-            // btn_save
-            // 
-            this.btn_save.Location = new System.Drawing.Point(389, 642);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(94, 36);
-            this.btn_save.TabIndex = 10;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_import
             // 
@@ -590,15 +578,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 569);
+            this.ClientSize = new System.Drawing.Size(975, 566);
             this.Controls.Add(this.tabControl3);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.btn_export);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btn_save);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(997, 622);
+            this.MinimumSize = new System.Drawing.Size(997, 622);
             this.Name = "EmployeeJobsForm";
-            this.Text = "Export Jobs";
+            this.Text = "Edit Jobs";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EmployeeJobsForm_FormClosed);
             this.Load += new System.EventHandler(this.EmployeeJobs_Load);
             this.grpBox_completed.ResumeLayout(false);
@@ -636,7 +625,6 @@
         private System.Windows.Forms.DateTimePicker date_completedTime;
         private System.Windows.Forms.Label lbl_dateCompleted;
         private System.Windows.Forms.ComboBox comboBox_client;
-        private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_import;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;

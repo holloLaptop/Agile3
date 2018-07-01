@@ -15,20 +15,18 @@ namespace Assignment_3
     {
         Package p = new Package();
 
-        PaintEventArgs paintEventArg; // Creates a global PEA that can be used for Print (without having to pass as parameter).
-
         // Keeps track of the parent form.
-        Form offlineMenuForm = new OfflineMenuForm(null);
+        private OfflineMenuForm _offlineMenuForm;
 
-        public PrintJobForm(Form offlineMenuForm)
+        public PrintJobForm(OfflineMenuForm offlineMenuForm)
         {
             InitializeComponent();
-            this.offlineMenuForm = offlineMenuForm;
+            _offlineMenuForm = offlineMenuForm;
         }
 
         private void PrintJobForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            offlineMenuForm.Show();
+            _offlineMenuForm.Show();
         }
 
         private void btn_importJobs_Click(object sender, EventArgs e)
@@ -63,7 +61,7 @@ namespace Assignment_3
             }
             else
             {
-                MessageBox.Show("Error: There are no jobs to print.", "No Jobs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Error: There are no completed jobs to print.", "No Jobs", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -76,8 +74,7 @@ namespace Assignment_3
 
             // JOB
             //  Job
-            item.Text = currentJob.ID.ToString();
-            while (item.Text.Contains("  ")) item.Text = item.Text.Replace("  ", " ");
+            item.Text = currentJob.client.name + ", Job " + currentJob.ID.ToString();
             item.Value = currentJob.ID;
             comboBox_jobs.Items.Add(item);
 
@@ -115,19 +112,8 @@ namespace Assignment_3
         {
             // Check if Fee is null; safest value to check as we already check this when we import jobs.
             if (txt_fee != null)
-            {
-                string text = "Contractor: " + txt_contractor.Text + "\n" +
-                    "Job Description: " + txt_description.Text + "\n" +
-                    "Charged: $" + txt_fee.Text + "\n" + "\n" +
-                    "FOR THE CLIENT:" + "\n" +
-                    "Name: " + txt_name.Text + "\n" +
-                    "Business: " + txt_business.Text + "\n" +
-                    "Address: " + txt_address.Text + "\n" +
-                    "Land Line No.: " + txt_landLine.Text + "\n" +
-                    "Mobile Ph. No.: " + txt_mobile.Text + "\n" +
-                    "Email: " + txt_email.Text + "\n";
-
-                Print(text);
+            {           
+                PrintPage();
             } else
             {
                 MessageBox.Show("Error: Required fields missing.", "Fields Missing", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -135,26 +121,22 @@ namespace Assignment_3
         }
 
         // Print the page in an invoice format.
-        private void Print(string text)
+        private void PrintPage()
         {
+            // Set up document to be printed.
             PrintDocument pd = new PrintDocument();
             pd.PrintPage += new PrintPageEventHandler(this.PrintPageEvent);
-
-            Graphics g = paintEventArg.Graphics;
-
-            SolidBrush solidBlackBrush = new SolidBrush(Color.Black);
-            Font arial12 = new Font("Arial", 12);
-            g.DrawString(text, arial12, solidBlackBrush, 10, 10);
-
-            base.OnPaint(paintEventArg);
-
+            
+            // Print dialog; ask for a printer to be used.
             PrintDialog printDialog = new PrintDialog();
             printDialog.Document = pd;
 
+            // Print preview of the page to be printed.
             PrintPreviewDialog printPreview = new PrintPreviewDialog();
             printPreview.Document = pd;
             printPreview.ShowDialog();
 
+            // Print dialog; print if they confirm.
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 pd.Print();
@@ -165,12 +147,40 @@ namespace Assignment_3
         {
             Graphics g = ev.Graphics;
 
+            // Initialise the print area of the document.
             float maxHeight = ev.PageSettings.PrintableArea.Height;
             float maxWidth = ev.PageSettings.PrintableArea.Width;
             float marginLeft = ev.PageSettings.Margins.Left;
             float marginRight = ev.PageSettings.Margins.Right;
             float marginTop = ev.PageSettings.Margins.Top;
             float marginBottom = ev.PageSettings.Margins.Bottom;
+
+
+            SolidBrush solidBlackBrush = new SolidBrush(Color.Black);
+            Font arial12 = new Font("Arial", 12);
+
+            // The text we want to print.
+            string text = "Contractor: " + txt_contractor.Text + "\n" +
+                    "Job Description: " + txt_description.Text + "\n" +
+                    "Charged: $" + txt_fee.Text + "\n" + "\n" +
+                    "FOR THE CLIENT:" + "\n" +
+                    "Name: " + txt_name.Text + "\n" +
+                    "Business: " + txt_business.Text + "\n" +
+                    "Address: " + txt_address.Text + "\n" +
+                    "Land Line No.: " + txt_landLine.Text + "\n" +
+                    "Mobile Ph. No.: " + txt_mobile.Text + "\n" +
+                    "Email: " + txt_email.Text + "\n";
+
+            g.DrawString(text, arial12, solidBlackBrush, marginLeft, marginTop);
         }
+
+//        protected override void OnPaint(PaintEventArgs e)
+  //      {
+    //        Graphics g = e.Graphics;
+
+            
+
+        //    base.OnPaint(e);
+      //  }
     }
 }
