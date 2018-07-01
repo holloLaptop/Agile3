@@ -27,6 +27,8 @@ namespace Assignment_3
             this.getJobsTableAdapter.Fill(this.agileDevelopmentDataSet.GetJobs);
             // TODO: This line of code loads data into the 'agileDevelopmentDataSet.GetEmployees' table. You can move, or remove it, as needed.
             this.getEmployeesTableAdapter.Fill(this.agileDevelopmentDataSet.GetEmployees);
+
+            // Load the relevant data fields into the controls.
             DataTable jobs = agileDevelopmentDataSet.GetJobs;
             foreach (DataRow row in jobs.Rows)
             {
@@ -49,20 +51,25 @@ namespace Assignment_3
 
         }
 
+        // Create a new Shift in the database.
         private void btn_submit_Click(object sender, EventArgs e)
         {
             if (_homeMenuForm.IsOnline())
             {
-                //try
-                // {
-                int EmployeeID = Convert.ToInt32(((ComboboxItem)comboBox_employeeID.SelectedItem).Value);
-                int JobID = Convert.ToInt32(((ComboboxItem)comboBox_job.SelectedItem).Value);
-                queriesTableAdapter1.CreateShift(EmployeeID, JobID, date_startTime.Value, date_endTime.Value);
-                //make it safe please
-                queriesTableAdapter1.Dispose();
-                this.Close();
-                //}
-                //catch { Console.Out.WriteLine("oops");}   
+                try
+                {
+                    int EmployeeID = Convert.ToInt32(((ComboboxItem)comboBox_employeeID.SelectedItem).Value);
+                    int JobID = Convert.ToInt32(((ComboboxItem)comboBox_job.SelectedItem).Value);
+                    queriesTableAdapter1.CreateShift(EmployeeID, JobID, date_startTime.Value, date_endTime.Value);
+
+                    //Make the query safe.
+                    queriesTableAdapter1.Dispose();
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Error: A problem has occured while trying to access the database.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 

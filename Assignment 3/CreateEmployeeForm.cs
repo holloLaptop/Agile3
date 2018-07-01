@@ -21,6 +21,7 @@ namespace Assignment_3
             _homeMenuForm = homeMenuForm;
         }
 
+        // Create the employee in the database.
         private void btn_submit_Click(object sender, EventArgs e)
         {
             if (_homeMenuForm.IsOnline())
@@ -31,15 +32,19 @@ namespace Assignment_3
                     queriesTableAdapter1.Dispose();
                     this.Close();
                 }
-                catch { Console.Out.WriteLine("oops"); }
+                catch
+                {
+                    MessageBox.Show("Error: A problem has occured while trying to access the database.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-}
+        }
 
         private void CreateEmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             _homeMenuForm.Show();
         }
 
+        // Ensure valid text (numbers) are entered and convert them into a landline number format. 
         private void txt_landLine_TextChanged(object sender, EventArgs e)
         {
             TextBox Parent = (TextBox)sender;

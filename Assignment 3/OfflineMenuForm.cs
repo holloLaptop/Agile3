@@ -21,6 +21,7 @@ namespace Assignment_3
             _mainForm = mainForm;
         }
 
+        // Open a new form that allows a contractor to view and edit assigned jobs.
         private void btn_viewJobs_Click(object sender, EventArgs e)
         {
             Form employeeJobsForm = new EmployeeJobsForm(this);
@@ -28,6 +29,7 @@ namespace Assignment_3
             this.Hide();
         }
 
+        // Open a new form that allows a contractor to print an invoice for a job.
         private void btn_printJobs_Click(object sender, EventArgs e)
         {
             Form printJobForm = new PrintJobForm(this);
