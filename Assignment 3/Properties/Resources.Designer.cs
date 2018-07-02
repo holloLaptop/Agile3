@@ -153,6 +153,16 @@ namespace Assignment_3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap UpdateInfo {
+            get {
+                object obj = ResourceManager.GetObject("UpdateInfo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ViewJobs {
             get {
                 object obj = ResourceManager.GetObject("ViewJobs", resourceCulture);
