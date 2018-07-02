@@ -48,6 +48,15 @@ namespace Assignment_3
             }
         }
 
+        // Open a new form to edit a client/employee's info.
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            if (IsOnline())
+            {
+                this.Hide();
+            }
+        }
+
         // Open a new form to assign Jobs to contractors.
         private void btn_assignJobs_Click(object sender, EventArgs e)
         {
@@ -114,5 +123,6 @@ namespace Assignment_3
         {
 
         }
+
     }
 }
