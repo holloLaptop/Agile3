@@ -130,7 +130,13 @@ namespace Assignment_3
             }
 
             if (Shifts.Count > 0) comboBox_shifts.SelectedIndex = 0;
-            
+
+            // Clear and update the Completed related fields.
+            checkBox_completed.Checked = false;
+            txt_amountCharged.Text = "";
+            checkBox_paid.Checked = false;
+            txt_notes.Text = "";
+            LoadCompletedDetails();
         }
 
         private void lbl_client_Click(object sender, EventArgs e)
@@ -189,6 +195,7 @@ namespace Assignment_3
                 EnableClientFields(false);
 
                 LoadClientDetail();
+                LoadCompletedDetails();
             }
         }
 
@@ -204,6 +211,28 @@ namespace Assignment_3
             txt_email.Text = CurrentClient.email;
             txt_landLine.Text = CurrentClient.landLine.ToString();
             txt_mobile.Text = CurrentClient.mobile.ToString();
+        }
+
+        // Load the client's job details related to its completion and fee.
+        private void LoadCompletedDetails()
+        {
+            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+
+            // Completed job values loaded in.
+            //  We check if the job is completed by whether if the client has been charged or not.
+            if (SelectedJob.Charged > 0)
+            {
+                checkBox_completed.Checked = true;
+                txt_amountCharged.Text = SelectedJob.Charged.ToString();
+                checkBox_paid.Checked = SelectedJob.Paid;
+                txt_notes.Text = SelectedJob.Notes;
+            } else
+            {
+                checkBox_completed.Checked = false;
+                txt_amountCharged.Text = "";
+                checkBox_paid.Checked = false;
+                txt_notes.Text = "";
+            }
         }
 
         // Change the Enabled value of the Client-related fields to allow editing (when needed).
