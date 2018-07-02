@@ -39,12 +39,12 @@
             this.lbl_mobile = new System.Windows.Forms.Label();
             this.lbl_email = new System.Windows.Forms.Label();
             this.grpBox_client = new System.Windows.Forms.GroupBox();
-            this.txt_name = new System.Windows.Forms.TextBox();
-            this.txt_business = new System.Windows.Forms.TextBox();
-            this.txt_address = new System.Windows.Forms.TextBox();
-            this.txt_landLine = new System.Windows.Forms.TextBox();
-            this.txt_mobile = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
+            this.txt_mobile = new System.Windows.Forms.TextBox();
+            this.txt_landLine = new System.Windows.Forms.TextBox();
+            this.txt_address = new System.Windows.Forms.TextBox();
+            this.txt_business = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
             this.txt_description = new System.Windows.Forms.TextBox();
             this.lbl_contractor = new System.Windows.Forms.Label();
             this.txt_contractor = new System.Windows.Forms.TextBox();
@@ -57,9 +57,9 @@
             // lbl_job
             // 
             this.lbl_job.AutoSize = true;
-            this.lbl_job.Location = new System.Drawing.Point(12, 13);
+            this.lbl_job.Location = new System.Drawing.Point(11, 10);
             this.lbl_job.Name = "lbl_job";
-            this.lbl_job.Size = new System.Drawing.Size(35, 20);
+            this.lbl_job.Size = new System.Drawing.Size(31, 17);
             this.lbl_job.TabIndex = 0;
             this.lbl_job.Text = "Job";
             // 
@@ -67,16 +67,18 @@
             // 
             this.comboBox_jobs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_jobs.FormattingEnabled = true;
-            this.comboBox_jobs.Location = new System.Drawing.Point(107, 10);
+            this.comboBox_jobs.Location = new System.Drawing.Point(95, 8);
+            this.comboBox_jobs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox_jobs.Name = "comboBox_jobs";
-            this.comboBox_jobs.Size = new System.Drawing.Size(292, 28);
+            this.comboBox_jobs.Size = new System.Drawing.Size(260, 24);
             this.comboBox_jobs.TabIndex = 1;
             // 
             // btn_importJobs
             // 
-            this.btn_importJobs.Location = new System.Drawing.Point(404, 8);
+            this.btn_importJobs.Location = new System.Drawing.Point(359, 6);
+            this.btn_importJobs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_importJobs.Name = "btn_importJobs";
-            this.btn_importJobs.Size = new System.Drawing.Size(107, 36);
+            this.btn_importJobs.Size = new System.Drawing.Size(95, 29);
             this.btn_importJobs.TabIndex = 2;
             this.btn_importJobs.Text = "Import Jobs";
             this.btn_importJobs.UseVisualStyleBackColor = true;
@@ -85,63 +87,63 @@
             // lbl_description
             // 
             this.lbl_description.AutoSize = true;
-            this.lbl_description.Location = new System.Drawing.Point(12, 93);
+            this.lbl_description.Location = new System.Drawing.Point(11, 74);
             this.lbl_description.Name = "lbl_description";
-            this.lbl_description.Size = new System.Drawing.Size(89, 20);
+            this.lbl_description.Size = new System.Drawing.Size(79, 17);
             this.lbl_description.TabIndex = 3;
             this.lbl_description.Text = "Description";
             // 
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(6, 32);
+            this.lbl_name.Location = new System.Drawing.Point(5, 26);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(51, 20);
+            this.lbl_name.Size = new System.Drawing.Size(45, 17);
             this.lbl_name.TabIndex = 5;
             this.lbl_name.Text = "Name";
             // 
             // lbl_businessName
             // 
             this.lbl_businessName.AutoSize = true;
-            this.lbl_businessName.Location = new System.Drawing.Point(6, 72);
+            this.lbl_businessName.Location = new System.Drawing.Point(5, 58);
             this.lbl_businessName.Name = "lbl_businessName";
-            this.lbl_businessName.Size = new System.Drawing.Size(74, 20);
+            this.lbl_businessName.Size = new System.Drawing.Size(65, 17);
             this.lbl_businessName.TabIndex = 14;
             this.lbl_businessName.Text = "Business";
             // 
             // lbl_address
             // 
             this.lbl_address.AutoSize = true;
-            this.lbl_address.Location = new System.Drawing.Point(6, 112);
+            this.lbl_address.Location = new System.Drawing.Point(5, 90);
             this.lbl_address.Name = "lbl_address";
-            this.lbl_address.Size = new System.Drawing.Size(68, 20);
+            this.lbl_address.Size = new System.Drawing.Size(60, 17);
             this.lbl_address.TabIndex = 15;
             this.lbl_address.Text = "Address";
             // 
             // lbl_landLine
             // 
             this.lbl_landLine.AutoSize = true;
-            this.lbl_landLine.Location = new System.Drawing.Point(6, 152);
+            this.lbl_landLine.Location = new System.Drawing.Point(5, 122);
             this.lbl_landLine.Name = "lbl_landLine";
-            this.lbl_landLine.Size = new System.Drawing.Size(107, 20);
+            this.lbl_landLine.Size = new System.Drawing.Size(97, 17);
             this.lbl_landLine.TabIndex = 16;
             this.lbl_landLine.Text = "Land Line No.";
             // 
             // lbl_mobile
             // 
             this.lbl_mobile.AutoSize = true;
-            this.lbl_mobile.Location = new System.Drawing.Point(6, 192);
+            this.lbl_mobile.Location = new System.Drawing.Point(5, 154);
             this.lbl_mobile.Name = "lbl_mobile";
-            this.lbl_mobile.Size = new System.Drawing.Size(83, 20);
+            this.lbl_mobile.Size = new System.Drawing.Size(75, 17);
             this.lbl_mobile.TabIndex = 17;
             this.lbl_mobile.Text = "Mobile No.";
             // 
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(6, 232);
+            this.lbl_email.Location = new System.Drawing.Point(5, 186);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(48, 20);
+            this.lbl_email.Size = new System.Drawing.Size(42, 17);
             this.lbl_email.TabIndex = 18;
             this.lbl_email.Text = "Email";
             // 
@@ -159,90 +161,99 @@
             this.grpBox_client.Controls.Add(this.lbl_mobile);
             this.grpBox_client.Controls.Add(this.lbl_address);
             this.grpBox_client.Controls.Add(this.lbl_landLine);
-            this.grpBox_client.Location = new System.Drawing.Point(16, 207);
+            this.grpBox_client.Location = new System.Drawing.Point(14, 166);
+            this.grpBox_client.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpBox_client.Name = "grpBox_client";
-            this.grpBox_client.Size = new System.Drawing.Size(399, 282);
+            this.grpBox_client.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpBox_client.Size = new System.Drawing.Size(355, 226);
             this.grpBox_client.TabIndex = 19;
             this.grpBox_client.TabStop = false;
             this.grpBox_client.Text = "Client";
-            // 
-            // txt_name
-            // 
-            this.txt_name.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_name.Enabled = false;
-            this.txt_name.Location = new System.Drawing.Point(123, 29);
-            this.txt_name.Name = "txt_name";
-            this.txt_name.ReadOnly = true;
-            this.txt_name.Size = new System.Drawing.Size(260, 26);
-            this.txt_name.TabIndex = 19;
-            // 
-            // txt_business
-            // 
-            this.txt_business.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_business.Enabled = false;
-            this.txt_business.Location = new System.Drawing.Point(123, 69);
-            this.txt_business.Name = "txt_business";
-            this.txt_business.ReadOnly = true;
-            this.txt_business.Size = new System.Drawing.Size(260, 26);
-            this.txt_business.TabIndex = 20;
-            // 
-            // txt_address
-            // 
-            this.txt_address.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_address.Enabled = false;
-            this.txt_address.Location = new System.Drawing.Point(123, 109);
-            this.txt_address.Name = "txt_address";
-            this.txt_address.ReadOnly = true;
-            this.txt_address.Size = new System.Drawing.Size(260, 26);
-            this.txt_address.TabIndex = 21;
-            // 
-            // txt_landLine
-            // 
-            this.txt_landLine.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_landLine.Enabled = false;
-            this.txt_landLine.Location = new System.Drawing.Point(123, 149);
-            this.txt_landLine.Name = "txt_landLine";
-            this.txt_landLine.ReadOnly = true;
-            this.txt_landLine.Size = new System.Drawing.Size(260, 26);
-            this.txt_landLine.TabIndex = 22;
-            // 
-            // txt_mobile
-            // 
-            this.txt_mobile.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_mobile.Enabled = false;
-            this.txt_mobile.Location = new System.Drawing.Point(123, 189);
-            this.txt_mobile.Name = "txt_mobile";
-            this.txt_mobile.ReadOnly = true;
-            this.txt_mobile.Size = new System.Drawing.Size(260, 26);
-            this.txt_mobile.TabIndex = 23;
             // 
             // txt_email
             // 
             this.txt_email.BackColor = System.Drawing.SystemColors.Control;
             this.txt_email.Enabled = false;
-            this.txt_email.Location = new System.Drawing.Point(123, 229);
+            this.txt_email.Location = new System.Drawing.Point(109, 183);
+            this.txt_email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_email.Name = "txt_email";
             this.txt_email.ReadOnly = true;
-            this.txt_email.Size = new System.Drawing.Size(260, 26);
+            this.txt_email.Size = new System.Drawing.Size(232, 22);
             this.txt_email.TabIndex = 24;
+            // 
+            // txt_mobile
+            // 
+            this.txt_mobile.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_mobile.Enabled = false;
+            this.txt_mobile.Location = new System.Drawing.Point(109, 151);
+            this.txt_mobile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_mobile.Name = "txt_mobile";
+            this.txt_mobile.ReadOnly = true;
+            this.txt_mobile.Size = new System.Drawing.Size(232, 22);
+            this.txt_mobile.TabIndex = 23;
+            // 
+            // txt_landLine
+            // 
+            this.txt_landLine.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_landLine.Enabled = false;
+            this.txt_landLine.Location = new System.Drawing.Point(109, 119);
+            this.txt_landLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_landLine.Name = "txt_landLine";
+            this.txt_landLine.ReadOnly = true;
+            this.txt_landLine.Size = new System.Drawing.Size(232, 22);
+            this.txt_landLine.TabIndex = 22;
+            // 
+            // txt_address
+            // 
+            this.txt_address.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_address.Enabled = false;
+            this.txt_address.Location = new System.Drawing.Point(109, 87);
+            this.txt_address.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_address.Name = "txt_address";
+            this.txt_address.ReadOnly = true;
+            this.txt_address.Size = new System.Drawing.Size(232, 22);
+            this.txt_address.TabIndex = 21;
+            // 
+            // txt_business
+            // 
+            this.txt_business.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_business.Enabled = false;
+            this.txt_business.Location = new System.Drawing.Point(109, 55);
+            this.txt_business.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_business.Name = "txt_business";
+            this.txt_business.ReadOnly = true;
+            this.txt_business.Size = new System.Drawing.Size(232, 22);
+            this.txt_business.TabIndex = 20;
+            // 
+            // txt_name
+            // 
+            this.txt_name.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_name.Enabled = false;
+            this.txt_name.Location = new System.Drawing.Point(109, 23);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.ReadOnly = true;
+            this.txt_name.Size = new System.Drawing.Size(232, 22);
+            this.txt_name.TabIndex = 19;
             // 
             // txt_description
             // 
             this.txt_description.BackColor = System.Drawing.SystemColors.Control;
             this.txt_description.Enabled = false;
-            this.txt_description.Location = new System.Drawing.Point(107, 90);
+            this.txt_description.Location = new System.Drawing.Point(95, 72);
+            this.txt_description.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_description.Multiline = true;
             this.txt_description.Name = "txt_description";
             this.txt_description.ReadOnly = true;
-            this.txt_description.Size = new System.Drawing.Size(292, 58);
+            this.txt_description.Size = new System.Drawing.Size(260, 47);
             this.txt_description.TabIndex = 25;
             // 
             // lbl_contractor
             // 
             this.lbl_contractor.AutoSize = true;
-            this.lbl_contractor.Location = new System.Drawing.Point(12, 53);
+            this.lbl_contractor.Location = new System.Drawing.Point(11, 42);
             this.lbl_contractor.Name = "lbl_contractor";
-            this.lbl_contractor.Size = new System.Drawing.Size(84, 20);
+            this.lbl_contractor.Size = new System.Drawing.Size(74, 17);
             this.lbl_contractor.TabIndex = 26;
             this.lbl_contractor.Text = "Contractor";
             // 
@@ -250,18 +261,19 @@
             // 
             this.txt_contractor.BackColor = System.Drawing.SystemColors.Control;
             this.txt_contractor.Enabled = false;
-            this.txt_contractor.Location = new System.Drawing.Point(107, 50);
+            this.txt_contractor.Location = new System.Drawing.Point(95, 40);
+            this.txt_contractor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_contractor.Name = "txt_contractor";
             this.txt_contractor.ReadOnly = true;
-            this.txt_contractor.Size = new System.Drawing.Size(292, 26);
+            this.txt_contractor.Size = new System.Drawing.Size(260, 22);
             this.txt_contractor.TabIndex = 27;
             // 
             // lbl_fee
             // 
             this.lbl_fee.AutoSize = true;
-            this.lbl_fee.Location = new System.Drawing.Point(12, 163);
+            this.lbl_fee.Location = new System.Drawing.Point(11, 130);
             this.lbl_fee.Name = "lbl_fee";
-            this.lbl_fee.Size = new System.Drawing.Size(37, 20);
+            this.lbl_fee.Size = new System.Drawing.Size(32, 17);
             this.lbl_fee.TabIndex = 28;
             this.lbl_fee.Text = "Fee";
             // 
@@ -269,17 +281,19 @@
             // 
             this.txt_fee.BackColor = System.Drawing.SystemColors.Control;
             this.txt_fee.Enabled = false;
-            this.txt_fee.Location = new System.Drawing.Point(107, 160);
+            this.txt_fee.Location = new System.Drawing.Point(95, 128);
+            this.txt_fee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_fee.Name = "txt_fee";
             this.txt_fee.ReadOnly = true;
-            this.txt_fee.Size = new System.Drawing.Size(292, 26);
+            this.txt_fee.Size = new System.Drawing.Size(260, 22);
             this.txt_fee.TabIndex = 29;
             // 
             // btn_confirmPrint
             // 
-            this.btn_confirmPrint.Location = new System.Drawing.Point(421, 492);
+            this.btn_confirmPrint.Location = new System.Drawing.Point(374, 394);
+            this.btn_confirmPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_confirmPrint.Name = "btn_confirmPrint";
-            this.btn_confirmPrint.Size = new System.Drawing.Size(90, 36);
+            this.btn_confirmPrint.Size = new System.Drawing.Size(80, 29);
             this.btn_confirmPrint.TabIndex = 30;
             this.btn_confirmPrint.Text = "Print";
             this.btn_confirmPrint.UseVisualStyleBackColor = true;
@@ -287,9 +301,9 @@
             // 
             // PrintJobForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 540);
+            this.ClientSize = new System.Drawing.Size(464, 439);
             this.Controls.Add(this.btn_confirmPrint);
             this.Controls.Add(this.txt_fee);
             this.Controls.Add(this.lbl_fee);
@@ -301,11 +315,13 @@
             this.Controls.Add(this.btn_importJobs);
             this.Controls.Add(this.comboBox_jobs);
             this.Controls.Add(this.lbl_job);
-            this.MaximumSize = new System.Drawing.Size(540, 596);
-            this.MinimumSize = new System.Drawing.Size(540, 596);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(482, 486);
+            this.MinimumSize = new System.Drawing.Size(482, 486);
             this.Name = "PrintJobForm";
             this.Text = "Print Invoice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PrintJobForm_FormClosed);
+            this.Load += new System.EventHandler(this.PrintJobForm_Load);
             this.grpBox_client.ResumeLayout(false);
             this.grpBox_client.PerformLayout();
             this.ResumeLayout(false);

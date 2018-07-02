@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment_3
@@ -115,6 +108,11 @@ namespace Assignment_3
                 MessageBox.Show("Error: Internet connection has been lost. Reconnect and try again.", "Offline", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
+        }
+
+        private void HomeMenuForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

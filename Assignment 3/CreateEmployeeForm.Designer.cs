@@ -162,6 +162,7 @@
             this.Name = "CreateEmployeeForm";
             this.Text = "New Employee";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateEmployeeForm_FormClosed);
+            this.Load += new System.EventHandler(this.CreateEmployeeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
