@@ -51,6 +51,7 @@ namespace Assignment_3
             comboBox_client.SelectedIndex = 0;
         }
 
+        // Load the data related to the employee.
         private void LoadEmployeeDetail()
         {
             this.getEmployeesTableAdapter1.Fill(this.agileDevelopmentDataSet.GetEmployees);
@@ -139,6 +140,7 @@ namespace Assignment_3
             return false;
         }
 
+        // Allow the user to edit data fields.
         private void btn_editEmployee_Click(object sender, EventArgs e)
         {
             txt_eAddress.Enabled = true;
@@ -146,33 +148,48 @@ namespace Assignment_3
             txt_eEmail.Enabled = true;
             txt_eMobile.Enabled = true;
             txt_employeeName.Enabled = true;
-            //txt_employeeID
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        // Save the new values of the employee's info.
+        private void btn_updateEmployee_Click_1(object sender, EventArgs e)
         {
-            int id = int.Parse(((ComboboxItem)comboBox_employee.SelectedItem).Value.ToString());
-            queriesTableAdapter1.UpdatePersonAddress(id, txt_eAddress.Text);
-            queriesTableAdapter1.UpdatePersonName(id, txt_employeeName.Text);
-            queriesTableAdapter1.UpdatePersonEmail(id, txt_eEmail.Text);
+            if (EmployeeDataFilled())
+            {
+                int id = int.Parse(((ComboboxItem)comboBox_employee.SelectedItem).Value.ToString());
+                queriesTableAdapter1.UpdatePersonAddress(id, txt_eAddress.Text);
+                queriesTableAdapter1.UpdatePersonName(id, txt_employeeName.Text);
+                queriesTableAdapter1.UpdatePersonEmail(id, txt_eEmail.Text);
 
-            queriesTableAdapter1.UpdatePersonMobile(id, txt_eMobile.Text);
-            queriesTableAdapter1.UpdatePersonLandLine(id, txt_eLandLine.Text);
+                queriesTableAdapter1.UpdatePersonMobile(id, txt_eMobile.Text);
+                queriesTableAdapter1.UpdatePersonLandLine(id, txt_eLandLine.Text);
 
-            txt_eAddress.Enabled = false;
-            txt_eLandLine.Enabled = false;
-            txt_eEmail.Enabled = false;
-            txt_eMobile.Enabled = false;
-            txt_employeeName.Enabled = false;
-            LoadEmployeeDetail();
-
+                txt_eAddress.Enabled = false;
+                txt_eLandLine.Enabled = false;
+                txt_eEmail.Enabled = false;
+                txt_eMobile.Enabled = false;
+                txt_employeeName.Enabled = false;
+                LoadEmployeeDetail();
+            }
         }
 
+        // Check the required employee information fields are not empty.
+        private Boolean EmployeeDataFilled()
+        {
+            if (comboBox_employee.SelectedText.ToString() != "" && txt_employeeName.Text != "" && txt_employeeID.Text != "" &&
+                txt_eAddress.Text != "" && txt_eEmail.Text != "")
+            {
+                return true;
+            }
+
+            MessageBox.Show("Error: Required values missing.", "Empty Values", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return false;
+        }
+
+        // Update the form based on which employee is selected.
         private void comboBox_employee_SelectedIndexChanged(object sender, EventArgs e)
         {
             int i = comboBox_employee.SelectedIndex;
             DataRow row = Employee.Rows[i];
-
 
             txt_employeeID.Text = row[0].ToString();
             txt_employeeName.Text = row[2].ToString();
