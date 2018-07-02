@@ -37,6 +37,7 @@ namespace Assignment_3
             }
         }
 
+        // Save the data entered in the form as a Job in the database.
         private void btn_submit_Click(object sender, EventArgs e) {
             if (_homeMenuForm.IsOnline())
             {
@@ -45,21 +46,23 @@ namespace Assignment_3
                     this.getClientsTableAdapter.Fill(this.agileDevelopmentDataSet.GetClients);
 
                 }
-                catch (System.Exception ex)
+                catch
                 {
-                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                    MessageBox.Show("Error: A problem has occured while trying to access the database.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
 
                 try
                 {
                     int ClientID = Convert.ToInt32(((ComboboxItem)comboBox_clientID.SelectedItem).Value);
-                    //please this work
                     queriesTableAdapter1.CreateJob(ClientID, txt_shortDescription.Text, txt_location.Text, (byte)numUD_priority.Value, date_startTime.Value, null, 0, false);
                     queriesTableAdapter1.Dispose();
                     this.Close();
                 }
-                catch { Console.Out.WriteLine("oops"); }
+                catch
+                {
+                    MessageBox.Show("Error: A problem has occured while trying to access the database.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 

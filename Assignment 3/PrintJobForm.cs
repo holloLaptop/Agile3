@@ -29,6 +29,7 @@ namespace Assignment_3
             _offlineMenuForm.Show();
         }
 
+        // Import jobs from a selected file to be printed. Only jobs that have been 'Charged' (e.g. completed) can be printed.
         private void btn_importJobs_Click(object sender, EventArgs e)
         {
             //clears imported jobs to prevent duplicates
@@ -65,6 +66,7 @@ namespace Assignment_3
             }
         }
 
+        // Update the relevant details on the form whenever a different job is selected.
         private void updateFormDetails(Job currentJob)
         {
             Contractors contractor = p.Contractor;
@@ -107,7 +109,7 @@ namespace Assignment_3
             txt_email.Text = currentJob.client.email;
         }
 
-        // Prepare the information for printing.
+        // Start the print process when the button is clicked.
         private void btn_confirmPrint_Click(object sender, EventArgs e)
         {
             // Check if Fee is null; safest value to check as we already check this when we import jobs.
@@ -144,6 +146,7 @@ namespace Assignment_3
             }
         }
 
+        // Prepare the content of the page to be printed.
         private void PrintPageEvent(object sender, PrintPageEventArgs ev)
         {
             Graphics g = ev.Graphics;
@@ -174,14 +177,5 @@ namespace Assignment_3
 
             g.DrawString(text, arial12, solidBlackBrush, marginLeft, marginTop);
         }
-
-//        protected override void OnPaint(PaintEventArgs e)
-  //      {
-    //        Graphics g = e.Graphics;
-
-            
-
-        //    base.OnPaint(e);
-      //  }
     }
 }

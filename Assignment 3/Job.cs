@@ -20,8 +20,6 @@ namespace Assignment_3
         public DateTime Ordered;
         public DateTime StartTime;
 
-        //possible convert into just ID's for simple relational databasing
-
         // Contractor related values.
         public DateTime CompletionTime;
         public decimal Charged;

@@ -60,6 +60,7 @@ namespace Assignment_3
 
         public Package() { /*we do nothing*/ }
 
+        // Prepare the data to be exported.
         public void Serialise()
         {
             SaveFileDialog fileDialog = new SaveFileDialog();
@@ -80,6 +81,7 @@ namespace Assignment_3
             }
         }
 
+        // Prepare the data to be imported.
         public void Deserialise()
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
@@ -98,6 +100,7 @@ namespace Assignment_3
                 this.Contractor = placeHolder.Contractor;
                 this.JobInformation = placeHolder.JobInformation;
                 this.Clients = placeHolder.Clients;
+
                 //now due to the binding we'll rebind the Clients to JobInformation
                 //this shall prevent inconsistancy errors
                 for (int i = 0; i < JobInformation.Count; i++)
@@ -113,10 +116,7 @@ namespace Assignment_3
 
                     }
                 }
-                //closing stream
                 stream.Close();
-                //test Passed
-                //Serialise();
             }    
         }
 

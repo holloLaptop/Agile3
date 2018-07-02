@@ -21,6 +21,7 @@ namespace Assignment_3
             _homeMenuForm = homeMenuForm;
         }
 
+        // Export data from the database into a file that is readable by the offline version of the program.
         private void btn_export_Click(object sender, EventArgs e)
         {
             if (_homeMenuForm.IsOnline())
@@ -28,6 +29,7 @@ namespace Assignment_3
                 Package p = new Package();
                 DateTime Start = date_startTime.Value;
                 DateTime End = date_endTime.Value;
+
                 //fetches data from sql server
                 DataTable table = getShiftForEmployeeTableAdapter1.GetData(Convert.ToInt32(((ComboboxItem)comboBox_employeeID.SelectedItem).Value), Start, End);
                 //counting rows
@@ -72,7 +74,7 @@ namespace Assignment_3
                         {
                             client.SetLandLine(int.Parse(table.Rows[i][16].ToString()));
                         }
-                        catch { client.SetLandLine(0); }
+                        catch { client.SetLandLine(0); } // Default value.
                         try
                         {
                             client.SetMobile(int.Parse(table.Rows[i][17].ToString()));
@@ -87,16 +89,13 @@ namespace Assignment_3
                         //add client to Job
                         newJob.client = p.getClient(client.id);
 
-                        //Console.WriteLine(newJob.ToString());
                         //setting values of the new Job
                         p.AddJob(newJob);
-
-                        // Contractor info
-                        //  Retrieves data on the employee based on their ID.
-
                     }
+
                     p.AddShift(newShift);
                 }
+
                 //get contractor info here
                 DataTable employeeTable = getEmployeesTableAdapter.GetData();
                 DataRow employeeRow = null;
@@ -108,7 +107,8 @@ namespace Assignment_3
                         i = employeeTable.Rows.Count;
                     }
                 }
-                //attempt too fix issue
+
+                //attempt to fix issue
                 p.Contractor.EmployeeID = int.Parse(table.Rows[0][0].ToString());
                 p.Contractor.name = employeeRow[2].ToString();
 
@@ -130,23 +130,26 @@ namespace Assignment_3
                 CI.Value = row[0].ToString();
                 comboBox_employeeID.Items.Add(CI);
             }
-            //this.getEmployeesBindingSource.Fill(this.agileDevelopmentDataSet.GetEmployees);
         }
 
+        // Update the job listing when the start/end time are changed.
         private void date_startTime_ValueChanged(object sender, EventArgs e)
         {
             int PersonID = Convert.ToInt32(((ComboboxItem)comboBox_employeeID.SelectedItem).Value);
             DateTime Start = date_startTime.Value;
             DateTime End = date_endTime.Value;
 
-            try{
-                dataGridView1.DataSource = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);
-            } catch
+            try
             {
-              MessageBox.Show("Error: Client/Date selected is invalid.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dataGridView1.DataSource = getShiftForEmployeeTableAdapter1.GetData(PersonID, Start, End);
+            }
+            catch
+            {
+                MessageBox.Show("Error: Client/Date selected is invalid.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
+        // Import a selected file into the database.
         private void btn_import_Click(object sender, EventArgs e)
         {
             if (_homeMenuForm.IsOnline())
@@ -154,6 +157,7 @@ namespace Assignment_3
                 //so simple, nothing else needed
                 Package p = new Package();
                 p.Deserialise();
+
                 //Updates All client information
                 foreach (Client c in p.Clients)
                 {
@@ -165,6 +169,7 @@ namespace Assignment_3
                     queriesTableAdapter1.UpdatePersonMobile(ID, c.mobile);
                     queriesTableAdapter1.UpdatePersonName(ID, c.name);
                 }
+
                 //updating all jobs and shifts
                 foreach (Job J in p.JobInformation)
                 {

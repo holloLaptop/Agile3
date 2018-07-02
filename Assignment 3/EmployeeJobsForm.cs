@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment_3
@@ -14,8 +8,7 @@ namespace Assignment_3
     public partial class EmployeeJobsForm : Form
     {
         Package p = new Package();
-        // Keeps track of the parent form of this form.
-        private OfflineMenuForm _offlineMenuForm;
+        private OfflineMenuForm _offlineMenuForm; // Keeps track of the parent form of this form.
 
         public EmployeeJobsForm(OfflineMenuForm offlineMenuForm)
         {
@@ -23,6 +16,7 @@ namespace Assignment_3
             _offlineMenuForm = offlineMenuForm;
         }
 
+        // Check the input a user is entering.
         private void txt_amountCharged_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Allow users to only enter numbers with a single decimal place; does NOT prevent incorrect 
@@ -34,6 +28,7 @@ namespace Assignment_3
             }
         }
 
+        // Show an additional set of data fields when the job is completed.
         private void checkBox_completed_CheckedChanged(object sender, EventArgs e)
         {
             // Show the required data fields once the job is Completed. 
@@ -51,6 +46,7 @@ namespace Assignment_3
             grpBox_completed.Hide();
         }
 
+        // Format an imported file into the form to be edited.
         private void btn_import_Click(object sender, EventArgs e)
         {
             //clears imported jobs to prevent duplicates
@@ -59,11 +55,14 @@ namespace Assignment_3
             p.Contractor = null;
             comboBox_jobs.Controls.Clear();
             comboBox_jobs.Items.Clear();
+
             //Loads data
             p.Deserialise();
+
             //importing jobs into dropdown box
             for (int i = 0; i < p.JobInformation.Count; i++) {
                 Job currentJob = p.JobInformation[i];
+
                 //used the custom class for simplification
                 ComboboxItem item = new ComboboxItem();
                 item.Text = currentJob.client.BusinessName + ", " + currentJob.Location;
@@ -89,7 +88,7 @@ namespace Assignment_3
                 }
             }
 
-            // Make sure we're assigning the value to a non-null job; crashes otherwise.
+            // Make sure we're assigning the value to a non-null job; program crashes otherwise.
             if (comboBox_jobs.SelectedIndex != -1)
             {
                 try
@@ -102,23 +101,26 @@ namespace Assignment_3
             }
         }
 
+        // Update the form whenever a different job from the dropdown box is selected.
         private void comboBox_jobs_SelectedIndexChanged(object sender, EventArgs e)
         {
             Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
             txt_description.Text = SelectedJob.ShortDescription;
-            //Client information loaded in
-            /*Client CurrentClient = SelectedJob.client;
-            comboBox_client.Text = CurrentClient.Name ;
-            txt_address.Text = CurrentClient.address;
-            txt_businessName.Text = CurrentClient.BusinessName;
-            txt_email.Text = CurrentClient.Email;
-            txt_landLine.Text = CurrentClient.LandLine.ToString();
-            txt_mobile.Text = CurrentClient.Mobile.ToString();*/
+            
+            //Client information loaded in Client
+            /*  CurrentClient = SelectedJob.client;
+                comboBox_client.Text = CurrentClient.Name ;
+                txt_address.Text = CurrentClient.address;
+                txt_businessName.Text = CurrentClient.BusinessName;
+                txt_email.Text = CurrentClient.Email;
+                txt_landLine.Text = CurrentClient.LandLine.ToString();
+                txt_mobile.Text = CurrentClient.Mobile.ToString();*/
             LoadClientDetail();
 
             //Update List of Shifts then selects the first one to trigger auto-load of details.
             comboBox_shifts.Items.Clear();
             List<ContractShift> Shifts = SelectedJob.Shifts;
+
             for(int i = 0; i < Shifts.Count; i++)
             {
                 ComboboxItem item = new ComboboxItem();
@@ -126,6 +128,7 @@ namespace Assignment_3
                 item.Value = i;
                 comboBox_shifts.Items.Add(item);
             }
+
             if (Shifts.Count > 0) comboBox_shifts.SelectedIndex = 0;
             
         }
@@ -150,6 +153,7 @@ namespace Assignment_3
 
         }
 
+        // Save the values related to a shift's start and end time whenever they are changed.
         private void comboBox_shifts_SelectedIndexChanged(object sender, EventArgs e)
         {
             Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
@@ -168,6 +172,7 @@ namespace Assignment_3
             EnableClientFields(true);
         }    
 
+        // Change the client's details according to the edits the contractor has made.
         private void btn_updateClientInfo_Click(object sender, EventArgs e)
         {
             Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
@@ -184,6 +189,7 @@ namespace Assignment_3
             LoadClientDetail();
         }
 
+        // Load the client's details.
         private void LoadClientDetail()
         {
             Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
@@ -197,6 +203,7 @@ namespace Assignment_3
             txt_mobile.Text = CurrentClient.mobile.ToString();
         }
 
+        // Change the Enabled value of the Client-related fields to allow editing (when needed).
         private void EnableClientFields(bool value)
         {
             txt_businessName.Enabled = value;
@@ -206,11 +213,13 @@ namespace Assignment_3
             txt_email.Enabled = value;
         }
 
+        // Export the data via the Serialise function in Package.
         private void btn_export_Click(object sender, EventArgs e)
         {
             p.Serialise();
         }
 
+        // Constantly check and save that valid text (numbers) is being entered.
         private void txt_landLine_TextChanged(object sender, EventArgs e)
         {
             
@@ -223,7 +232,7 @@ namespace Assignment_3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //updating shift
+
         }
 
         // Automatically save the completion time when it is changed.

@@ -23,12 +23,6 @@ namespace Assignment_3
         //Email
         public String email;
 
-        //public String LandLine { get => landLine; }
-        //public String Mobile { get => mobile; }
-        //public String Name { get => name; set => name = value; }
-        //public String Address { get => address; set => address = value; }
-        //public String Email { get => email; set => email = value; }
-
         //Phone Number from int to string
         public static String PhoneToString(long phonenumber) {
             //String output = String.Format("{0:(088) 255-3820}", phonenumber);
@@ -36,12 +30,13 @@ namespace Assignment_3
             return output;
 
         }
-        //converts back if needed lol
+
+        //converts back if needed
         static public long PhoneToInt(String phoneNumber) {
             long Output = 0;
 
-            String temp = phoneNumber;
             //Validation
+            String temp = phoneNumber;
             String Numbers = "0123456789";
             //Stripping all foreign Characters
             for(int i = 0; i < temp.Length; i++)
@@ -57,6 +52,7 @@ namespace Assignment_3
 
             return Output;
         }
+
         //Set methods for phone numbers
         public void SetLandLine(long input) {
             landLine = PhoneToString(input);

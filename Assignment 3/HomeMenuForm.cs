@@ -22,6 +22,7 @@ namespace Assignment_3
             _mainForm = mainForm;
         }
 
+        // Open a new form to allow a new Client to be created.
         private void btn_newClient_Click(object sender, EventArgs e)
         {
             if (IsOnline())
@@ -32,6 +33,7 @@ namespace Assignment_3
             }
         }
 
+        // Open a new form to allow a new Employee to be added.
         private void btn_newEmployee_Click(object sender, EventArgs e)
         {
             if (IsOnline())
@@ -42,6 +44,7 @@ namespace Assignment_3
             }
         }
 
+        // Open a new form to allow new Jobs to be created.
         private void btn_newJob_Click(object sender, EventArgs e)
         {
             if (IsOnline())
@@ -52,6 +55,7 @@ namespace Assignment_3
             }
         }
 
+        // Open a new form to assign Jobs to contractors.
         private void btn_assignJobs_Click(object sender, EventArgs e)
         {
             if (IsOnline())
@@ -62,6 +66,7 @@ namespace Assignment_3
             }
         }
 
+        // Open a new form to import and export files to/from the database.
         private void btn_importAndExportJobs_Click(object sender, EventArgs e)
         {
             if (IsOnline())
