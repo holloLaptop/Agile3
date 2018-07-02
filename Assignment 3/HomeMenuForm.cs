@@ -51,10 +51,7 @@ namespace Assignment_3
         // Open a new form to edit a client/employee's info.
         private void btn_update_Click(object sender, EventArgs e)
         {
-            if (IsOnline())
-            {
-                this.Hide();
-            }
+
         }
 
         // Open a new form to assign Jobs to contractors.
@@ -124,5 +121,14 @@ namespace Assignment_3
 
         }
 
+        private void btn_update_Click_1(object sender, EventArgs e)
+        {
+            if (IsOnline())
+            {
+                Form EditClientInfo = new EditClientInfo(this);
+                EditClientInfo.Show();
+                this.Hide();
+            }
+        }
     }
 }

@@ -42,20 +42,22 @@
             this.txt_mobile = new System.Windows.Forms.TextBox();
             this.txt_landLine = new System.Windows.Forms.TextBox();
             this.txt_address = new System.Windows.Forms.TextBox();
+            this.txt_clientName = new System.Windows.Forms.TextBox();
             this.txt_businessName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.queriesTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter();
             this.getClientsTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetClientsTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_clientName = new System.Windows.Forms.TextBox();
+            this.getClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_client
@@ -83,17 +85,12 @@
             // 
             // comboBox_client
             // 
-            this.comboBox_client.DataSource = this.getJobsBindingSource;
-            this.comboBox_client.DisplayMember = "Name";
-            this.comboBox_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox_client.Enabled = false;
             this.comboBox_client.FormattingEnabled = true;
             this.comboBox_client.Location = new System.Drawing.Point(144, 12);
             this.comboBox_client.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox_client.Name = "comboBox_client";
-            this.comboBox_client.Size = new System.Drawing.Size(258, 25);
+            this.comboBox_client.Size = new System.Drawing.Size(258, 24);
             this.comboBox_client.TabIndex = 7;
-            this.comboBox_client.ValueMember = "PersonID";
             this.comboBox_client.SelectedIndexChanged += new System.EventHandler(this.comboBox_clent_SelectedIndexChanged);
             // 
             // tabControl2
@@ -185,6 +182,14 @@
             this.txt_address.Size = new System.Drawing.Size(258, 22);
             this.txt_address.TabIndex = 8;
             // 
+            // txt_clientName
+            // 
+            this.txt_clientName.Enabled = false;
+            this.txt_clientName.Location = new System.Drawing.Point(144, 43);
+            this.txt_clientName.Name = "txt_clientName";
+            this.txt_clientName.Size = new System.Drawing.Size(258, 22);
+            this.txt_clientName.TabIndex = 8;
+            // 
             // txt_businessName
             // 
             this.txt_businessName.Enabled = false;
@@ -238,10 +243,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Business Name";
             // 
-            // getClientsTableAdapter1
-            // 
-            this.getClientsTableAdapter1.ClearBeforeFill = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -251,13 +252,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Client Name";
             // 
-            // txt_clientName
+            // getClientsTableAdapter1
             // 
-            this.txt_clientName.Enabled = false;
-            this.txt_clientName.Location = new System.Drawing.Point(144, 43);
-            this.txt_clientName.Name = "txt_clientName";
-            this.txt_clientName.Size = new System.Drawing.Size(258, 22);
-            this.txt_clientName.TabIndex = 8;
+            this.getClientsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // getClientsBindingSource
+            // 
+            this.getClientsBindingSource.DataMember = "GetClients";
+            this.getClientsBindingSource.DataSource = this.agileDevelopmentDataSet;
             // 
             // EditClientInfo
             // 
@@ -275,6 +277,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,5 +306,6 @@
         private System.Windows.Forms.Label label1;
         private AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter queriesTableAdapter1;
         private AgileDevelopmentDataSetTableAdapters.GetClientsTableAdapter getClientsTableAdapter1;
+        private System.Windows.Forms.BindingSource getClientsBindingSource;
     }
 }

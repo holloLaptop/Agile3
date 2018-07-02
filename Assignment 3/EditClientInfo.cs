@@ -10,12 +10,12 @@ namespace Assignment_3
     {
         //Package p = new Package();
         DataTable Clients = new DataTable();
-        private OfflineMenuForm _offlineMenuForm; // Keeps track of the parent form of this form.
+        private HomeMenuForm _homeMenuForm; // Keeps track of the parent form of this form.
 
-        public EditClientInfo(OfflineMenuForm offlineMenuForm)
+        public EditClientInfo(HomeMenuForm offlineMenuForm)
         {
             InitializeComponent();
-            _offlineMenuForm = offlineMenuForm;
+            _homeMenuForm = offlineMenuForm;
         }
 
         // Check the input a user is entering.
@@ -38,7 +38,7 @@ namespace Assignment_3
 
         private void EmployeeJobs_Load(object sender, EventArgs e)
         {
-            
+            LoadClientDetail();
         }
 
         // Format an imported file into the form to be edited.
@@ -49,7 +49,7 @@ namespace Assignment_3
 
         private void EmployeeJobsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _offlineMenuForm.Show();
+            _homeMenuForm.Show();
         }
 
         // Ensure only valid text is entered; automatically save the value when it is changed.
@@ -100,7 +100,7 @@ namespace Assignment_3
         private void LoadClientDetail()
         {
             this.getClientsTableAdapter1.Fill(this.agileDevelopmentDataSet.GetClients);
-
+            comboBox_client.Items.Clear();
             Clients = agileDevelopmentDataSet.GetClients;
             foreach (DataRow row in Clients.Rows)
             {
@@ -110,6 +110,7 @@ namespace Assignment_3
                 CI.Value = row[1].ToString();
                 comboBox_client.Items.Add(CI);
             }
+            comboBox_client.SelectedIndex = 0;
         }
 
         // Change the Enabled value of the Client-related fields to allow editing (when needed).
@@ -194,7 +195,8 @@ namespace Assignment_3
             queriesTableAdapter1.UpdatePersonLandLine(id, txt_landLine.Text);
             queriesTableAdapter1.UpdatePersonMobile(id, txt_mobile.Text);
             queriesTableAdapter1.UpdatePersonAddress(id, txt_address.Text);
-
+            LoadClientDetail();
+            EnableClientFields(false);
         }
     }
 }
