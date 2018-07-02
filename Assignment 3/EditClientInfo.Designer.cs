@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbl_client = new System.Windows.Forms.Label();
-            this.getJobsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.agileDevelopmentDataSet = new Assignment_3.AgileDevelopmentDataSet();
-            this.getJobsTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetJobsTableAdapter();
             this.comboBox_client = new System.Windows.Forms.ComboBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -50,18 +47,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.queriesTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter();
-            this.getClientsTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetClientsTableAdapter();
-            this.getClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.btn_editEmployee = new System.Windows.Forms.Button();
+            this.txt_eEmail = new System.Windows.Forms.TextBox();
+            this.txt_eMobile = new System.Windows.Forms.TextBox();
+            this.txt_eLandLine = new System.Windows.Forms.TextBox();
+            this.txt_eAddress = new System.Windows.Forms.TextBox();
+            this.txt_employeeName = new System.Windows.Forms.TextBox();
+            this.txt_employeeID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -69,13 +63,20 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
+            this.comboBox_employee = new System.Windows.Forms.ComboBox();
+            this.getJobsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.agileDevelopmentDataSet = new Assignment_3.AgileDevelopmentDataSet();
+            this.getJobsTableAdapter = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetJobsTableAdapter();
+            this.queriesTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.QueriesTableAdapter();
+            this.getClientsTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetClientsTableAdapter();
+            this.getClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getEmployeesTableAdapter1 = new Assignment_3.AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter();
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_client
@@ -86,20 +87,6 @@
             this.lbl_client.Size = new System.Drawing.Size(84, 17);
             this.lbl_client.TabIndex = 1;
             this.lbl_client.Text = "Client Name";
-            // 
-            // getJobsBindingSource
-            // 
-            this.getJobsBindingSource.DataMember = "GetJobs";
-            this.getJobsBindingSource.DataSource = this.agileDevelopmentDataSet;
-            // 
-            // agileDevelopmentDataSet
-            // 
-            this.agileDevelopmentDataSet.DataSetName = "AgileDevelopmentDataSet";
-            this.agileDevelopmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getJobsTableAdapter
-            // 
-            this.getJobsTableAdapter.ClearBeforeFill = true;
             // 
             // comboBox_client
             // 
@@ -271,25 +258,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Client Name";
             // 
-            // getClientsTableAdapter1
-            // 
-            this.getClientsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // getClientsBindingSource
-            // 
-            this.getClientsBindingSource.DataMember = "GetClients";
-            this.getClientsBindingSource.DataSource = this.agileDevelopmentDataSet;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.textBox5);
-            this.tabPage1.Controls.Add(this.textBox6);
+            this.tabPage1.Controls.Add(this.btn_editEmployee);
+            this.tabPage1.Controls.Add(this.txt_eEmail);
+            this.tabPage1.Controls.Add(this.txt_eMobile);
+            this.tabPage1.Controls.Add(this.txt_eLandLine);
+            this.tabPage1.Controls.Add(this.txt_eAddress);
+            this.tabPage1.Controls.Add(this.txt_employeeName);
+            this.tabPage1.Controls.Add(this.txt_employeeID);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label9);
@@ -297,7 +275,7 @@
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.comboBox_employee);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -314,63 +292,67 @@
             this.button1.TabIndex = 24;
             this.button1.Text = "Update Info";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // btn_editEmployee
             // 
-            this.button2.Location = new System.Drawing.Point(144, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Edit Client Info";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_editEmployee.Location = new System.Drawing.Point(144, 215);
+            this.btn_editEmployee.Name = "btn_editEmployee";
+            this.btn_editEmployee.Size = new System.Drawing.Size(123, 23);
+            this.btn_editEmployee.TabIndex = 25;
+            this.btn_editEmployee.Text = "Edit Employee Info";
+            this.btn_editEmployee.UseVisualStyleBackColor = true;
+            this.btn_editEmployee.Click += new System.EventHandler(this.btn_editEmployee_Click);
             // 
-            // textBox1
+            // txt_eEmail
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(144, 186);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 22);
-            this.textBox1.TabIndex = 18;
+            this.txt_eEmail.Enabled = false;
+            this.txt_eEmail.Location = new System.Drawing.Point(144, 186);
+            this.txt_eEmail.Name = "txt_eEmail";
+            this.txt_eEmail.Size = new System.Drawing.Size(258, 22);
+            this.txt_eEmail.TabIndex = 18;
             // 
-            // textBox2
+            // txt_eMobile
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(144, 158);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 22);
-            this.textBox2.TabIndex = 19;
+            this.txt_eMobile.Enabled = false;
+            this.txt_eMobile.Location = new System.Drawing.Point(144, 158);
+            this.txt_eMobile.Name = "txt_eMobile";
+            this.txt_eMobile.Size = new System.Drawing.Size(258, 22);
+            this.txt_eMobile.TabIndex = 19;
+            this.txt_eMobile.TextChanged += new System.EventHandler(this.txt_landLine_TextChanged);
             // 
-            // textBox3
+            // txt_eLandLine
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(144, 130);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(258, 22);
-            this.textBox3.TabIndex = 20;
+            this.txt_eLandLine.Enabled = false;
+            this.txt_eLandLine.Location = new System.Drawing.Point(144, 130);
+            this.txt_eLandLine.Name = "txt_eLandLine";
+            this.txt_eLandLine.Size = new System.Drawing.Size(258, 22);
+            this.txt_eLandLine.TabIndex = 20;
+            this.txt_eLandLine.TextChanged += new System.EventHandler(this.txt_landLine_TextChanged);
             // 
-            // textBox4
+            // txt_eAddress
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(144, 101);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(258, 22);
-            this.textBox4.TabIndex = 21;
+            this.txt_eAddress.Enabled = false;
+            this.txt_eAddress.Location = new System.Drawing.Point(144, 101);
+            this.txt_eAddress.Name = "txt_eAddress";
+            this.txt_eAddress.Size = new System.Drawing.Size(258, 22);
+            this.txt_eAddress.TabIndex = 21;
             // 
-            // textBox5
+            // txt_employeeName
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(144, 45);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(258, 22);
-            this.textBox5.TabIndex = 22;
+            this.txt_employeeName.Enabled = false;
+            this.txt_employeeName.Location = new System.Drawing.Point(144, 45);
+            this.txt_employeeName.Name = "txt_employeeName";
+            this.txt_employeeName.Size = new System.Drawing.Size(258, 22);
+            this.txt_employeeName.TabIndex = 22;
             // 
-            // textBox6
+            // txt_employeeID
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(144, 73);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(258, 22);
-            this.textBox6.TabIndex = 23;
+            this.txt_employeeID.Enabled = false;
+            this.txt_employeeID.Location = new System.Drawing.Point(144, 73);
+            this.txt_employeeID.Name = "txt_employeeID";
+            this.txt_employeeID.Size = new System.Drawing.Size(258, 22);
+            this.txt_employeeID.TabIndex = 23;
             // 
             // label2
             // 
@@ -435,14 +417,42 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "Employee Name";
             // 
-            // comboBox1
+            // comboBox_employee
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(144, 14);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(258, 24);
-            this.comboBox1.TabIndex = 17;
+            this.comboBox_employee.FormattingEnabled = true;
+            this.comboBox_employee.Location = new System.Drawing.Point(144, 14);
+            this.comboBox_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_employee.Name = "comboBox_employee";
+            this.comboBox_employee.Size = new System.Drawing.Size(258, 24);
+            this.comboBox_employee.TabIndex = 17;
+            this.comboBox_employee.SelectedIndexChanged += new System.EventHandler(this.comboBox_employee_SelectedIndexChanged);
+            // 
+            // getJobsBindingSource
+            // 
+            this.getJobsBindingSource.DataMember = "GetJobs";
+            this.getJobsBindingSource.DataSource = this.agileDevelopmentDataSet;
+            // 
+            // agileDevelopmentDataSet
+            // 
+            this.agileDevelopmentDataSet.DataSetName = "AgileDevelopmentDataSet";
+            this.agileDevelopmentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // getJobsTableAdapter
+            // 
+            this.getJobsTableAdapter.ClearBeforeFill = true;
+            // 
+            // getClientsTableAdapter1
+            // 
+            this.getClientsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // getClientsBindingSource
+            // 
+            this.getClientsBindingSource.DataMember = "GetClients";
+            this.getClientsBindingSource.DataSource = this.agileDevelopmentDataSet;
+            // 
+            // getEmployeesTableAdapter1
+            // 
+            this.getEmployeesTableAdapter1.ClearBeforeFill = true;
             // 
             // EditClientInfo
             // 
@@ -455,14 +465,14 @@
             this.Text = "Edit Information";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EmployeeJobsForm_FormClosed);
             this.Load += new System.EventHandler(this.EmployeeJobs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.getJobsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agileDevelopmentDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getClientsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,13 +504,13 @@
         private System.Windows.Forms.BindingSource getClientsBindingSource;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button btn_editEmployee;
+        private System.Windows.Forms.TextBox txt_eEmail;
+        private System.Windows.Forms.TextBox txt_eMobile;
+        private System.Windows.Forms.TextBox txt_eLandLine;
+        private System.Windows.Forms.TextBox txt_eAddress;
+        private System.Windows.Forms.TextBox txt_employeeName;
+        private System.Windows.Forms.TextBox txt_employeeID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -508,6 +518,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_employee;
+        private AgileDevelopmentDataSetTableAdapters.GetEmployeesTableAdapter getEmployeesTableAdapter1;
     }
 }

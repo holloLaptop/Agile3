@@ -10,6 +10,7 @@ namespace Assignment_3
     {
         //Package p = new Package();
         DataTable Clients = new DataTable();
+        DataTable Employee = new DataTable();
         private HomeMenuForm _homeMenuForm; // Keeps track of the parent form of this form.
 
         public EditClientInfo(HomeMenuForm offlineMenuForm)
@@ -39,6 +40,7 @@ namespace Assignment_3
         private void EmployeeJobs_Load(object sender, EventArgs e)
         {
             LoadClientDetail();
+            LoadEmployeeDetail();
         }
 
         // Format an imported file into the form to be edited.
@@ -111,6 +113,22 @@ namespace Assignment_3
                 comboBox_client.Items.Add(CI);
             }
             comboBox_client.SelectedIndex = 0;
+        }
+
+        private void LoadEmployeeDetail()
+        {
+            this.getEmployeesTableAdapter1.Fill(this.agileDevelopmentDataSet.GetEmployees);
+            comboBox_employee.Items.Clear();
+            Employee = agileDevelopmentDataSet.GetEmployees;
+            foreach (DataRow row in Employee.Rows)
+            {
+                ComboboxItem CI = new ComboboxItem();
+                CI.Text = row[2].ToString();
+                while (CI.Text.Contains("  ")) CI.Text = CI.Text.Replace("  ", " ");
+                CI.Value = row[1].ToString();
+                comboBox_employee.Items.Add(CI);
+            }
+            comboBox_employee.SelectedIndex = 0;
         }
 
         // Change the Enabled value of the Client-related fields to allow editing (when needed).
@@ -197,6 +215,49 @@ namespace Assignment_3
             queriesTableAdapter1.UpdatePersonAddress(id, txt_address.Text);
             LoadClientDetail();
             EnableClientFields(false);
+        }
+
+        private void btn_editEmployee_Click(object sender, EventArgs e)
+        {
+            txt_eAddress.Enabled = true;
+            txt_eLandLine.Enabled = true;
+            txt_eEmail.Enabled = true;
+            txt_eMobile.Enabled = true;
+            txt_employeeName.Enabled = true;
+            //txt_employeeID
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int id = int.Parse(((ComboboxItem)comboBox_employee.SelectedItem).Value.ToString());
+            queriesTableAdapter1.UpdatePersonAddress(id, txt_eAddress.Text);
+            queriesTableAdapter1.UpdatePersonName(id, txt_employeeName.Text);
+            queriesTableAdapter1.UpdatePersonEmail(id, txt_eEmail.Text);
+
+            queriesTableAdapter1.UpdatePersonMobile(id, txt_eMobile.Text);
+            queriesTableAdapter1.UpdatePersonLandLine(id, txt_eLandLine.Text);
+
+            txt_eAddress.Enabled = false;
+            txt_eLandLine.Enabled = false;
+            txt_eEmail.Enabled = false;
+            txt_eMobile.Enabled = false;
+            txt_employeeName.Enabled = false;
+            LoadEmployeeDetail();
+
+        }
+
+        private void comboBox_employee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = comboBox_employee.SelectedIndex;
+            DataRow row = Employee.Rows[i];
+
+
+            txt_employeeID.Text = row[0].ToString();
+            txt_employeeName.Text = row[2].ToString();
+            txt_eEmail.Text = row[6].ToString();
+            txt_eLandLine.Text = row[4].ToString();
+            txt_eMobile.Text = row[5].ToString();
+            txt_eAddress.Text = row[3].ToString();
         }
     }
 }
