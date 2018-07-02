@@ -139,6 +139,7 @@ namespace Assignment_3
             // Print dialog; print if they confirm.
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
+                //pd.PrinterSettings = printDialog.PrinterSettings;
                 pd.Print();
             }
         }
