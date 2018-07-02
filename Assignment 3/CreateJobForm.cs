@@ -63,7 +63,7 @@ namespace Assignment_3
         // Make sure the required data fields are filled in.
         private Boolean DataFilled()
         {
-            if (comboBox_clientID.SelectedText.ToString() != "" && txt_shortDescription.Text != "" && txt_location.Text != "")
+            if (comboBox_clientID.Text != "" && txt_shortDescription.Text != "" && txt_location.Text != "")
             {
                 return true;
             }

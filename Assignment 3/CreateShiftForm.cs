@@ -70,7 +70,7 @@ namespace Assignment_3
         // Make sure the required data fields are filled in.
         private Boolean DataFilled()
         {
-            if (comboBox_employeeID.SelectedText.ToString() != "" && comboBox_job.SelectedText.ToString() != "")
+            if (comboBox_employeeID.Text != "" && comboBox_job.Text != "")
             {
                 return true;
             }

@@ -130,7 +130,7 @@ namespace Assignment_3
         // Make sure the required data fields are filled in.
         private Boolean ClientDataFilled()
         {
-            if (comboBox_client.SelectedText.ToString() != "" && txt_clientName.Text != "" && txt_businessName.Text != "" &&
+            if (comboBox_client.Text != "" && txt_clientName.Text != "" && txt_businessName.Text != "" &&
                 txt_address.Text != "" && txt_email.Text != "")
             {
                 return true;
@@ -175,7 +175,7 @@ namespace Assignment_3
         // Check the required employee information fields are not empty.
         private Boolean EmployeeDataFilled()
         {
-            if (comboBox_employee.SelectedText.ToString() != "" && txt_employeeName.Text != "" && txt_employeeID.Text != "" &&
+            if (comboBox_employee.Text != "" && txt_employeeName.Text != "" && txt_employeeID.Text != "" &&
                 txt_eAddress.Text != "" && txt_eEmail.Text != "")
             {
                 return true;
