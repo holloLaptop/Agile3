@@ -90,6 +90,7 @@
             // 
             // comboBox_client
             // 
+            this.comboBox_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_client.FormattingEnabled = true;
             this.comboBox_client.Location = new System.Drawing.Point(162, 15);
             this.comboBox_client.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -438,6 +439,7 @@
             // 
             // comboBox_employee
             // 
+            this.comboBox_employee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_employee.FormattingEnabled = true;
             this.comboBox_employee.Location = new System.Drawing.Point(162, 18);
             this.comboBox_employee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

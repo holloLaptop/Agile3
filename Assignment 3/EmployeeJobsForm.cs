@@ -219,7 +219,7 @@ namespace Assignment_3
         // Make sure the required data fields are filled in.
         private Boolean DataFilled()
         {
-            if (comboBox_client.SelectedText.ToString() != "" && txt_businessName.Text != "" && txt_address.Text != "" && txt_email.Text != "")
+            if (comboBox_client.Text != "" && txt_businessName.Text != "" && txt_address.Text != "" && txt_email.Text != "")
             {
                 return true;
             }
