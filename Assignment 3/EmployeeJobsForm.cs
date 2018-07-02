@@ -132,10 +132,6 @@ namespace Assignment_3
             if (Shifts.Count > 0) comboBox_shifts.SelectedIndex = 0;
 
             // Clear and update the Completed related fields.
-            checkBox_completed.Checked = false;
-            txt_amountCharged.Text = "";
-            checkBox_paid.Checked = false;
-            txt_notes.Text = "";
             LoadCompletedDetails();
         }
 
@@ -195,7 +191,6 @@ namespace Assignment_3
                 EnableClientFields(false);
 
                 LoadClientDetail();
-                LoadCompletedDetails();
             }
         }
 
