@@ -14,10 +14,15 @@ namespace Assignment_3
             _homeMenuForm = homeMenuForm;
         }
 
+        private void CreateEmployeeForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         // Create the employee in the database.
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            if (_homeMenuForm.IsOnline())
+            if (_homeMenuForm.IsOnline() && DataFilled()) 
             {
                 try
                 {
@@ -47,9 +52,15 @@ namespace Assignment_3
             Parent.SelectionStart = x;
         }
 
-        private void CreateEmployeeForm_Load(object sender, EventArgs e)
+        // Make sure the required data fields are filled in.
+        private Boolean DataFilled()
         {
+            if (txt_name.Text != "" && txt_address.Text != "" && txt_email.Text != "") {
+                return true;
+            }
 
+            MessageBox.Show("Error: Required values missing.", "Empty Values", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return false;
         }
     }
 }

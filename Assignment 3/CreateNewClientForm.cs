@@ -22,7 +22,7 @@ namespace Assignment_3
         // Save the Client information to the database.
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            if (_homeMenuForm.IsOnline())
+            if (_homeMenuForm.IsOnline() && DataFilled())
             {
                 try
                 {
@@ -59,6 +59,18 @@ namespace Assignment_3
 
             Parent.Text = Person.PhoneToString(Person.PhoneToInt(Parent.Text));
             Parent.SelectionStart = x;
+        }
+
+        // Make sure the required data fields are filled in.
+        private Boolean DataFilled()
+        {
+            if (txt_name.Text != "" && txt_address.Text != "" && txt_email.Text != "" && txt_businessName.Text != "")
+            {
+                return true;
+            }
+
+            MessageBox.Show("Error: Required values missing.", "Empty Values", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return false;
         }
     }
 }

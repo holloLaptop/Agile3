@@ -175,18 +175,21 @@ namespace Assignment_3
         // Change the client's details according to the edits the contractor has made.
         private void btn_updateClientInfo_Click(object sender, EventArgs e)
         {
-            Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
-            Client CC = SelectedJob.client;
+            if (DataFilled())
+            {
+                Job SelectedJob = p.JobInformation[comboBox_jobs.SelectedIndex];
+                Client CC = SelectedJob.client;
 
-            CC.BusinessName = txt_businessName.Text;
-            CC.address = txt_address.Text;
-            CC.SetLandLine(Person.PhoneToInt(txt_landLine.Text));
-            CC.SetMobile(Person.PhoneToInt(txt_mobile.Text));
-            CC.email = txt_email.Text;
+                CC.BusinessName = txt_businessName.Text;
+                CC.address = txt_address.Text;
+                CC.SetLandLine(Person.PhoneToInt(txt_landLine.Text));
+                CC.SetMobile(Person.PhoneToInt(txt_mobile.Text));
+                CC.email = txt_email.Text;
 
-            EnableClientFields(false);
+                EnableClientFields(false);
 
-            LoadClientDetail();
+                LoadClientDetail();
+            }
         }
 
         // Load the client's details.
@@ -211,6 +214,18 @@ namespace Assignment_3
             txt_landLine.Enabled = value;
             txt_mobile.Enabled = value;
             txt_email.Enabled = value;
+        }
+
+        // Make sure the required data fields are filled in.
+        private Boolean DataFilled()
+        {
+            if (comboBox_client.SelectedText.ToString() != "" && txt_businessName.Text != "" && txt_address.Text != "" && txt_email.Text != "")
+            {
+                return true;
+            }
+
+            MessageBox.Show("Error: Required values missing.", "Empty Values", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return false;
         }
 
         // Export the data via the Serialise function in Package.

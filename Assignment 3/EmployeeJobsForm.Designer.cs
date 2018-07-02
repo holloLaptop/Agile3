@@ -99,9 +99,9 @@
             this.lbl_client.AutoSize = true;
             this.lbl_client.Location = new System.Drawing.Point(7, 15);
             this.lbl_client.Name = "lbl_client";
-            this.lbl_client.Size = new System.Drawing.Size(95, 20);
+            this.lbl_client.Size = new System.Drawing.Size(101, 20);
             this.lbl_client.TabIndex = 1;
-            this.lbl_client.Text = "Client Name";
+            this.lbl_client.Text = "Client Name*";
             this.lbl_client.Click += new System.EventHandler(this.lbl_client_Click);
             // 
             // lbl_description
@@ -414,9 +414,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(7, 196);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
+            this.label7.Size = new System.Drawing.Size(54, 20);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Email";
+            this.label7.Text = "Email*";
             this.label7.Click += new System.EventHandler(this.lbl_client_Click);
             // 
             // label6
@@ -444,9 +444,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(7, 88);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 20);
+            this.label4.Size = new System.Drawing.Size(74, 20);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Address";
+            this.label4.Text = "Address*";
             this.label4.Click += new System.EventHandler(this.lbl_client_Click);
             // 
             // label3
@@ -454,9 +454,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 20);
+            this.label3.Size = new System.Drawing.Size(126, 20);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Business Name";
+            this.label3.Text = "Business Name*";
             this.label3.Click += new System.EventHandler(this.lbl_client_Click);
             // 
             // tabControl3

@@ -33,7 +33,7 @@ namespace Assignment_3
 
         // Save the data entered in the form as a Job in the database.
         private void btn_submit_Click(object sender, EventArgs e) {
-            if (_homeMenuForm.IsOnline())
+            if (_homeMenuForm.IsOnline() && DataFilled())
             {
                 try
                 {
@@ -58,6 +58,18 @@ namespace Assignment_3
                     MessageBox.Show("Error: A problem has occured while trying to access the database.", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+        }
+
+        // Make sure the required data fields are filled in.
+        private Boolean DataFilled()
+        {
+            if (comboBox_clientID.SelectedText.ToString() != "" && txt_shortDescription.Text != "" && txt_location.Text != "")
+            {
+                return true;
+            }
+
+            MessageBox.Show("Error: Required values missing.", "Empty Values", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return false;
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
